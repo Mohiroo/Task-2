@@ -1,6 +1,12 @@
 @import "../node_modules/normalize.css/normalize.css";
+@import "./components/variables.scss";
 
-body {
+@import "./components/text-field/text-field.scss";
+@import "./components/dropdown/dropdown.scss";
+
+
+.wrapper {
   max-width: 1920px;
   min-width: 320px;
+  margin: 20px 20px;
 }

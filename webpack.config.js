@@ -46,4 +46,9 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    alias: {
+      Pug: path.resolve(__dirname, './src/components'),
+    },
+  },
 }

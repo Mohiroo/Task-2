@@ -354,7 +354,20 @@ template {
 /*!********************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./styles.scss ***!
   \********************************************************************************************************/
-body {
+.text-field {
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  padding: 12px 14px;
+  width: 250px;
+  font-family: Montserrat; }
+  .text-field::placeholder {
+    color: rgba(31, 32, 65, 0.25); }
+  .text-field:focus {
+    outline: none;
+    border: 1px solid rgba(31, 32, 65, 0.5); }
+
+.wrapper {
   max-width: 1920px;
-  min-width: 320px; }
+  min-width: 320px;
+  margin: 20px 20px; }
 
