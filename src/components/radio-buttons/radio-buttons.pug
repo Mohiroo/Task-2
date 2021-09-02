@@ -1,10 +1,8 @@
-mixin radio-buttons(name, value)
-  input(type='radio' name=name, value=value)
+mixin radio-buttons(name, value, text)
+  label.radio-button
+    input(type='radio' name=name, value=value)
+    = text
 
 form.radio-buttons
-  label.radio-button
-    +radio-buttons('sex', 'male')
-    | Мужчина
-  label.radio-button
-    +radio-buttons('sex', 'female')
-    | Женщина
++radio-buttons('sex', 'male', 'Мужчина')
++radio-buttons('sex', 'female', 'Женщина')
