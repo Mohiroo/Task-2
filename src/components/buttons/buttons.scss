@@ -1,0 +1,68 @@
+div {
+  margin-bottom: 50px;
+}
+
+.v1 {
+  padding: 15px 20px;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border-radius: 22px;
+  color: #FFFFFF;
+  font-family: "Montserrat";
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+
+  &:active { opacity: 0.5; }
+  &:focus { outline: none; }
+}
+
+.v2 {
+  padding: 15px 20px;
+  background: none;
+  border: 2px solid #BC9CFF;
+  border-radius: 22px;
+  color: #BC9CFF;
+  font-family: "Montserrat";
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &:active { border: 2px solid #DDCDFF; }
+  &:focus { outline: none; }
+}
+
+.v3 {
+  background: none;
+  border: none;
+
+  font-family: "Montserrat";
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #BC9CFF;
+
+  &:active { color: rgba(31, 32, 65, 0.5); }
+  &:focus { outline: none; }
+}
+
+.v4 {
+  width: 280px;
+  // height: 15px;
+  padding: 15px 20px;
+  display: inline-block;
+
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border-radius: 22px;
+  border: none;
+  // background-image: url(./components/buttons/arrow_forward_black_24dp.svg);
+
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  vertical-align: middle;
+
+  font-family: Montserrat;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #FFFFFF;
+
+  &:active { color: red; }
+}
