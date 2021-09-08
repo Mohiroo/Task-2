@@ -43,12 +43,20 @@ module.exports = {
           'css-loader',
           'sass-loader'
         ]
-      }
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              esModule: false,
+              name: "[name].[ext]",
+              outputPath: "assets/images"
+            }
+          },
+        ],
+      },
     ]
-  },
-  resolve: {
-    alias: {
-      Pug: path.resolve(__dirname, './src/components'),
-    },
   },
 }

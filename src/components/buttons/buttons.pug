@@ -1,12 +1,13 @@
-mixin button(type, text)
-  button(class="type") text
+mixin button(type, text='')
+  if type=='button-4'
+    button(class=type)
+      span.v4-button__text= text
+      span.material-icons-outlined.v4-button__arrow arrow_forward
+  else  
+    button(class=type)= text
 
-div
-  button.v1 Click me
-div 
-  button.v2 Click me
-div 
-  button.v3 Click me
-div 
-  button.v4 перейти к оплате
-  
+
++button("button-4", "Привет")
++button("button-3", "Привет")
++button("button-2", "Войти")
++button("button-1", "Привет")

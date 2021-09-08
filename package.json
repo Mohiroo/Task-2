@@ -19,11 +19,15 @@
     "node-sass": "^6.0.1",
     "sass-loader": "^12.1.0",
     "simple-pug-loader": "^0.2.0",
+    "svg-sprite-loader": "^6.0.9",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.1.0"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "extract-svg-sprite-webpack-plugin": "^0.8.1",
+    "file-loader": "^6.2.0",
+    "normalize.css": "^8.0.1",
+    "svg-url-loader": "^7.1.1"
   }
 }

@@ -1,36 +1,39 @@
-div {
-  margin-bottom: 50px;
-}
-
-.v1 {
-  padding: 15px 20px;
+.button-1 {
+  width: 99px;
+  height: 44px;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   border-radius: 22px;
-  color: #FFFFFF;
-  font-family: "Montserrat";
-  font-weight: bold;
-  text-transform: uppercase;
   border: none;
+
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;text-transform: uppercase;
+  color: #FFFFFF;
 
   &:active { opacity: 0.5; }
   &:focus { outline: none; }
 }
 
-.v2 {
-  padding: 15px 20px;
-  background: none;
+.button-2 {
+  width: 99px;
+  height: 44px;
   border: 2px solid #BC9CFF;
   border-radius: 22px;
-  color: #BC9CFF;
+  background: none;
+ 
   font-family: "Montserrat";
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
   text-transform: uppercase;
+  color: #BC9CFF;
 
   &:active { border: 2px solid #DDCDFF; }
   &:focus { outline: none; }
 }
 
-.v3 {
+.button-3 {
   background: none;
   border: none;
 
@@ -43,26 +46,32 @@ div {
   &:focus { outline: none; }
 }
 
-.v4 {
-  width: 280px;
-  // height: 15px;
-  padding: 15px 20px;
-  display: inline-block;
+.button-4 {
+  width: 320px;
+  height: 44px;
 
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  border-radius: 22px;
+  border-radius: 30px;
   border: none;
-  // background-image: url(./components/buttons/arrow_forward_black_24dp.svg);
-
-  font-size: 12px;
-  line-height: 15px;
-  text-align: center;
-  vertical-align: middle;
+  padding: 0;
 
   font-family: Montserrat;
+  font-size: 12px;
+  line-height: 15px;
   font-weight: bold;
   text-transform: uppercase;
   color: #FFFFFF;
 
-  &:active { color: red; }
+  &:focus { outline: none; }
+
+  display: flex;
+  align-items: center;
+  .v4-button__text {
+    margin-left: 44px;
+    flex: 1;
+  }
+  .v4-button__arrow {
+    flex-basis: 44px;
+    align-items: flex-start;
+  }
 }
