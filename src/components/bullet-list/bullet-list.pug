@@ -1,0 +1,8 @@
+mixin list-item(text)
+  li.bullet-list__item
+    span= text
+
+ul.bullet-list
+  +list-item("Нельзя с питомцами")
+  +list-item("Без вечеринок и мероприятий")
+  +list-item("Время прибытия — после 13:00, а выезд до 12:00")

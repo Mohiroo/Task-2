@@ -1,0 +1,39 @@
+
+.bullet-list {
+  padding: 0px;
+  margin: 0px;
+}
+
+.bullet-list__item {
+  list-style-type: none;
+
+  font-family: Montserrat;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+
+  span {
+    display: inline-block;
+    width: 232px;
+  }
+  
+  &::before {
+    content: "";
+
+    float: left;
+    position: relative;  
+    top: 7px;
+    margin-right: 10.43px;
+
+    width: 10.43px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(31, 32, 65, 0.25);
+  }
+
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
