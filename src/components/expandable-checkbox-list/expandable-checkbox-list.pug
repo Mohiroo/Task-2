@@ -1,0 +1,14 @@
+mixin expandable-checkbox-list(name, value, text)
+  label.expandable-checkbox__item
+    input.checkbox-button__button(type='checkbox' name=name, value=value)
+    span.expandable-checkbox__text= text 
+
+.expandable-checkbox__menu 
+  button.expandable-checkbox__button#expandable-checkbox__button expandable checkbox list
+  .expandable-checkbox__list#expandable-checkbox__list
+    +expandable-checkbox-list("option_1", "breakfast", "Завтрак")
+    +expandable-checkbox-list("option_1", "table", "Письменный стол")
+    +expandable-checkbox-list("option_1", "chair", "Стул для кормления")
+    +expandable-checkbox-list("option_1", "child-bed", "Кроватка")
+    +expandable-checkbox-list("option_1", "tv", "Телевизор")
+    +expandable-checkbox-list("option_1", "shampoo", "Шампунь")

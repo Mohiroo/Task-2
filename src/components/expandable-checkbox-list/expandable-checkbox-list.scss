@@ -1,0 +1,61 @@
+@import "../checkbox-buttons/checkbox-buttons.scss";
+
+.expandable-checkbox__menu {
+  font-family: Montserrat;
+
+  .expandable-checkbox__button {
+    border: none;
+    background: none;
+    padding: 0;
+
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #1F2041;
+
+    &::after {
+      content: "";
+      -webkit-mask: url(./components/expandable-checkbox-list/expand_more_black_24dp.svg) center no-repeat;
+      mask: url(./components/expandable-checkbox-list/expand_more_black_24dp.svg) center no-repeat;
+      background: rgba(31, 32, 65, 0.5);
+      display: inline-block;
+      height: 44px;
+      width: 44px;
+      vertical-align: middle;
+      margin-left: 30px;
+    }
+  }
+
+  .expandable-checkbox__button_enable {
+    &::after {
+      content: "";
+      -webkit-mask: url(./components/expandable-checkbox-list/expand_less_black_24dp.svg) center no-repeat;
+      mask: url(./components/expandable-checkbox-list/expand_less_black_24dp.svg) center no-repeat;
+    }
+  }
+
+  .expandable-checkbox__list {
+    display: none;
+    .expandable-checkbox__item {
+      display: block;
+      transform: scaleY(1);
+
+      font-size: 14px;
+      line-height: 18px;
+      color: rgba(31, 32, 65, 0.5);
+
+      &:first-child {
+        margin-top: 2.44px;
+      }
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .expandable-checkbox__list_enable {
+    display: block;
+  }
+}
