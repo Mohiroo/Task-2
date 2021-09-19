@@ -1,3 +1,9 @@
-mixin text-field(type='text', placeholder='', name='')
-  input.text-field(type=type name=name placeholder=placeholder)
+mixin text-field(mask, type='text', placeholder='', name='')
+  if mask=='no'
+    input.text-field(type=type name=name placeholder=placeholder)
+  else
+    input.text-field.text-field_mask(type=type name=name)
+
++text-field("no", type, 'Email', "Email")
++text-field("yes", type, '', "2")
 
