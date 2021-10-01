@@ -1,0 +1,19 @@
+.rate-button {
+
+  input {
+    appearance: none;
+
+    width: 20px;
+    height: 20px;
+
+    -webkit-mask: url(./components/rate-button/grade_black_24dp.svg) center no-repeat;
+    mask: url(./components/rate-button/grade_black_24dp.svg) center no-repeat;
+    background: linear-gradient(to bottom, #bc9cff, #af9fff, #a3a1fe, #97a3fc, #8ba4f9);
+
+    &:checked {
+      -webkit-mask: url(./components/rate-button/star_black_24dp.svg) center no-repeat;
+      mask: url(./components/rate-button/star_black_24dp.svg) center no-repeat;
+      background: linear-gradient(to bottom, #bc9cff, #af9fff, #a3a1fe, #97a3fc, #8ba4f9);
+    }
+  }
+}
