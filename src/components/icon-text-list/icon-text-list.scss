@@ -1,0 +1,60 @@
+.icon-text-list {
+  .icon-text-list__item {
+    width: 280px;
+
+    display: block;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+
+    font-family: Montserrat;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75);
+
+    .icon-item__text {
+      margin: 0 0 0 7px;
+
+      display: inline-block;
+      vertical-align: middle;
+
+      span {
+        display: block;
+        font-weight: bold;
+      }
+    }
+
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+    &:nth-child(1) {
+      padding-top: 0px;
+      &:before {
+      content: "";
+
+      width: 48px;
+      height: 48px;
+
+      display: inline-block;
+      vertical-align: middle;
+
+      -webkit-mask: url(./components/icon-text-list/insert_emoticon_black_48dp.svg) center no-repeat;
+      mask: url(./components/icon-text-list/insert_emoticon_black_48dp.svg) center no-repeat;
+      background: linear-gradient(to bottom, #bc9cff, #af9fff, #a3a1fe, #97a3fc, #8ba4f9);
+      }
+    }
+    &:nth-child(2) {
+      &:before {
+        content: "";
+
+        width: 48px;
+        height: 48px;
+
+        display: inline-block;
+        vertical-align: middle;
+
+        -webkit-mask: url(./components/icon-text-list/location_city_black_48dp.svg) center no-repeat;
+        mask: url(./components/icon-text-list/location_city_black_48dp.svg) center no-repeat;
+        background: linear-gradient(to bottom, #bc9cff, #af9fff, #a3a1fe, #97a3fc, #8ba4f9);
+      }
+    }
+  }
+}
