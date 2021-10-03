@@ -27,12 +27,15 @@
   "dependencies": {
     "extract-svg-sprite-webpack-plugin": "^0.8.1",
     "file-loader": "^6.2.0",
+    "flatpickr": "^4.6.9",
     "ion-rangeslider": "^2.3.1",
     "jquery": "^3.6.0",
     "jquery-mask-plugin": "^1.14.16",
     "jquery.rateit": "^1.1.5",
+    "js-datepicker": "^5.18.0",
     "normalize.css": "^8.0.1",
     "nouislider": "^15.4.0",
+    "pikaday": "^1.8.2",
     "svg-url-loader": "^7.1.1"
   }
 }
