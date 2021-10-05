@@ -2,9 +2,12 @@ var $ = require( "jquery" );
 import flatpickr from "flatpickr";
 import { Russian } from "flatpickr/dist/l10n/ru.js";
 
-$(".date-dropdown__button").on('click', function(){
-  flatpickr(".date-dropdown__date", {
-    dateFormat: 'd.m.Y',
+
+
+$(".filter-date-dropdown__button").on('click', function(){
+  flatpickr(".filter-date-dropdown__date", {
+    mode: "range",
+    dateFormat: "d M",
     minDate: "today",
     "locale": Russian,
     clickOpens: false,

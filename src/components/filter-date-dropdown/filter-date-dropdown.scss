@@ -1,20 +1,20 @@
 @import "~flatpickr/dist/flatpickr.css";
 
-.date-dropdown {
-  width: 150px;
+.filter-date-dropdown {
+  width: 266px;
   height: 44px;
 
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-sizing: border-box;
   border-radius: 4px;
-  
-  .date-dropdown__date {
+
+  .filter-date-dropdown__date {
     background: none;
     border: none;
     padding: 0;
 
     display: inline-block;
-    width: 87px;
+    width: 203px;
     margin: 0 0 0 14px;
   
     font-family: Montserrat;
@@ -26,7 +26,7 @@
     &:hover { cursor: default; }
   }
 
-  .date-dropdown__button {
+  .filter-date-dropdown__button {
     background: none;
     padding: 0;
     border: none;
@@ -37,7 +37,8 @@
 
     vertical-align: middle;
 
-    -webkit-mask: url(./components/date-dropdown/expand_more_black_24dp.svg) center no-repeat;
+    -webkit-mask: url(./components/filter-date-dropdown/expand_more_black_24dp.svg) center no-repeat;
+    mask: url(./components/filter-date-dropdown/expand_more_black_24dp.svg) center no-repeat;
     background: rgba(31, 32, 65, 0.5);
   }
 }
