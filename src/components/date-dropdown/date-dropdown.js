@@ -6,10 +6,9 @@ flatpickr(".date-dropdown__date", {
   dateFormat: 'd.m.Y',
   minDate: "today",
   "locale": Russian,
-  // clickOpens: false,
+  clickOpens: false,
 });
 
 $(".date-dropdown__button").on('click', function(){
-  flatpickr.open();
-  console.log("123");
-})
+  flatpickr(".date-dropdown__date", {}).open();
+});
