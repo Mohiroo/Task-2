@@ -1,0 +1,35 @@
+mixin dropdown-rooms__option(option)
+  if option=="спальни"
+    .dropdown-rooms__option
+      span.dropdown-rooms__menu-text= option
+      .dropdown-rooms__menu-buttons
+        button.dropdown-rooms__menu-button.bedroom-dropdown-rooms__menu-minus.none-dropdown-rooms__menu-minus -
+        span.dropdown-rooms__menu-count.bedroom-dropdown-rooms__menu-count 0
+        button.dropdown-rooms__menu-button.bedroom-dropdown-rooms__menu-plus +
+  else if option=="кровати"
+    .dropdown-rooms__option
+      span.dropdown-rooms__menu-text= option
+      .dropdown-rooms__menu-buttons
+        button.dropdown-rooms__menu-button.bed-dropdown-rooms__menu-minus.none-dropdown-rooms__menu-minus -
+        span.dropdown-rooms__menu-count.bed-dropdown-rooms__menu-count 0
+        button.dropdown-rooms__menu-button.bed-dropdown-rooms__menu-plus +
+  else if option=="ванные комнаты"
+    .dropdown-rooms__option
+      span.dropdown-rooms__menu-text= option
+      .dropdown-rooms__menu-buttons
+        button.dropdown-rooms__menu-button.bathroom-dropdown-rooms__menu-minus.none-dropdown-rooms__menu-minus -
+        span.dropdown-rooms__menu-count.bathroom-dropdown-rooms__menu-count 0
+        button.dropdown-rooms__menu-button.bathroom-dropdown-rooms__menu-plus +
+  else
+    span 123
+
+.dropdown-rooms
+  .dropdown-rooms__main
+    span.dropdown-rooms__text Выберите комнаты
+    button.dropdown-rooms__button
+  .dropdown-rooms__menu
+    +dropdown-rooms__option("спальни")
+    +dropdown-rooms__option("кровати")
+    +dropdown-rooms__option("ванные комнаты")
+
+
