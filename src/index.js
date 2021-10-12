@@ -8,3 +8,4 @@ import "./components/rate-button/rate-button.js";
 import "./components/date-dropdown/date-dropdown.js";
 import "./components/filter-date-dropdown/filter-date-dropdown";
 import "./components/dropdown-rooms/dropdown-rooms";
+import "./components/dropdown-guests/dropdown-guests";

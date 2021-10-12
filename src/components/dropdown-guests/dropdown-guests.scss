@@ -1,0 +1,125 @@
+.dropdown-guests {
+  width: 320px;
+
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 2px;
+  
+  .dropdown-guests__main {
+    .dropdown-guests__text {
+      width: 257px;
+  
+      display: inline-block;
+  
+      margin: 0 0 0 14px;
+  
+      font-family: Montserrat;
+      font-size: 14px;
+      line-height: 24px;
+      color: rgba(31, 32, 65, 0.75);
+    }
+  
+    .dropdown-guests__button {
+      background: none;
+      padding: 0;
+      border: none;
+      cursor: pointer;
+  
+      width: 43px;
+      height: 42px;
+  
+      vertical-align: middle;
+  
+      -webkit-mask: url(./components/dropdown-guests/expand_more_black_24dp.svg) center no-repeat;
+      mask: url(./components/dropdown-guests/expand_more_black_24dp.svg) center no-repeat;
+      background: rgba(31, 32, 65, 0.75);
+    }
+  }
+
+  .dropdown-guests__menu {
+    display: none; 
+  }
+}
+
+.dropdown-guests-active {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  .dropdown-guests__main { border-bottom: 1px solid rgba(31, 32, 65, 0.5); }
+  .dropdown-guests__menu {
+    display: initial;
+
+    .dropdown-guests__option {
+      margin: 7px 6px 0 14px;
+
+      font-family: Montserrat;
+      font-size: 12px;
+      line-height: 15px;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      .dropdown-guests__menu-text {
+        width: 204px;
+        display: inline-block;
+
+        vertical-align:super;
+      }
+
+      .dropdown-guests__menu-buttons {
+        width: 90px;
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .dropdown-guests__menu-button {
+          background: none;
+          border: none;
+          padding: 0;
+
+          width: 30px;
+          height: 30px;
+
+          border: 1px solid rgba(31, 32, 65, 0.25);
+          box-sizing: border-box;
+          border-radius: 22px;
+
+          font-size: 18px;
+          line-height: 22px;
+
+          color: rgba(31, 32, 65, 0.5);
+        }
+
+        .none-dropdown-guests__menu-minus { opacity: 0.5; }
+      }
+    }
+
+    .dropdown-guests__submenu {
+      margin: 20px 6px 7px 13px;
+
+      width: 299px;
+      height: 18.29px;
+
+      .dropdown-guests__button {
+        background: none;
+        padding: 0;
+        border: none;
+
+        font-family: Montserrat;
+        font-weight: bold;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #BC9CFF;
+      }
+
+      .apply-dropdown-guests__button {
+        float: right;
+      }
+
+      .clear-dropdown-guests__button {
+        float: left;
+      }
+
+      .disable-dropdown-guests__button {
+        display: none;
+      }
+    }
+  }
+}

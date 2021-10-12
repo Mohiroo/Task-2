@@ -1,0 +1,37 @@
+mixin dropdown-guests__option(option)
+  if option=="взрослые"
+    .dropdown-guests__option
+      span.dropdown-guests__menu-text= option
+      .dropdown-guests__menu-buttons
+        button.dropdown-guests__menu-button.adult-dropdown-guests__menu-minus.none-dropdown-guests__menu-minus -
+        span.dropdown-guests__menu-count.adult-dropdown-guests__menu-count 0
+        button.dropdown-guests__menu-button.adult-dropdown-guests__menu-plus +
+  else if option=="дети"
+    .dropdown-guests__option
+        span.dropdown-guests__menu-text= option
+        .dropdown-guests__menu-buttons
+          button.dropdown-guests__menu-button.children-dropdown-guests__menu-minus.none-dropdown-guests__menu-minus -
+          span.dropdown-guests__menu-count.children-dropdown-guests__menu-count 0
+          button.dropdown-guests__menu-button.children-dropdown-guests__menu-plus +
+  else if option=="младенцы"
+    .dropdown-guests__option
+      span.dropdown-guests__menu-text= option
+      .dropdown-guests__menu-buttons
+        button.dropdown-guests__menu-button.infants-dropdown-guests__menu-minus.none-dropdown-guests__menu-minus -
+        span.dropdown-guests__menu-count.infants-dropdown-guests__menu-count 0
+        button.dropdown-guests__menu-button.infants-dropdown-guests__menu-plus +
+  else
+    span 123
+
+
+.dropdown-guests
+  .dropdown-guests__main
+    span.dropdown-guests__text Сколько гостей
+    button.dropdown-guests__button
+  .dropdown-guests__menu
+    +dropdown-guests__option("взрослые")
+    +dropdown-guests__option("дети")
+    +dropdown-guests__option("младенцы")
+    .dropdown-guests__submenu
+      button.dropdown-guests__button.clear-dropdown-guests__button.disable-dropdown-guests__button Очистить
+      button.dropdown-guests__button.apply-dropdown-guests__button Применить
