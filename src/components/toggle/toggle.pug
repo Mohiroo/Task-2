@@ -1,4 +1,6 @@
-form.toggle
+mixin toggle(text, addClass='')
   label.toggle__text
     input.toggle__button(type="checkbox")
-    | Получать спецпредложения
+    = text
+
+//- +toggle("test", "")

@@ -1,13 +1,13 @@
-mixin button(type, text='')
-  if type=='button-4'
-    button(class=type)
+mixin button(mode, text='', type='', addClass='')
+  if mode=='button-4'
+    button(class=mode + " " + addClass)
       span.v4-button__text= text
       span.v4-button__arrow
   else  
-    button(class=type)= text
+    button(class=mode + " " + addClass)= text
 
 
-//- +button("button-4", "Привет")
-//- +button("button-3", "Привет")
-//- +button("button-2", "Войти")
-//- +button("button-1", "Привет")
+//- +button("button-4", "Привет") - большая кнопка
+//- +button("button-3", "Привет") - кнопка-текст
+//- +button("button-2", "Войти") - кнопка с обводкой
+//- +button("button-1", "Привет") - кнопка заполненная

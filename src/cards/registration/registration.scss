@@ -1,0 +1,74 @@
+@import "./../../components/text-field/text-field.scss";
+@import "./../../components/radio-buttons/radio-buttons.scss";
+@import "./../../components/toggle/toggle.scss";
+@import "./../../components/buttons/buttons.scss";
+
+.registration {
+  max-width: 380px;
+  height: 646px;
+
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  font-family: Montserrat;
+
+  .registration__card {
+    width: 320px;
+    margin: 0 auto;
+
+    .registration__form {
+      margin: 40px 0 30px 0;
+
+      .registration__title {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+  
+        color: #1F2041;
+      }
+      .registration__name {
+        margin: 20px 0 7px 0;
+
+        .registration__name-input {
+          margin-bottom: 10px;
+        }
+      }
+      .registration__sex { margin-bottom: 23px; }
+      .registration__birthdate { margin-bottom: 20px; }
+      .registration__login-details {
+        margin-bottom: 24px;
+
+        .registration__password {
+          margin: 10px 0 7px 0;
+        }
+      }
+
+      .registration__text {
+        margin-bottom: 5px;
+
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: #1F2041;
+      }
+    }
+  }
+
+  .registration__login-account {
+    height: 44px;
+
+    .login-account__text {
+      display: inline-block;
+
+      margin-right: 31px;
+
+      font-size: 14px;
+      line-height: 18px;
+      vertical-align: center;
+      color: #000000;
+    }
+  }
+}

@@ -1,8 +1,8 @@
-mixin text-field(mode, type='text', placeholder='', name='')
+mixin text-field(mode, type='text', placeholder='', name='', addClass='')
   if mode=='mask'
-    input.text-field.text-field_mask(type=type name=name)
+    input(type=type name=name class="text-field text-field_mask " + addClass)
   else
-    input.text-field(type=type name=name placeholder=placeholder)
+    input(type=type name=name placeholder=placeholder class="text-field " + addClass)
 
-+text-field("mask", type, "Email", "Email")
+//- +text-field("mask", type, placeholder, "Email", "addClass")
 
