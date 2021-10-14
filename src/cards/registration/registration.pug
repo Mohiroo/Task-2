@@ -18,7 +18,7 @@ include ./../../components/buttons/buttons.pug
         +text-field("mask", "text", placeholder, "birthday", "")
       .registration__login-details
         p.registration__text.login-details__text данные для входа в сервис
-        +text-field(mode, "text", "Email", "email", "")
+        +text-field(mode, "email", "Email", "email", "")
         +text-field(mode, "password", "Пароль", "password", "registration__password")
         +toggle("Получать спецпредложения", "registration__special-offers")
       +button("button-4", "перейти к оплате", "submit", "registration__next")
