@@ -71,7 +71,11 @@
     flex: 1;
   }
   .v4-button__arrow {
-    flex-basis: 44px;
-    align-items: flex-start;
+    width: 44px;
+    height: 44px;
+
+    -webkit-mask: url(./components/buttons/arrow_forward_white_24dp.svg) center no-repeat;
+    mask: url(./components/buttons/arrow_forward_white_24dp.svg) center no-repeat;
+    background: #FFFFFF;
   }
 }

@@ -2,12 +2,12 @@ mixin button(type, text='')
   if type=='button-4'
     button(class=type)
       span.v4-button__text= text
-      span.material-icons-outlined.v4-button__arrow arrow_forward
+      span.v4-button__arrow
   else  
     button(class=type)= text
 
 
-+button("button-4", "Привет")
-+button("button-3", "Привет")
-+button("button-2", "Войти")
-+button("button-1", "Привет")
+//- +button("button-4", "Привет")
+//- +button("button-3", "Привет")
+//- +button("button-2", "Войти")
+//- +button("button-1", "Привет")
