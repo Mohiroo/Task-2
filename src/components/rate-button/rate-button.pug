@@ -1,6 +1,24 @@
-.rate-button
-  input.rate-button__star-1(type='checkbox')
-  input.rate-button__star-2(type='checkbox')
-  input.rate-button__star-3(type='checkbox')
-  input.rate-button__star-4(type='checkbox')
-  input.rate-button__star-5(type='checkbox')
+mixin rate-buttons(star_1='', star_2='', star_3='', star_4='', star_5='')
+  .rate-buttons
+    if star_1=="filled"
+      span(class= "rate-button " + star_1 + "-rate-button")
+    else 
+      span(class= "rate-button")
+    if star_2=="filled"
+      span(class= "rate-button " + star_2 + "-rate-button")
+    else 
+      span(class= "rate-button")
+    if star_3=="filled"
+      span(class= "rate-button " + star_3 + "-rate-button")
+    else 
+      span(class= "rate-button")
+    if star_4=="filled"
+      span(class= "rate-button " + star_4 + "-rate-button")
+    else 
+      span(class= "rate-button")
+    if star_5=="filled"
+      span(class= "rate-button " + star_5 + "-rate-button")
+    else 
+      span(class= "rate-button")
+
+//- +rate-buttons('filled')
