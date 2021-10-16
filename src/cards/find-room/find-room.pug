@@ -1,0 +1,19 @@
+include ./../../components/filter-date-dropdown/filter-date-dropdown.pug
+include ./../../components/dropdown-guests/dropdown-guests.pug
+include ./../../components/buttons/buttons.pug
+
+.find-room
+  .find-room__card
+    form.find-room__form
+      p.find-room__title Найдём номера под ваши пожелания
+      .find-room__date
+        .find-room__arrival
+          p.find-room__text прибытие
+        .find-room__exit
+          p.find-room__text выезд
+      .find-room__guests
+        p.find-room__text Гости
+        +dropdown-guests__main("")
+        +dropdown-guests__menu("")
+
+      +button("button-4", "Подобрать номера", "submit", "")

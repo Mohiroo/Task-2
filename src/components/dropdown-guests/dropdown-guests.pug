@@ -1,37 +1,29 @@
-mixin dropdown-guests__option(option)
-  if option=="взрослые"
-    .dropdown-guests__option
-      span.dropdown-guests__menu-text= option
-      .dropdown-guests__menu-buttons
-        button.dropdown-guests__menu-button.adult-dropdown-guests__menu-minus.none-dropdown-guests__menu-minus -
-        span.dropdown-guests__menu-count.adult-dropdown-guests__menu-count 0
-        button.dropdown-guests__menu-button.adult-dropdown-guests__menu-plus +
-  else if option=="дети"
-    .dropdown-guests__option
-        span.dropdown-guests__menu-text= option
-        .dropdown-guests__menu-buttons
-          button.dropdown-guests__menu-button.children-dropdown-guests__menu-minus.none-dropdown-guests__menu-minus -
-          span.dropdown-guests__menu-count.children-dropdown-guests__menu-count 0
-          button.dropdown-guests__menu-button.children-dropdown-guests__menu-plus +
-  else if option=="младенцы"
-    .dropdown-guests__option
-      span.dropdown-guests__menu-text= option
-      .dropdown-guests__menu-buttons
-        button.dropdown-guests__menu-button.infants-dropdown-guests__menu-minus.none-dropdown-guests__menu-minus -
-        span.dropdown-guests__menu-count.infants-dropdown-guests__menu-count 0
-        button.dropdown-guests__menu-button.infants-dropdown-guests__menu-plus +
-  else
-    span 123
-
-
-.dropdown-guests
-  .dropdown-guests__main
+mixin dropdown-guests__main(addClass)
+  div(class="dropdown-guests__main " + addClass)
     span.dropdown-guests__text Сколько гостей
-    button.dropdown-guests__button
-  .dropdown-guests__menu
-    +dropdown-guests__option("взрослые")
-    +dropdown-guests__option("дети")
-    +dropdown-guests__option("младенцы")
-    .dropdown-guests__submenu
-      button.dropdown-guests__button.clear-dropdown-guests__button.disable-dropdown-guests__button Очистить
-      button.dropdown-guests__button.apply-dropdown-guests__button Применить
+    button.dropdown-guests__button(type="button")
+    
+
+mixin dropdown-guests__menu(addClass)
+    div(class="dropdown-guests__menu " + addClass)
+      .dropdown-guests__option
+        span.dropdown-guests__menu-text взрослые
+        .dropdown-guests__menu-buttons
+          button.dropdown-guests__menu-button.adult-dropdown-guests__menu-minus.none-dropdown-guests__menu-minus(type="button") -
+          span.dropdown-guests__menu-count.adult-dropdown-guests__menu-count 0
+          button.dropdown-guests__menu-button.adult-dropdown-guests__menu-plus(type="button") +
+      .dropdown-guests__option
+          span.dropdown-guests__menu-text дети
+          .dropdown-guests__menu-buttons
+            button.dropdown-guests__menu-button.children-dropdown-guests__menu-minus.none-dropdown-guests__menu-minus(type="button") -
+            span.dropdown-guests__menu-count.children-dropdown-guests__menu-count 0
+            button.dropdown-guests__menu-button.children-dropdown-guests__menu-plus(type="button") +
+      .dropdown-guests__option
+        span.dropdown-guests__menu-text младенцы
+        .dropdown-guests__menu-buttons
+          button.dropdown-guests__menu-button.infants-dropdown-guests__menu-minus.none-dropdown-guests__menu-minus(type="button") -
+          span.dropdown-guests__menu-count.infants-dropdown-guests__menu-count 0
+          button.dropdown-guests__menu-button.infants-dropdown-guests__menu-plus(type="button") +
+      .dropdown-guests__submenu
+        button.dropdown-guests__button.clear-dropdown-guests__button.disable-dropdown-guests__button(type="button") Очистить
+        button.dropdown-guests__button.apply-dropdown-guests__button(type="button") Применить

@@ -5,7 +5,8 @@ var children = parseInt($(".children-dropdown-guests__menu-count").text());
 var infants = parseInt($(".infants-dropdown-guests__menu-count").text());
 
 $(".dropdown-guests__button").on('click', function(){
-  $(".dropdown-guests").toggleClass("dropdown-guests-active")
+  $(".dropdown-guests__main").toggleClass("active-dropdown-guests__main")
+  $(".dropdown-guests__menu").toggleClass("active-dropdown-guests__menu")
 });
 
 //////////////////////////////////////////////////////////////// adult
