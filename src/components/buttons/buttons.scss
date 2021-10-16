@@ -1,6 +1,9 @@
 .button-1 {
-  width: 99px;
-  height: 44px;
+  max-height: 44px;
+  height: 100%;
+
+  padding: 0 20px;
+
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   border-radius: 22px;
   border: none;
@@ -8,7 +11,8 @@
   font-family: Montserrat;
   font-weight: 700;
   font-size: 12px;
-  line-height: 15px;text-transform: uppercase;
+  line-height: 15px;
+  text-transform: uppercase;
   color: #FFFFFF;
 
   &:active { opacity: 0.5; }
@@ -17,7 +21,9 @@
 
 .button-2 {
   width: 99px;
-  height: 44px;
+  max-height: 44px;
+  height: 100%;
+
   border: 2px solid #BC9CFF;
   border-radius: 22px;
   background: none;

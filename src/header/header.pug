@@ -1,0 +1,24 @@
+include ./../components/buttons/buttons.pug
+
+mixin header-anonym
+  .header
+    include ./header-logo.svg
+    nav.header__links
+      a.header__about(href="#") О нас
+      a.header__services(href="#") Услуги
+      a.header__vacancy(href="#") Вакансии
+      a.header__news(href="#") Новости
+      a.header__agreements(href="#") Соглашения
+      +button("button-2", "Войти", "button", "header__login")
+      +button("button-1", "Зарегистрироваться", "button", "")
+
+mixin header-user
+  .header
+    include ./header-logo.svg
+    nav.header__links
+      a.header__about(href="#") О нас
+      a.header__services(href="#") Услуги
+      a.header__vacancy(href="#") Вакансии
+      a.header__news(href="#") Новости
+      a.header__agreements(href="#") Соглашения
+      a.header__user(href="#") Юлий Цезарь

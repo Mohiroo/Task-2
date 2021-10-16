@@ -1,0 +1,62 @@
+@import "./../components/buttons/buttons.scss";
+
+.header {
+  height: 70px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 0 140px;
+
+  .header__links {
+    height: 34px;
+    
+    a {
+      margin-right: 20px;
+
+      font-family: Montserrat;
+      font-size: 14px;
+      line-height: 17px;
+      color: rgba(31, 32, 65, 0.5);
+      text-decoration: none;
+    }
+    .header__services, .header__agreements {
+      &::after {
+        content: "";
+        width: 24px;
+        height: 21px;
+
+        display: inline-block;
+
+        vertical-align: middle;
+
+        -webkit-mask: url(./header/expand_more_black_24dp.svg) center no-repeat;
+        mask: url(./header/expand_more_black_24dp.svg) center no-repeat;
+        background-color: rgba(31, 32, 65, 0.5);
+      }
+    }
+
+    // anonym 
+    .header__login { 
+      width: 87px;
+      margin-right: 20px;
+    }
+
+    //user
+    .header__user {
+      &::before {
+        content: "";
+        width: 1px;
+        height: 30px;
+
+        display: inline-block;
+        vertical-align: middle;
+
+        margin-right: 20px;
+
+        background: rgba(31, 32, 65, 0.1);
+      }
+    }
+  }
+}
