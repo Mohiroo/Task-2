@@ -1,0 +1,156 @@
+@import "./../components/subscription-text-field/subscription-text-field.scss";
+
+.footer__logo {
+  display: inline-block;
+
+  margin-bottom: 20px;
+}
+
+.footer__desktop {
+  font-family: Montserrat;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(31, 32, 65, 0.5);
+
+  .footer__main {
+    height: 372px;
+
+    display: flex;
+    justify-content: space-between;
+
+    margin: 100px 140px 0;
+
+    .footer-list__title {
+      margin-bottom: 21px;
+
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: #1F2041;
+    }
+    .footer__text {
+      width: 260px;
+      
+      margin-bottom: 20px;
+      
+      line-height: 24px;
+      color: rgba(31, 32, 65, 0.75);
+    }
+    a {
+      display: block;
+
+      margin-bottom: 20px;
+
+      color: rgba(31, 32, 65, 0.5);
+      text-decoration: none;
+    }
+  }
+  .footer__bottom {
+    height: 70px;
+    
+    padding: 0 140px;
+    border-top: 1px solid rgba(31, 32, 65, 0.05);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .footer-bottom__links {
+      .footer-bottom__twitter {
+        width: 24px;
+        height: 24px;
+  
+        display: inline-block;
+
+        margin-right: 20px;
+  
+        -webkit-mask: url(./footer/twitter.svg) center no-repeat;
+        mask: url(./footer/twitter.svg) center no-repeat;
+        background: linear-gradient(to bottom, #bc9cff, #af9fff, #a3a1fe, #97a3fc, #8ba4f9);
+      }
+      .footer-bottom__facebook {
+        width: 24px;
+        height: 24px;
+  
+        display: inline-block;
+
+        margin-right: 20px;
+  
+        -webkit-mask: url(./footer/facebook.svg) center no-repeat;
+        mask: url(./footer/facebook.svg) center no-repeat;
+        background: linear-gradient(to bottom, #bc9cff, #af9fff, #a3a1fe, #97a3fc, #8ba4f9);
+      }
+      .footer-bottom__instagram {
+        width: 24px;
+        height: 24px;
+  
+        display: inline-block;
+  
+        -webkit-mask: url(./footer/instagram.svg) center no-repeat;
+        mask: url(./footer/instagram.svg) center no-repeat;
+        background: linear-gradient(to bottom, #bc9cff, #af9fff, #a3a1fe, #97a3fc, #8ba4f9);
+      }
+    }
+  }
+}
+
+.footer__mobile {
+  width: 768px;
+  height: 367px;
+
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+
+  .footer-mobile__card {
+    padding-top: 120px;
+
+    .footer-mobile__text {
+      margin-bottom: 25px;
+
+      font-family: Montserrat;
+      font-size: 14px;
+      line-height: 17px;
+      color: rgba(31, 32, 65, 0.75);
+    }
+    .footer-mobile__links {
+      .footer-mobile__twitter {
+        width: 24px;
+        height: 24px;
+  
+        display: inline-block;
+  
+        margin-right: 20px;
+  
+        -webkit-mask: url(./footer/twitter.svg) center no-repeat;
+        mask: url(./footer/twitter.svg) center no-repeat;
+        background: linear-gradient(to bottom, #bc9cff, #af9fff, #a3a1fe, #97a3fc, #8ba4f9);
+      }
+      .footer-mobile__facebook {
+        width: 24px;
+        height: 24px;
+  
+        display: inline-block;
+  
+        margin-right: 20px;
+  
+        -webkit-mask: url(./footer/facebook.svg) center no-repeat;
+        mask: url(./footer/facebook.svg) center no-repeat;
+        background: linear-gradient(to bottom, #bc9cff, #af9fff, #a3a1fe, #97a3fc, #8ba4f9);
+      }
+      .footer-mobile__instagram {
+        width: 24px;
+        height: 24px;
+  
+        display: inline-block;
+  
+        -webkit-mask: url(./footer/instagram.svg) center no-repeat;
+        mask: url(./footer/instagram.svg) center no-repeat;
+        background: linear-gradient(to bottom, #bc9cff, #af9fff, #a3a1fe, #97a3fc, #8ba4f9);
+      }
+    }
+  }
+
+  
+}
