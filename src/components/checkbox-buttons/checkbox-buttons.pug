@@ -1,9 +1,10 @@
-mixin checkbox-buttons(name, value, text)
+mixin checkbox-button(name, value, text)
   label.checkbox-button
     input.checkbox-button__button(type='checkbox' name=name, value=value)
     p= text
 
-form.checkbox-buttons
-  +checkbox-buttons("option_1", "smoke", "Можно курить")
-  +checkbox-buttons("option_2", "pets", "Можно с питомцами")
-  +checkbox-buttons("option_3", "party", "Можно пригласить гостей (до 10 человек)")
+mixin checkbox-buttons(addClass)
+  form(class="checkbox-buttons " + addClass)
+    +checkbox-button("option_1", "smoke", "Можно курить")
+    +checkbox-button("option_2", "pets", "Можно с питомцами")
+    +checkbox-button("option_3", "party", "Можно пригласить гостей (до 10 человек)")

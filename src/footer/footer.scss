@@ -7,7 +7,7 @@
 }
 
 .footer__desktop {
-  font-family: Montserrat;
+  
   font-size: 14px;
   line-height: 17px;
   color: rgba(31, 32, 65, 0.5);
@@ -96,7 +96,7 @@
 }
 
 .footer__mobile {
-  width: 768px;
+  max-width: 768px;
   height: 367px;
 
   margin: 0 auto;
@@ -109,7 +109,7 @@
     .footer-mobile__text {
       margin-bottom: 25px;
 
-      font-family: Montserrat;
+      
       font-size: 14px;
       line-height: 17px;
       color: rgba(31, 32, 65, 0.75);

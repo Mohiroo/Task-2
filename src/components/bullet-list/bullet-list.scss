@@ -5,9 +5,9 @@
 }
 
 .bullet-list__item {
-  list-style-type: none;
+  margin-bottom: 10px;
 
-  font-family: Montserrat;
+  list-style-type: none;
   font-size: 14px;
   line-height: 24px;
   color: rgba(31, 32, 65, 0.75);
@@ -19,20 +19,18 @@
   
   &::before {
     content: "";
-
-    float: left;
-    position: relative;  
-    top: 7px;
-    margin-right: 10.43px;
-
     width: 10.43px;
     height: 10px;
+
+    vertical-align: top;
+    position: relative;
+    top: 7px;
+    display: inline-block;
+    margin-right: 10.43px;
+    
     border-radius: 50%;
     background: rgba(31, 32, 65, 0.25);
   }
-
-  margin-bottom: 10px;
-
   &:last-child {
     margin-bottom: 0;
   }

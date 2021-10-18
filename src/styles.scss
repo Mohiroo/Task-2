@@ -3,13 +3,15 @@
 // Временное решение
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Material+Icons+Outlined");
-@import "./footer/footer.scss";
+@import "./components/pagination/pagination.scss";
 
 
 body {
   min-width: 320px;
   max-width: 1920px;
-  // margin: 20px 20px;
+  margin: 20px 20px;
+
+  font-family: Montserrat;
 }
 
 p {

@@ -1,3 +1,4 @@
-button.like-button
-  span.like-button__like
-  span.like-button__count 2
+mixin like-button(addClass)
+  button(class="like-button " + addClass)
+    span.like-button__like
+    span.like-button__count 2

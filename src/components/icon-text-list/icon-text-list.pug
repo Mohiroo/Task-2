@@ -1,9 +1,10 @@
-.icon-text-list
+mixin icon-text-list__item(title, text)
   .icon-text-list__item
     p.icon-item__text 
-      span Комфорт
-      | Шумопоглощающие стены
-  .icon-text-list__item
-    p.icon-item__text 
-      span Удобство
-      | Окно в каждой из спален
+      span= title
+      = text
+
+mixin icon-text-list(addClass)
+  div(class="icon-text-list " + addClass)
+    +icon-text-list__item("Комфорт", "Шумопоглощающие стены")
+    +icon-text-list__item("Удобство", "Окно в каждой из спален")
