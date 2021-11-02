@@ -9,3 +9,4 @@ import "./components/date-dropdown/date-dropdown.js";
 import "./components/filter-date-dropdown/filter-date-dropdown";
 import "./components/dropdown-rooms/dropdown-rooms";
 import "./components/dropdown-guests/dropdown-guests";
+import "./cards/room-card/room-card";

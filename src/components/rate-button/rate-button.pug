@@ -1,24 +1,34 @@
-mixin rate-buttons(star_1='', star_2='', star_3='', star_4='', star_5='')
-  .rate-buttons
-    if star_1=="filled"
-      span(class= "rate-button " + star_1 + "-rate-button")
-    else 
+mixin rate-buttons(star_count, addClass)
+  div(class="rate-buttons " + addClass)
+    if star_count=="1"
+      span(class= "rate-button filled-rate-button")
       span(class= "rate-button")
-    if star_2=="filled"
-      span(class= "rate-button " + star_2 + "-rate-button")
-    else 
       span(class= "rate-button")
-    if star_3=="filled"
-      span(class= "rate-button " + star_3 + "-rate-button")
-    else 
       span(class= "rate-button")
-    if star_4=="filled"
-      span(class= "rate-button " + star_4 + "-rate-button")
-    else 
       span(class= "rate-button")
-    if star_5=="filled"
-      span(class= "rate-button " + star_5 + "-rate-button")
-    else 
+    else if star_count=="2"
+      span(class= "rate-button filled-rate-button")
+      span(class= "rate-button filled-rate-button")
       span(class= "rate-button")
+      span(class= "rate-button")
+      span(class= "rate-button")
+    else if star_count=="3"
+      span(class= "rate-button filled-rate-button")
+      span(class= "rate-button filled-rate-button")
+      span(class= "rate-button filled-rate-button")
+      span(class= "rate-button")
+      span(class= "rate-button")
+    else if star_count=="4"
+      span(class= "rate-button filled-rate-button")
+      span(class= "rate-button filled-rate-button")
+      span(class= "rate-button filled-rate-button")
+      span(class= "rate-button filled-rate-button")
+      span(class= "rate-button")
+    else if star_count=="5"
+      span(class= "rate-button filled-rate-button")
+      span(class= "rate-button filled-rate-button")
+      span(class= "rate-button filled-rate-button")
+      span(class= "rate-button filled-rate-button")
+      span(class= "rate-button filled-rate-button")
 
-//- +rate-buttons('filled')
+//- +rate-buttons('1')

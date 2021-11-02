@@ -1,0 +1,37 @@
+include ./../../components/rate-button/rate-button.pug
+
+mixin room-card(lux, addClass)
+  .room-card
+    .room-card__images
+      .slider
+        .slider__wrapper
+          img.slider__item(src=require('./cards/room-card/image.png').default)
+          img.slider__item(src=require('./cards/room-card/image.png').default)
+          img.slider__item(src=require('./cards/room-card/image.png').default)
+          img.slider__item(src=require('./cards/room-card/image.png').default)
+        .slider__buttons
+          .slider__button-left
+            button.slider__button.slider__button-prev(type="button")
+          .slider__button-right
+            button.slider__button.slider__button-next(type="button")
+          .slider__indicators
+            button.slider__indicator.slider__indicator-1.slider__indicator-active
+            button.slider__indicator.slider__indicator-2
+            button.slider__indicator.slider__indicator-3
+            button.slider__indicator.slider__indicator-4
+    .room-card_details
+      .room-card__info
+        span.room-card__number № 
+          span.number__room 888
+          if lux=="lux"
+            span.room-card__lux люкс
+        span.room-details__text 
+          span.room-details__text-bold 9 990₽ 
+          | в сутки
+      .room-card__rates
+        +rate-buttons("3")
+        span.room-rates__text
+          span.room-rates__text-bold 145 
+          | Отзывов
+
++room-card("lux")
