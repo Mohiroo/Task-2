@@ -13,6 +13,11 @@ var indicator_4 = $(".slider__indicator-4");
 buttonNext.on('click', function(){ move("next") });
 buttonPrev.on('click', function(){ move("back") });
 
+indicator_1.on('click', function(){ moveToIndicator(1) });
+indicator_2.on('click', function(){ moveToIndicator(2) });
+indicator_3.on('click', function(){ moveToIndicator(3) });
+indicator_4.on('click', function(){ moveToIndicator(4) });
+
 function move(direction) {
   // установка "шага" в зависимости от направления
   var step = direction === 'next' ? -100 : 100;
@@ -29,10 +34,8 @@ function move(direction) {
   // применение расстояния
   if (direction == 'next') {
     wrapper.css("transform", "translateX(" + translateValue + "%)");
-    console.log("translateX(" + translateValue + "%)");
   } else {
     wrapper.css("transform", "translateX(" + translateValue + "%)");
-    console.log("translateX(" + translateValue + "%)");
   }
 
   changeIndicator();
@@ -51,4 +54,15 @@ function changeIndicator() {
   } else if (translateValue == -300) {
     indicator_4.addClass("slider__indicator-active")
   }
+}
+
+// Измненеие фото по нажатию на интикатор
+function moveToIndicator(indicator) { 
+  if (indicator == 1) { translateValue = 0}
+  if (indicator == 2) { translateValue = -100}
+  if (indicator == 3) { translateValue = -200}
+  if (indicator == 4) { translateValue = -300}
+
+  wrapper.css("transform", "translateX(" + translateValue + "%)");
+  changeIndicator()
 }
