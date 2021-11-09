@@ -1,3 +1,5 @@
+@import "./../../components/buttons/buttons.scss";
+
 .dropdown-guests__main {
   max-width: 320px;
   width: 100%;
@@ -19,7 +21,7 @@
     color: rgba(31, 32, 65, 0.75);
   }
 
-  .dropdown-guests__button {
+  .guests__button {
     background: none;
     padding: 0;
     border: none;
@@ -47,7 +49,7 @@
   display: none; 
 }
 
-.active-dropdown-guests__menu {
+.dropdown-guests__menu-active {
   max-width: 320px;
   width: 100%;
   
@@ -82,7 +84,7 @@
       justify-content: space-between;
       align-items: center;
 
-      .dropdown-guests__menu-button {
+      .guests-menu__button {
         background: none;
         border: none;
         padding: 0;
@@ -100,36 +102,25 @@
         color: rgba(31, 32, 65, 0.5);
       }
 
-      .none-dropdown-guests__menu-minus { opacity: 0.5; }
+      .guests__minus-inactive { opacity: 0.5; }
     }
   }
 
   .dropdown-guests__submenu {
-    margin: 20px 0px 0px 13px;
+    margin: 20px 0px 13px 13px;
 
     max-width: 299px;
-    height: 18.29px;
+    height: 15px;
 
-    .dropdown-guests__button {
-      background: none;
-      padding: 0;
-      border: none;
-
-      font-weight: bold;
-      font-size: 12px;
-      text-transform: uppercase;
-      color: #BC9CFF;
-    }
-
-    .apply-dropdown-guests__button {
+    .guests__button-apply {
       float: right;
     }
 
-    .clear-dropdown-guests__button {
+    .guests__button-clear {
       float: left;
     }
 
-    .disable-dropdown-guests__button {
+    .guests__button-disable {
       display: none;
     }
   }

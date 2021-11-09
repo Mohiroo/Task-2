@@ -1,91 +1,145 @@
-var $ = require( "jquery" );
+let $ = require( "jquery" );
 
-var adult = parseInt($(".adult-dropdown-guests__menu-count").text());
-var children = parseInt($(".children-dropdown-guests__menu-count").text());
-var infants = parseInt($(".infants-dropdown-guests__menu-count").text());
+let guests_buttons = $(".guests-menu__button");
+let guests_main = $(".dropdown-guests__main");
+let guests_menu = $(".dropdown-guests__menu");
+let button_open = $(".guests__button");
+let button_clear = $(".guests__button-clear")
+let button_apply = $(".guests__button-apply")
 
-$(".dropdown-guests__button").on('click', function(){
-  $(".dropdown-guests__main").toggleClass("active-dropdown-guests__main")
-  $(".dropdown-guests__menu").toggleClass("active-dropdown-guests__menu")
+let mainText = $(".dropdown-guests__text")
+
+let adultButtonMinus = $(".adult__minus");
+let adultCount = $(".adult__count");
+let adultButtonPlus = $(".adult__plus")
+
+let childrenButtonMinus = $(".children__minus");
+let childrenCount = $(".children__count");
+let childrenButtonPlus = $(".children__plus");
+
+let infantsButtonMinus = $(".infants__minus");
+let infantsCount = $(".infants__count");
+let infantsButtonPlus = $(".infants__plus");
+
+let adult = 0;
+let children = 0;
+let infants = 0;
+
+button_open.on('click', function(){
+  crateMenu()
 });
 
-//////////////////////////////////////////////////////////////// adult
+adultButtonMinus.on('click', function(){ minusCount("adult") })
+adultButtonPlus.on('click', function(){ plusCount("adult")})
+childrenButtonMinus.on('click', function(){ minusCount("children") })
+childrenButtonPlus.on('click', function(){ plusCount("children")})
+infantsButtonMinus.on('click', function(){ minusCount("infants") })
+infantsButtonPlus.on('click', function(){ plusCount("infants")})
 
-$(".adult-dropdown-guests__menu-minus").on('click', function(){
-  if (adult > 0) {
-    adult = adult - 1
-    $(".adult-dropdown-guests__menu-count").text(adult);
-  }
-  if (adult == 0) {
-    $(".adult-dropdown-guests__menu-minus").addClass("none-dropdown-guests__menu-minus");
-  }
-});
-
-$(".adult-dropdown-guests__menu-plus").on('click', function(){
-  adult = adult + 1;
-  $(".adult-dropdown-guests__menu-count").text(adult);
-  $(".adult-dropdown-guests__menu-minus").removeClass("none-dropdown-guests__menu-minus");
-});
-
-// //////////////////////////////////////////////////////////////// children
-
-$(".children-dropdown-guests__menu-minus").on('click', function(){
-  if (children == 1) {
-    $(".children-dropdown-guests__menu-minus").addClass("none-dropdown-guests__menu-minus");
-  }
-  if (children > 0) {
-    children = children - 1
-    $(".children-dropdown-guests__menu-count").text(children);
-  }
-});
-
-$(".children-dropdown-guests__menu-plus").on('click', function(){
-  children = children + 1;
-  $(".children-dropdown-guests__menu-count").text(children);
-  $(".children-dropdown-guests__menu-minus").removeClass("none-dropdown-guests__menu-minus");
-});
-
-// //////////////////////////////////////////////////////////////// infants
-
-$(".infants-dropdown-guests__menu-minus").on('click', function(){
-  if (infants == 1) {
-    $(".infants-dropdown-guests__menu-minus").addClass("none-dropdown-guests__menu-minus");
-  } 
-  if (infants > 0) {
-    infants = infants - 1
-    $(".infants-dropdown-guests__menu-count").text(infants);
-  }
-});
-
-$(".infants-dropdown-guests__menu-plus").on('click', function(){
-  infants = infants + 1;
-  $(".infants-dropdown-guests__menu-count").text(infants);
-  $(".infants-dropdown-guests__menu-minus").removeClass("none-dropdown-guests__menu-minus");
-});
-
-
-$(".dropdown-guests__menu-button").on('click', function(){
-  var dropdown_guests__count = adult + children + infants
+guests_buttons.on('click', function(){
+  let guestsCount = adult + children + infants
   
-  if (dropdown_guests__count == 0) {
+  if (guestsCount == 0) {
     $(".dropdown-guests__text").text("Сколько гостей");
-    $(".clear-dropdown-guests__button").addClass("disable-dropdown-guests__button")
+    button_clear.addClass("guests__button-disable")
   } else {
-    $(".dropdown-guests__text").text(dropdown_guests__count + " гостя");
-    $(".clear-dropdown-guests__button").removeClass("disable-dropdown-guests__button")
+   button_clear.removeClass("guests__button-disable")
   }
 });
 
-$(".clear-dropdown-guests__button").on('click', function(){
-  adult = 0
-  children = 0
-  infants = 0
+button_apply.on('click', function() {
+  let guestCount = adult + children + infants
 
-  $(".adult-dropdown-guests__menu-count").text(adult);
-  $(".children-dropdown-guests__menu-count").text(children);
-  $(".infants-dropdown-guests__menu-count").text(infants);
-  $(".dropdown-guests__text").text("Сколько гостей");
+  mainText.text(`${guestCount} ${getNoun(guestCount)}`);
+})
 
-  $(".clear-dropdown-guests__button").removeClass("disable-dropdown-guests__button")
-});
+button_clear.on("click", function() {
+  adult = 0;
+  children = 0;
+  infants = 0;
 
+  crateMenu();
+  
+  adultButtonMinus.addClass("guests__minus-inactive");
+  childrenButtonMinus.addClass("guests__minus-inactive");
+  infantsButtonMinus.addClass("guests__minus-inactive");  
+})
+
+function crateMenu() {
+  guests_main.toggleClass("active-dropdown-guests__main")
+  guests_menu.toggleClass("dropdown-guests__menu-active")
+
+  adultCount.text(adult)
+  childrenCount.text(children)
+  infantsCount.text(infants)
+
+  mainText.text("Сколько гостей");
+}
+
+function minusCount(category) {
+  if (category == "adult") {
+    if (adult > 0) {
+      adult = adult - 1
+      adultCount.text(adult);
+    }
+    if (adult == 0) {
+      adultButtonMinus.addClass("guests__minus-inactive");
+    }
+  } else if (category == "children") {
+    if (children > 0) {
+      children = children - 1
+      childrenCount.text(children);
+    }
+    if (children == 0) {
+      childrenButtonMinus.addClass("guests__minus-inactive");
+    }
+  } else if (category == "infants") {
+    if (infants > 0) {
+      infants = infants - 1
+      infantsCount.text(infants);
+    }
+    if (infants == 0) {
+      infantsButtonMinus.addClass("guests__minus-inactive");
+    }
+  }
+}
+
+function plusCount(category) {
+  if (category == "adult") {
+    if (adult == 0) {
+      adultButtonMinus.removeClass("guests__minus-inactive");
+    }
+
+    adult = adult + 1;
+
+    adultCount.text(adult);
+  } else if (category == "children") {
+    if (children == 0) {
+      childrenButtonMinus.removeClass("guests__minus-inactive");
+    }
+
+    children = children + 1;
+
+    childrenCount.text(children);
+  } else if (category == "infants") {
+    if (infants == 0) {
+      infantsButtonMinus.removeClass("guests__minus-inactive");
+    }
+
+    infants = infants + 1;
+
+    infantsCount.text(infants);
+  }
+}
+
+function getNoun(number) {
+  if (number == 0) {
+    return "гостей"
+  } else if (number == 1) {
+    return "гость"
+  } else if (2 <= number && number <= 4) {
+    return "гостя"
+  } else if (number > 4) {
+    return "гостей"
+  }
+}
