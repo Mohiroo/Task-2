@@ -1,19 +1,24 @@
-include ./../../components/filter-date-dropdown/filter-date-dropdown.pug
+include ./../calendar/calendar.pug
+include ./../../components/date-dropdown/date-dropdown.pug
 include ./../../components/dropdown-guests/dropdown-guests.pug
 include ./../../components/buttons/buttons.pug
 
-.find-room
-  .find-room__card
+mixin find-room(addClass='')
+  div(class="find-room " + addClass)
     form.find-room__form
       p.find-room__title Найдём номера под ваши пожелания
       .find-room__date
-        .find-room__arrival
+        .find-room__dropdown
           p.find-room__text прибытие
-        .find-room__exit
+          +date-dropdown("find-room__date-dropdown", "calendar__date-1", "find-room__dropdown-button")
+        .find-room__dropdown
           p.find-room__text выезд
+          +date-dropdown("find-room__date-dropdown", "calendar__date-2", "find-room__dropdown-button")
+      +calendar()
       .find-room__guests
         p.find-room__text Гости
         +dropdown-guests__main("")
         +dropdown-guests__menu("")
-
       +button("button-4", "Подобрать номера", "submit", "")
+
+//- +find-room()

@@ -1,4 +1,5 @@
-@import "./../../components/filter-date-dropdown/filter-date-dropdown.scss";
+@import "./../calendar/calendar.scss";
+@import "./../../components/date-dropdown/date-dropdown.scss";
 @import "./../../components/dropdown-guests/dropdown-guests.scss";
 @import "./../../components/buttons/buttons.scss";
 
@@ -10,51 +11,45 @@
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-
-  .find-room__card {
+    
+  .find-room__form {
     max-width: 320px;
-    margin: 0 auto;
+    margin: 40px auto 30px auto;
+    
+    .find-room__title {
+      margin-bottom: 21px;
 
-    .find-room__form {
-      margin: 40px 0 30px 0;
-      
-      .find-room__title {
-        margin-bottom: 21px;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 29px;
+      color: #1F2041;
+    }
+    .find-room__date {
+      margin-bottom: 22px;
+      .find-room__dropdown {
+        display: inline-block;
 
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 29px;
-        color: #1F2041;
-      }
-      .find-room__date {
-        margin-bottom: 20px;
-
-        .find-room__arrival {
-          display: inline-block;
-
-          margin-right: 20px;
-        }
-        .find-room__exit {
-          display: inline-block;
+        &:nth-child(1) {
+          margin-right: 15px;
         }
       }
-      .find-room__guests {
-        margin-bottom: 31px;
+    }
+    .find-room__guests {
+      margin-bottom: 31px;
 
-        .guests-room__selector {
+      .guests-room__selector {
 
-        }
       }
+    }
 
-      .find-room__text {
-        margin-bottom: 5px;
+    .find-room__text {
+      margin-bottom: 5px;
 
-        font-weight: bold;
-        font-size: 12px;
-        line-height: 15px;
-        text-transform: uppercase;
-        color: #1F2041;
-      }
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: #1F2041;
     }
   }
 }

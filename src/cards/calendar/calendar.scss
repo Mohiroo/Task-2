@@ -1,8 +1,16 @@
 @import "./../../components/buttons/buttons.scss";
 
 .calendar {
+  display: none;
+}
+
+.calendar-active {
   width: 320px;
   height: 369px;
+
+  display: inline-block;
+  position: absolute;
+  z-index: 110;
   
   background: #FFFFFF;
   border: 1px solid rgba(31, 32, 65, 0.25);

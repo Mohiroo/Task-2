@@ -10,3 +10,4 @@ import "./components/dropdown-rooms/dropdown-rooms";
 import "./components/dropdown-guests/dropdown-guests";
 import "./cards/room-card/room-card";
 import "./cards/calendar/calendar";
+import "./cards/find-room/find-room"

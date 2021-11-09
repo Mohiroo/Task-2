@@ -1,18 +1,19 @@
 const { css } = require("jquery");
 let $ = require( "jquery" );
 
-let day = $(".calendar__date")
-let button_next = $(".month__next")
-let button_back = $(".month__back")
-let button_clear = $(".calendar__button-clear")
-let button_apply = $(".calendar__button-apply")
+let calendar = $(".calendar");
+let day = $(".calendar__date");
+let button_next = $(".month__next");
+let button_back = $(".month__back");
+let button_clear = $(".calendar__button-clear");
+let button_apply = $(".calendar__button-apply");
 
 const today = new Date(); // Текущий день, месяц, год
 let selectedMonth = new Date(); // Изменяемый: при переключении переключении месяцов
 let daysOfMonth = []; // список дней месяца для вычисления "оставшися клеток для заполнения"
 
 let datesOfCalendar = []; // datesOfCalendar[0] == classIndex[0]
-let months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октрябрь", "Ноябрь", "Декабрь"]
+let months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октрябрь", "Ноябрь", "Декабрь"];
 
 let pickedDates = 0; // Клики по датам
 let firstPickDate = null; // месяц, год 1 выбранной даты
@@ -52,12 +53,14 @@ button_apply.on("click", function() {
     let secondDate__month = (secondPickDate.getMonth() + 1).toString().length == 1 ? "0" + (secondPickDate.getMonth() + 1) : secondPickDate.getMonth() + 1
     let secondDate__year = secondPickDate.getFullYear()
 
-    $(".date1").text(`${firstDate__date}.${firstDate__month}.${firstDate__year}`)
-    $(".date2").text(`${secondDate__date}.${secondDate__month}.${secondDate__year}`)
+    $(".calendar__date-1").text(`${firstDate__date}.${firstDate__month}.${firstDate__year}`)
+    $(".calendar__date-2").text(`${secondDate__date}.${secondDate__month}.${secondDate__year}`)
   } else {
-    $(".date1").text(`${firstDate__date}.${firstDate__month}.${firstDate__year}`)
-    $(".date2").text(`${firstDate__date}.${firstDate__month}.${firstDate__year}`)
+    $(".calendar__date-1").text(`${firstDate__date}.${firstDate__month}.${firstDate__year}`)
+    $(".calendar__date-1").text(`${firstDate__date}.${firstDate__month}.${firstDate__year}`)
   }
+
+  calendar.removeClass("calendar-active")
 })
 
 function createCalendar() {

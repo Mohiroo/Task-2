@@ -1,55 +1,56 @@
 include ./../../components/buttons/buttons.pug
 
-.calendar
-  .calendar__month
-    button.month__button.month__back
-    span.month__selected Ноябрь 2021
-    button.month__button.month__next
-  .calendar__picker
-    .calendar__picker-weekdays
-      span.calendar__weekday Пн
-      span.calendar__weekday Вт
-      span.calendar__weekday Ср
-      span.calendar__weekday Чт
-      span.calendar__weekday Пт
-      span.calendar__weekday Сб
-      span.calendar__weekday Вс
-    .calendar__picker-date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-      span.calendar__date
-  .calendar__buttons
-    +button("button-3", "Очистить", "calendar__button-clear")
-    +button("button-3", "Применить", "calendar__button-apply")
+mixin calendar(addClass)
+  div(class="calendar " + addClass)
+    .calendar__month
+      button.month__button.month__back
+      span.month__selected Ноябрь 2021
+      button.month__button.month__next
+    .calendar__picker
+      .calendar__picker-weekdays
+        span.calendar__weekday Пн
+        span.calendar__weekday Вт
+        span.calendar__weekday Ср
+        span.calendar__weekday Чт
+        span.calendar__weekday Пт
+        span.calendar__weekday Сб
+        span.calendar__weekday Вс
+      .calendar__picker-date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+        span.calendar__date
+    .calendar__buttons
+      +button("button-3", "Очистить", "calendar__button-clear")
+      +button("button-3", "Применить", "calendar__button-apply")
