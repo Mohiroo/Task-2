@@ -8,6 +8,9 @@ let button_back = $(".month__back");
 let button_clear = $(".calendar__button-clear");
 let button_apply = $(".calendar__button-apply");
 
+let date1 = $(".calendar__date-1")
+let date2 = $(".calendar__date-2")
+
 const today = new Date(); // Текущий день, месяц, год
 let selectedMonth = new Date(); // Изменяемый: при переключении переключении месяцов
 let daysOfMonth = []; // список дней месяца для вычисления "оставшися клеток для заполнения"
@@ -41,9 +44,11 @@ button_clear.on("click", function() {
   pickedDates = 0;
   
   refreshCalendar();
+
+  date1.text("ДД.ММ.ГГГГ")
+  date2.text("ДД.ММ.ГГГГ")
 })
 button_apply.on("click", function() {
-  console.log((firstPickDate.getMonth() + 1).toString().length == 1);
   let firstDate__date = firstPickDate.getDate().toString().length == 1 ? "0" + firstPickDate.getDate() : firstPickDate.getDate()
   let firstDate__month = (firstPickDate.getMonth() + 1).toString().length == 1 ? "0" + (firstPickDate.getMonth() + 1) : firstPickDate.getMonth() + 1
   let firstDate__year = firstPickDate.getFullYear()
@@ -53,11 +58,11 @@ button_apply.on("click", function() {
     let secondDate__month = (secondPickDate.getMonth() + 1).toString().length == 1 ? "0" + (secondPickDate.getMonth() + 1) : secondPickDate.getMonth() + 1
     let secondDate__year = secondPickDate.getFullYear()
 
-    $(".calendar__date-1").text(`${firstDate__date}.${firstDate__month}.${firstDate__year}`)
-    $(".calendar__date-2").text(`${secondDate__date}.${secondDate__month}.${secondDate__year}`)
+    date1.text(`${firstDate__date}.${firstDate__month}.${firstDate__year}`)
+    date2.text(`${secondDate__date}.${secondDate__month}.${secondDate__year}`)
   } else {
-    $(".calendar__date-1").text(`${firstDate__date}.${firstDate__month}.${firstDate__year}`)
-    $(".calendar__date-1").text(`${firstDate__date}.${firstDate__month}.${firstDate__year}`)
+    date1.text(`${firstDate__date}.${firstDate__month}.${firstDate__year}`)
+    date2.text(`${firstDate__date}.${firstDate__month}.${firstDate__year}`)
   }
 
   calendar.removeClass("calendar-active")
@@ -216,14 +221,13 @@ function pickDates(calendarCell) { // Выбор дат
     day.eq(firstPickCell).addClass("calendar__date-first-pick");
 
     pickedDates = 1;
+    secondPickDate = null;
   }
   
   if (firstPickCell == secondPickCell) {
     day.removeClass("calendar__date-start");
     day.removeClass("calendar__date-end");
   }
-  console.log(firstPickDate);
-  console.log(secondPickDate);
 }
 
 function displayPickedDates(date, calendarCell) {    // Соотношение даты

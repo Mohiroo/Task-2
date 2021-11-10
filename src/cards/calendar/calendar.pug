@@ -3,9 +3,9 @@ include ./../../components/buttons/buttons.pug
 mixin calendar(addClass)
   div(class="calendar " + addClass)
     .calendar__month
-      button.month__button.month__back
+      button.month__button.month__back(type="button")
       span.month__selected Ноябрь 2021
-      button.month__button.month__next
+      button.month__button.month__next(type="button")
     .calendar__picker
       .calendar__picker-weekdays
         span.calendar__weekday Пн
