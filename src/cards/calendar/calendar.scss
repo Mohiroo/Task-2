@@ -171,3 +171,7 @@
     .calendar__button-apply { float: right; }
   }
 }
+
+@media (max-width: 320px) {
+  .calendar-active { max-width: 318px; }
+}

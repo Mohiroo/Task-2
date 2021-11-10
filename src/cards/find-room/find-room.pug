@@ -8,10 +8,10 @@ mixin find-room(addClass='')
     form.find-room__form
       p.find-room__title Найдём номера под ваши пожелания
       .find-room__date
-        .find-room__dropdown
+        .find-room__arrival
           p.find-room__text прибытие
           +date-dropdown("find-room__date-dropdown", "calendar__date-1", "find-room__dropdown-button")
-        .find-room__dropdown
+        .find-room__departure
           p.find-room__text выезд
           +date-dropdown("find-room__date-dropdown", "calendar__date-2", "find-room__dropdown-button")
       +calendar()

@@ -5,7 +5,7 @@
   width: 100%;
 
   box-sizing: border-box;
-  border-radius: 2px;
+  border-radius: 4px;
   border: 1px solid rgba(31, 32, 65, 0.25);
   
   display: flex;
@@ -41,7 +41,7 @@
 }
 
 .active-dropdown-guests__main { 
-  border-radius: 2px 2px 0 0;
+  border-radius: 4px 4px 0 0;
   border-color: rgba(31, 32, 65, 0.5); 
 }
 
@@ -58,7 +58,7 @@
   z-index: 100;
 
   background: white;
-  border-radius: 0 0 2px 2px;
+  border-radius: 0 0 4px 4px;
   border: 1px solid rgba(31, 32, 65, 0.5);
   border-top: none;
   box-sizing: border-box;

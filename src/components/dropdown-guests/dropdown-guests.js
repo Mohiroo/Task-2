@@ -26,7 +26,7 @@ let children = 0;
 let infants = 0;
 
 button_open.on('click', function(){
-  crateMenu()
+  createMenu()
 });
 
 adultButtonMinus.on('click', function(){ minusCount("adult") })
@@ -58,14 +58,12 @@ button_clear.on("click", function() {
   children = 0;
   infants = 0;
 
-  crateMenu();
-  
-  adultButtonMinus.addClass("guests__minus-inactive");
-  childrenButtonMinus.addClass("guests__minus-inactive");
-  infantsButtonMinus.addClass("guests__minus-inactive");  
+  createMenu();  
 })
 
-function crateMenu() {
+function createMenu() {
+  let guestCount = adult + children + infants
+
   guests_main.toggleClass("active-dropdown-guests__main")
   guests_menu.toggleClass("dropdown-guests__menu-active")
 
@@ -73,7 +71,16 @@ function crateMenu() {
   childrenCount.text(children)
   infantsCount.text(infants)
 
-  mainText.text("Сколько гостей");
+  adultButtonMinus.addClass("guests__minus-inactive");
+  childrenButtonMinus.addClass("guests__minus-inactive");
+  infantsButtonMinus.addClass("guests__minus-inactive");
+
+  if (guestCount == 0) {
+    mainText.text("Сколько гостей");
+  } else {
+    mainText.text(`${guestCount} ${getNoun(guestCount)}`);
+  }
+  
 }
 
 function minusCount(category) {

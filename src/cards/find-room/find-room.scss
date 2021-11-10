@@ -17,7 +17,7 @@
     margin: 40px auto 30px auto;
     
     .find-room__title {
-      margin-bottom: 21px;
+      margin-bottom: 22px;
 
       font-weight: bold;
       font-size: 24px;
@@ -26,21 +26,17 @@
     }
     .find-room__date {
       margin-bottom: 5px;
-      .find-room__dropdown {
+      .find-room__arrival {
         display: inline-block;
-
-        &:nth-child(1) {
-          margin-right: 15px;
-        }
+      }
+      .find-room__departure {
+        display: inline-block;
+        margin-left: 15.82px;   
       }
     }
     .find-room__guests {
       margin-top: 22px;
       margin-bottom: 31px;
-
-      .guests-room__selector {
-
-      }
     }
 
     .find-room__text {
@@ -51,6 +47,18 @@
       line-height: 15px;
       text-transform: uppercase;
       color: #1F2041;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .find-room {
+    .find-room__form {
+      .find-room__date {
+        .find-room__departure {
+          margin-left: 13.82px;
+        }
+      }
     }
   }
 }
