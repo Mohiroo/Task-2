@@ -49,21 +49,23 @@ button_clear.on("click", function() {
   date2.text("ДД.ММ.ГГГГ")
 })
 button_apply.on("click", function() {
+  if (secondPickDate == null) {
+    secondPickDate = firstPickDate;
+  }
+
   let firstDate__date = firstPickDate.getDate().toString().length == 1 ? "0" + firstPickDate.getDate() : firstPickDate.getDate()
   let firstDate__month = (firstPickDate.getMonth() + 1).toString().length == 1 ? "0" + (firstPickDate.getMonth() + 1) : firstPickDate.getMonth() + 1
   let firstDate__year = firstPickDate.getFullYear()
 
-  if (secondPickDate != null) {
-    let secondDate__date = secondPickDate.getDate().toString().length == 1 ? "0" + secondPickDate.getDate() : secondPickDate.getDate()
-    let secondDate__month = (secondPickDate.getMonth() + 1).toString().length == 1 ? "0" + (secondPickDate.getMonth() + 1) : secondPickDate.getMonth() + 1
-    let secondDate__year = secondPickDate.getFullYear()
+  let secondDate__date = secondPickDate.getDate().toString().length == 1 ? "0" + secondPickDate.getDate() : secondPickDate.getDate()
+  let secondDate__month = (secondPickDate.getMonth() + 1).toString().length == 1 ? "0" + (secondPickDate.getMonth() + 1) : secondPickDate.getMonth() + 1
+  let secondDate__year = secondPickDate.getFullYear()
 
-    date1.text(`${firstDate__date}.${firstDate__month}.${firstDate__year}`)
-    date2.text(`${secondDate__date}.${secondDate__month}.${secondDate__year}`)
-  } else {
-    date1.text(`${firstDate__date}.${firstDate__month}.${firstDate__year}`)
-    date2.text(`${firstDate__date}.${firstDate__month}.${firstDate__year}`)
-  }
+  date1.text(`${firstDate__date}.${firstDate__month}.${firstDate__year}`);
+  date2.text(`${secondDate__date}.${secondDate__month}.${secondDate__year}`);
+
+  window.days = (secondPickDate.getTime() - firstPickDate.getTime()) / (1000*60*60*24);
+  if (window.days == 0) { window.days = 1; }
 
   calendar.removeClass("calendar-active")
 })
