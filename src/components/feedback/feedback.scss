@@ -1,0 +1,54 @@
+@import "./../like-button/like-button.scss";
+
+.feedback {
+  max-width: 715px;
+
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+
+  .feedback__title {
+    margin-bottom: 5px;
+
+    .feedback__avatar {
+      width: 47.67px;
+      height: 48px;
+
+      display: inline-block;
+      margin-right: 6px;
+
+      border: 2px solid #FFFFFF;
+      box-sizing: border-box;
+      filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.1));
+      border-radius: 32px;
+    }
+    .feedback__user {
+      display: inline-block;
+
+      vertical-align: super;
+
+      .feedback__user-name { font-weight: bold; }
+    }
+  }
+
+  .feedback__content {
+
+    .feedback__like-box {
+      width: 47.67px;
+   
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 7px;
+
+      .feedback__like {
+        margin: 0 auto 0 auto;
+      }
+    }
+    .feedback__text {
+      max-width: 653px;
+
+      display: inline-block;
+      margin-top: -1px;
+    }
+  }
+}
