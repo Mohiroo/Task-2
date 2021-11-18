@@ -1,0 +1,33 @@
+@import "./../../header/header.scss";
+@import "./../../cards/find-room/find-room.scss";
+@import "./../../footer/footer.scss";
+
+.landing__page {
+  .landing__content {
+    height: 900px;
+
+    position: relative;
+
+    background: url("./pages/landing/landing_background.png") center no-repeat;
+    background-size: cover;
+
+    .landing__find-room {
+      position: relative;
+      top: 70px;
+      left: 140px;
+    }
+
+    .landing__text {
+      height: 48px;
+
+      position: absolute;
+	    bottom: 18px;
+      right: 134px;
+
+      font-size: 14px;
+      line-height: 24px;
+      text-align: right;
+      color: rgba(31, 32, 65, 0.75);
+    }
+  }
+}
