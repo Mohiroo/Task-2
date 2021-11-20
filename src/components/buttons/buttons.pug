@@ -1,10 +1,10 @@
-mixin button(mode, text='', addClass='')
+mixin button(mode, text='', addClass='', typeButton='button')
   if mode=='button-4'
-    button(class=mode + " " + addClass, type="button")
+    button(class=mode + " " + addClass, type=typeButton)
       span.v4-button__text= text
       span.v4-button__arrow
   else  
-    button(class=mode + " " + addClass, type="button")= text
+    button(class=mode + " " + addClass, type=typeButton)= text
 
 
 //- +button("button-1", "Привет") - кнопка заполненная

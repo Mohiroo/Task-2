@@ -1,13 +1,14 @@
 @import "./../components/buttons/buttons.scss";
 
 .header {
+  min-width: 910px;
   height: 70px;
+  
+  padding: 0 140px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  margin: 0 140px;
 
   .header__links {
     height: 34px;

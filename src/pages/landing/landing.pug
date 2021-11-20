@@ -2,11 +2,10 @@ include ./../../header/header.pug
 include ./../../cards/find-room/find-room.pug
 include ./../../footer/footer.pug
 
-.landing__page
-  +header-anonym
-  .landing__content
-    +find-room("landing__find-room")
-    p.landing__text
-      | Лучшие номера для вашей работы, <br>
-      | отдыха и просто вдохновения
-  +footer-desktop
++header-anonym
+main.landing__content
+  +find-room("landing__find-room")
+  p.landing__text
+    | Лучшие номера для вашей работы, <br>
+    | отдыха и просто вдохновения
++footer-desktop

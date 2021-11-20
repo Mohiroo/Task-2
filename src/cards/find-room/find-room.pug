@@ -5,7 +5,7 @@ include ./../../components/buttons/buttons.pug
 
 mixin find-room(addClass='')
   div(class="find-room " + addClass)
-    form.find-room__form
+    form.find-room__form(action="http://www.google.com")
       p.find-room__title Найдём номера под ваши пожелания
       .find-room__date
         .find-room__arrival
@@ -19,6 +19,6 @@ mixin find-room(addClass='')
         p.find-room__text Гости
         +dropdown-guests__main("")
         +dropdown-guests__menu("")
-      +button("button-4", "Подобрать номера", "submit", "")
+      +button("button-4", "Подобрать номера", "", "submit")
 
 //- +find-room()
