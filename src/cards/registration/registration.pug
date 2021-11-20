@@ -3,8 +3,8 @@ include ./../../components/radio-buttons/radio-buttons.pug
 include ./../../components/toggle/toggle.pug
 include ./../../components/buttons/buttons.pug
 
-.registration
-  .registration__card
+mixin registration()
+  .registration
     form.registration__form
       p.registration__title Регистрация аккаунта
       .registration__name
@@ -21,7 +21,7 @@ include ./../../components/buttons/buttons.pug
         +text-field(mode, "email", "Email", "email", "")
         +text-field(mode, "password", "Пароль", "password", "registration__password")
         +toggle("Получать спецпредложения", "registration__special-offers")
-      +button("button-4", "перейти к оплате", "submit", "registration__next")
+      +button("button-4", "зарегистрироваться", "submit", "registration__next")
     .registration__login-account
       p.login-account__text Уже есть аккаунт на Toxin
       +button("button-2", "Войти", '', '')

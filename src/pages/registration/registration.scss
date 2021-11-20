@@ -1,0 +1,18 @@
+@import "./../../header/header.scss";
+@import "./../../cards/registration/registration.scss";
+@import "./../../footer/footer.scss";
+
+.registration__page {
+  height: 683px;
+
+  box-sizing: border-box;
+  padding: 19px 0 19px 0;
+
+  background: url("./pages/registration/registration_background.png") no-repeat;
+  background-size: 1534px 1142px;
+  background-position: -47px -235px;
+  
+  .registration {
+    margin: 0 auto;
+  }
+}
