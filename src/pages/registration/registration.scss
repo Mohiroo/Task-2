@@ -9,10 +9,30 @@
   padding: 19px 0 19px 0;
 
   background: url("./pages/registration/registration_background.png") no-repeat;
-  background-size: 1534px 1142px;
-  background-position: -47px -235px;
+  background-size: cover;
+  background-position: center -450px;
   
   .registration {
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 1600px) {
+  .registration__page {
+    background-position: center -260px; 
+  }
+}
+
+@media (max-width: 1440px) {
+  .registration__page { 
+    background-size: 107%;
+    background-position: -63px -224px; 
+  }
+}
+
+@media (max-width: 1160px) {
+  .registration__page { 
+    background-size: cover;
+    background-position: center 
   }
 }

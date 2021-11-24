@@ -1,26 +1,36 @@
 @import "./../components/buttons/buttons.scss";
 
 .header {
-  min-width: 910px;
   height: 70px;
   
-  padding: 0 140px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0px 140px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   .header__links {
+    max-width: 769px;
+    width: 100%;
     height: 34px;
+
+    margin-left: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     
     a {
-      margin-right: 20px;
+      // margin-right: 20px;
 
       font-size: 14px;
       line-height: 17px;
       color: rgba(31, 32, 65, 0.5);
       text-decoration: none;
     }
+    
     .header__services, .header__agreements {
       &::after {
         content: "";
@@ -38,9 +48,8 @@
     }
 
     // anonym 
-    .header__login { 
+    .header__login-button { 
       width: 87px;
-      margin-right: 20px;
     }
 
     //user
