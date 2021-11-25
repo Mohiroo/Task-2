@@ -1,31 +1,31 @@
 @import "./../../header/header.scss";
-@import "./../../cards/registration/registration.scss";
+@import "./../../cards/login/login.scss";
 @import "./../../footer/footer.scss";
 
-.registration__content {
+.sign-in__content {
   height: 683px;
 
   box-sizing: border-box;
 
-  background: url("./pages/registration/registration_background.png") no-repeat;
+  background: url("./pages/sign-in/sign-in_background.png") no-repeat;
   
-  .registration {
+  .login {
     margin: 0 auto;
 
     position: relative;
-    top: 19px;
+    top: 172px;
   }
 }
 
 @media (max-width: 1440px) {
-  .registration__content {
+  .sign-in__content {
     background-size: cover;
     background-position: center 46%;
     transition: background-size 0.5s, background-position 0.6s;
   }
 }
 @media (min-width: 1441px) {
-  .registration__content {
+  .sign-in__content {
     background-size: cover;
     background-position: center 62%;
     transition: background-size 0.5s, background-position 0.6s;
