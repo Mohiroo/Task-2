@@ -18,8 +18,8 @@
   .landing__text {
     height: 48px;
 
-    position: absolute;
-    bottom: 18px;
+    position: relative;
+    top: 395px;
     right: 134px;
 
     font-size: 14px;
@@ -41,5 +41,18 @@
     background-size: 1920px 1279px;
     background-position: center 70%;
     transition: background-size 0.5s, background-position 0.6s;
+  }
+}
+
+@media (max-width: 661px) {
+  .landing__content {
+    .landing__find-room {
+      left: 0;
+      margin: auto;
+    }
+    .landing__text {
+      right: 0;
+      text-align: center;
+    }
   }
 }
