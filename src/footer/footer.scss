@@ -191,21 +191,19 @@
     }
   }
 }
-@media (min-width: 1240px) {
+@media (min-width: 1241px) {
   .footer__desktop {
     transition: padding 0.5s;
   }
 }
 
-
-
-@media (min-width: 769px) {
-  .footer__desktop {
+@media (max-width: 768px) {
+  .footer__mobile {
     display: block;
   }
 }
-@media (max-width: 768px) {
-  .footer__mobile {
+@media (min-width: 769px) {
+  .footer__desktop {
     display: block;
   }
 }
