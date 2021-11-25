@@ -3,12 +3,11 @@
 @import "./../../footer/footer.scss";
 
 .landing__page {
-  height: 900px;
+  height: 830px;
 
   position: relative;
 
-  background: url("./pages/landing/landing_background.png") center no-repeat;
-  background-size: cover;
+  background: url("./pages/landing/landing_background.png") no-repeat;
 
   .landing__find-room {
     position: relative;
@@ -27,5 +26,20 @@
     line-height: 24px;
     text-align: right;
     color: rgba(31, 32, 65, 0.75);
+  }
+}
+
+@media (max-width: 1440px) {
+  .landing__page {
+    background-size: 1534px 1022px;
+    background-position: center 70%;
+    transition: background-size 0.5s, background-position 0.6s;
+  }
+}
+@media (min-width: 1441px) {
+  .landing__page {
+    background-size: 1920px 1279px;
+    background-position: center 70%;
+    transition: background-size 0.5s, background-position 0.6s;
   }
 }

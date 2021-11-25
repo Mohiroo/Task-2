@@ -6,33 +6,28 @@
   height: 683px;
 
   box-sizing: border-box;
-  padding: 19px 0 19px 0;
 
   background: url("./pages/registration/registration_background.png") no-repeat;
-  background-size: cover;
-  background-position: center -450px;
   
   .registration {
     margin: 0 auto;
-  }
-}
 
-@media (max-width: 1600px) {
-  .registration__page {
-    background-position: center -260px; 
+    position: relative;
+    top: 19px;
   }
 }
 
 @media (max-width: 1440px) {
-  .registration__page { 
-    background-size: 107%;
-    background-position: -63px -224px; 
+  .registration__page {
+    background-size: cover;
+    background-position: center 46%;
+    transition: background-size 0.5s, background-position 0.6s;
   }
 }
-
-@media (max-width: 1160px) {
-  .registration__page { 
+@media (min-width: 1441px) {
+  .registration__page {
     background-size: cover;
-    background-position: center 
+    background-position: center 62%;
+    transition: background-size 0.5s, background-position 0.6s;
   }
 }
