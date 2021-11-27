@@ -21,8 +21,6 @@
   .footer__main {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    flex-direction: row;
     flex-wrap: wrap;
 
     margin: 100px 0;
@@ -194,6 +192,9 @@
 @media (min-width: 1241px) {
   .footer__desktop {
     transition: padding 0.5s;
+    .footer__main {
+      justify-content: space-between;
+    }
   }
 }
 
