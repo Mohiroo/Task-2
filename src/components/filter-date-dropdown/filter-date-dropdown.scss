@@ -4,20 +4,18 @@
   width: 266px;
   height: 44px;
 
+  background: #FFFFFF;
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-sizing: border-box;
   border-radius: 4px;
 
-  .filter-date-dropdown__date {
-    background: none;
-    border: none;
-    padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    display: inline-block;
-    width: 203px;
-    margin: 0 0 0 14px;
-  
-    
+  .filter-date-dropdown__date {
+    margin-left: 14px;
+
     font-size: 14px;
     line-height: 18px;
     color: rgba(31, 32, 65, 0.75);
@@ -27,15 +25,7 @@
   }
 
   .filter-date-dropdown__button {
-    background: none;
-    padding: 0;
-    border: none;
-    cursor: pointer;
-
     width: 43px;
-    height: 42px;
-
-    vertical-align: middle;
 
     -webkit-mask: url(./components/filter-date-dropdown/expand_more_black_24dp.svg) center no-repeat;
     mask: url(./components/filter-date-dropdown/expand_more_black_24dp.svg) center no-repeat;

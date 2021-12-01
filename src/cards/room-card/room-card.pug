@@ -1,14 +1,14 @@
 include ./../../components/rate-button/rate-button.pug
 
-mixin room-card(lux, addClass)
+mixin room-card(number='ОШИБКА', lux='ОШИБКА', cost='ОШИБКА', rate='ОШИБКА', feedbacks='ОШИБКА', addClass='')
   .room-card
     .room-card__images
       .slider
         .slider__wrapper
-          img.slider__item(src=require('./cards/room-card/image.png').default)
-          img.slider__item(src=require('./cards/room-card/image.png').default)
-          img.slider__item(src=require('./cards/room-card/image.png').default)
-          img.slider__item(src=require('./cards/room-card/image.png').default)
+          img.slider__item(src=require("./pages/search-room/" + number + ".png").default)
+          img.slider__item(src=require("./pages/search-room/" + number + ".png").default)
+          img.slider__item(src=require("./pages/search-room/" + number + ".png").default)
+          img.slider__item(src=require("./pages/search-room/" + number + ".png").default)
         .slider__buttons
           .slider__button-left
             button.slider__button.slider__button-prev(type="button")
@@ -21,17 +21,18 @@ mixin room-card(lux, addClass)
             button.slider__indicator.slider__indicator-4
     .room-card_details
       .room-card__info
-        span.room-card__number № 
-          span.number__room 888
+        a.room-card__number(href="#") № 
+          span.number__room= number
           if lux=="lux"
             span.room-card__lux люкс
         span.room-details__text 
-          span.room-details__text-bold 9 990₽ 
+          span.room-details__text-bold= cost
+            | ₽ 
           | в сутки
       .room-card__rates
-        +rate-buttons("3")
+        +rate-buttons(rate)
         span.room-rates__text
-          span.room-rates__text-bold 145 
-          | Отзывов
+          span.room-rates__text-bold= feedbacks 
+          |  Отзывов
 
-+room-card("lux")
+//- +room-card("lux")

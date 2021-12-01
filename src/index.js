@@ -13,3 +13,4 @@ import "./cards/calendar/calendar";
 import "./cards/find-room/find-room";
 import "./cards/book-card/book-card";
 import "./header/header.js"
+import "./pages/search-room/search-room.js"

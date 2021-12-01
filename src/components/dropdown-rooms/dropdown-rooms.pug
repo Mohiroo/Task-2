@@ -23,8 +23,8 @@ mixin dropdown-rooms__option(option)
   else
     span Error
 
-minix dropdown-rooms(addClass)
-  div(class="dropdown-rooms " + addClass)
+mixin dropdown-rooms
+  div(class="dropdown-rooms")
     .dropdown-rooms__main
       span.dropdown-rooms__text Выберите комнаты
       button.dropdown-rooms__button

@@ -1,36 +1,56 @@
-.pagination_button {
-  background: none;
-  padding: 0;
-  border: none;
-  cursor: pointer;
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  width: 40px;
-  height: 40px;
-
-  font-size: 12px;
-  line-height: 15px;
-  color: rgba(31, 32, 65, 0.5);
-}
-.pagination_button-active {
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  border-radius: 22px;
-  
-  font-weight: bold;
-  color: #FFFFFF;
-}
-.next-button {
-  vertical-align: middle;
-
-  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-  border-radius: 22px;
-
-  &::after {
-    content: url(./components/pagination/arrow_forward_white_24dp.svg);
-    width: 24px;
-    height: 24px;
+  .pagination_button {
+    height: 40px;
+    width: 40px;
 
     display: inline-block;
-    position: relative;
-    top: 2px;
+    vertical-align: middle;
+  
+    font-size: 12px;
+    line-height: 15px;
+    text-decoration: none;
+    text-align: center;
+    color: rgba(31, 32, 65, 0.5);
+
+    &::before {
+      content: "";
+      display: inline-block;
+      min-height: inherit;
+      height: 100%;
+      vertical-align: middle;
+    }
+  } 
+  
+  .pagination_button-active {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 22px;
+    
+    font-weight: bold;
+    color: #FFFFFF;
+  }
+
+  .next-button {
+    display: inline-block;
+    vertical-align: middle;
+
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    border-radius: 22px;
+
+    &::before {
+      content: "";
+      height: 100%;
+      width: 100%;
+
+      display: inline-block;
+      vertical-align: middle;
+
+      -webkit-mask: url(./components/pagination/arrow_forward_white_24dp.svg) center no-repeat;
+      mask: url(./components/pagination/arrow_forward_white_24dp.svg) center no-repeat;
+      background: #ffffff;
+    }
   }
 }

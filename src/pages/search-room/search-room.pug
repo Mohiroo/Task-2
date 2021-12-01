@@ -1,0 +1,56 @@
+include ./../../header/header.pug
+include ./../../components/filter-date-dropdown/filter-date-dropdown.pug
+include ./../../components/dropdown-guests/dropdown-guests.pug
+include ./../../components/range-slider/range-slider.pug
+include ./../../components/checkbox-buttons/checkbox-buttons.pug
+include ./../../components/rich-checkbox-buttons/rich-checkbox-buttons.pug
+include ./../../components/dropdown-rooms/dropdown-rooms.pug
+include ./../../components/expandable-checkbox-list/expandable-checkbox-list.pug
+include ./../../cards/room-card/room-card.pug
+include ./../../components/pagination/pagination.pug
+include ./../../footer/footer.pug
+
++header-anonym
+.search-room
+  aside.search-room__filters
+    button.filters__button фильтры
+    .filters__list
+      .filter__staying
+        .filter__title даты пребывания в отеле
+        +filter-date
+      .filter__guests
+        .filter__title гости
+        +filter-date
+      .filter__price
+        .filter__title диапазон цены 
+        +range-slider
+      .filter__rules
+        .filter__title правила дома
+        +checkbox-buttons
+      .filter__availability
+        .filter__title доступность
+        +rich-checkbox-buttons
+      .filter__amenities
+        .filter__title удобства номера
+        +dropdown-rooms
+      .filter__add-amenities
+        +expandable-checkbox__menu
+  .search-room__content
+    p.content__title Номера, которые мы для вас подобрали
+    .content__rooms 
+      +room-card("888", "lux", "9 900", "5", "145")
+      +room-card("840", "no-lux", "9 900", "4", "65")
+      +room-card("980", "lux", "8 500", "3", "35")
+      +room-card("856", "no-lux", "7 300", "5", "19")
+      +room-card("740", "no-lux", "6 000", "4", "44")
+      +room-card("982", "no-lux", "5 800", "3", "56")
+      +room-card("678", "no-lux", "5 500", "5", "45")
+      +room-card("450", "no-lux", "5 300", "4", "39")
+      +room-card("350", "no-lux", "5 000", "3", "77")
+      +room-card("666", "no-lux", "5 000", "5", "25")
+      +room-card("444", "no-lux", "5 000", "4", "15")
+      +room-card("352", "no-lux", "5 000", "3", "55")
+      .pagination__info
+        +pagination()
+        p.pagination__text 1 – 12 из 100+ вариантов аренды
++footer-desktop
