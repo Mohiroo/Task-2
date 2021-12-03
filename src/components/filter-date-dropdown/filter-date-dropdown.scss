@@ -1,5 +1,3 @@
-@import "~flatpickr/dist/flatpickr.css";
-
 .filter-date-dropdown {
   width: 266px;
   height: 44px;
@@ -25,7 +23,8 @@
   }
 
   .filter-date-dropdown__button {
-    width: 43px;
+    height: 44px;
+    width: 44px;
 
     -webkit-mask: url(./components/filter-date-dropdown/expand_more_black_24dp.svg) center no-repeat;
     mask: url(./components/filter-date-dropdown/expand_more_black_24dp.svg) center no-repeat;

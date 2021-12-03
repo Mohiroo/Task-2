@@ -1,7 +1,17 @@
+import "../../cards/calendar/calendar";
+import "../../cards/room-card/room-card";
+
 let $ = require( "jquery" );
 
 let filter_button = $(".filters__button")
 let filters_list = $(".filters__list")
+
+let caledarButton = $(".filter-date-dropdown__button")
+let calendar = $(".calendar")
+
+caledarButton.on('click', function() {
+  calendar.toggleClass("calendar-active")
+})
 
 filter_button.on("click", function() {
   if (filters_list.css("display") == "none") {

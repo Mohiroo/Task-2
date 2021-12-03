@@ -14,7 +14,7 @@ mixin find-room(addClass='')
         .find-room__departure
           p.find-room__text выезд
           +date-dropdown("find-room__date-dropdown", "calendar__date-2", "find-room__dropdown-button")
-      +calendar()
+      +calendar
       .find-room__guests
         p.find-room__text Гости
         +dropdown-guests__main("")

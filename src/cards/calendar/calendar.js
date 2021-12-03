@@ -8,15 +8,17 @@ let button_back = $(".month__back");
 let button_clear = $(".calendar__button-clear");
 let button_apply = $(".calendar__button-apply");
 
-let date1 = $(".calendar__date-1")
-let date2 = $(".calendar__date-2")
+let single_date = $(".calendar__single-date");
+let double_date1 = $(".calendar__date-1")
+let double_date2 = $(".calendar__date-2")
 
 const today = new Date(); // Текущий день, месяц, год
 let selectedMonth = new Date(); // Изменяемый: при переключении переключении месяцов
 let daysOfMonth = []; // список дней месяца для вычисления "оставшися клеток для заполнения"
 
 let datesOfCalendar = []; // datesOfCalendar[0] == classIndex[0]
-let months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октрябрь", "Ноябрь", "Декабрь"];
+const months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октрябрь", "Ноябрь", "Декабрь"];
+const shortMonths = ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"]
 
 let pickedDates = 0; // Клики по датам
 let firstPickDate = null; // месяц, год 1 выбранной даты
@@ -45,8 +47,9 @@ button_clear.on("click", function() {
   
   refreshCalendar();
 
-  date1.text("ДД.ММ.ГГГГ")
-  date2.text("ДД.ММ.ГГГГ")
+  double_date1.text("ДД.ММ.ГГГГ")
+  single_date.text("ДД.ММ - ДД.ММ")
+  double_date2.text("ДД.ММ.ГГГГ")
 })
 button_apply.on("click", function() {
   if (secondPickDate == null) {
@@ -55,14 +58,17 @@ button_apply.on("click", function() {
 
   let firstDate__date = firstPickDate.getDate().toString().length == 1 ? "0" + firstPickDate.getDate() : firstPickDate.getDate()
   let firstDate__month = (firstPickDate.getMonth() + 1).toString().length == 1 ? "0" + (firstPickDate.getMonth() + 1) : firstPickDate.getMonth() + 1
+  let shortFirstDate__month = shortMonths[firstPickDate.getMonth()]
   let firstDate__year = firstPickDate.getFullYear()
 
   let secondDate__date = secondPickDate.getDate().toString().length == 1 ? "0" + secondPickDate.getDate() : secondPickDate.getDate()
   let secondDate__month = (secondPickDate.getMonth() + 1).toString().length == 1 ? "0" + (secondPickDate.getMonth() + 1) : secondPickDate.getMonth() + 1
+  let secondFirstDate__month = shortMonths[secondPickDate.getMonth()]
   let secondDate__year = secondPickDate.getFullYear()
 
-  date1.text(`${firstDate__date}.${firstDate__month}.${firstDate__year}`);
-  date2.text(`${secondDate__date}.${secondDate__month}.${secondDate__year}`);
+  single_date.text(`${firstDate__date} ${shortFirstDate__month} - ${secondDate__date} ${secondFirstDate__month}`)
+  double_date1.text(`${firstDate__date}.${firstDate__month}.${firstDate__year}`);
+  double_date2.text(`${secondDate__date}.${secondDate__month}.${secondDate__year}`);
 
   window.days = (secondPickDate.getTime() - firstPickDate.getTime()) / (1000*60*60*24);
   if (window.days == 0) { window.days = 1; }

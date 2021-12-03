@@ -1,5 +1,6 @@
 include ./../../header/header.pug
 include ./../../components/filter-date-dropdown/filter-date-dropdown.pug
+include ../../cards/calendar/calendar.pug
 include ./../../components/dropdown-guests/dropdown-guests.pug
 include ./../../components/range-slider/range-slider.pug
 include ./../../components/checkbox-buttons/checkbox-buttons.pug
@@ -18,9 +19,10 @@ include ./../../footer/footer.pug
       .filter__staying
         .filter__title даты пребывания в отеле
         +filter-date
+        +calendar
       .filter__guests
         .filter__title гости
-        +filter-date
+        //- +filter-date
       .filter__price
         .filter__title диапазон цены 
         +range-slider

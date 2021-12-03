@@ -8,6 +8,7 @@
 @import "./../../components/expandable-checkbox-list/expandable-checkbox-list.scss";
 @import "./../../cards/room-card/room-card.scss";
 @import "./../../components/pagination/pagination.scss";
+@import "../../cards/calendar/calendar.scss";
 @import "./../../footer/footer.scss";
 
 .search-room {
@@ -50,6 +51,14 @@
   
       .filter__staying {
         margin-bottom: 20.44px;
+
+        position: relative;
+
+        .calendar {
+          // position: absolute;
+          top: 69px;
+          right: -26px;
+        }
       }
       .filter__guests {
         margin-bottom: 30.44px;
