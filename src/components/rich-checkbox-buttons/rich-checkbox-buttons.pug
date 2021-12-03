@@ -1,11 +1,13 @@
-mixin rich-checkbox-button(name, value, title, description)
+mixin rich-checkbox-button(name, value, title, description1, description2)
   label.rich-checkbox-button
     input.checkbox-button__button(type='checkbox' name=name, value=value)
     p.rich-checkbox-button__info
       span= title
-      =description
+      =description1
+      br
+      =description2
       
 mixin rich-checkbox-buttons
   div(class="rich-checkbox-buttons")
-    +rich-checkbox-button("option_1", "wide-corridor", "Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
-    +rich-checkbox-button("option_2", "assistant", "Помощник для инвалидов", "На 1 этаже вас встретит специалист  и проводит до номера.")
+    +rich-checkbox-button("option_1", "wide-corridor", "Широкий коридор", "Ширина коридоров в номере", "не менее 91 см.")
+    +rich-checkbox-button("option_2", "assistant", "Помощник для инвалидов", "На 1 этаже вас встретит специалист", "и проводит до номера.")

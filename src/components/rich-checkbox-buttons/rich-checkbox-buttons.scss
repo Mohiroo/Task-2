@@ -6,35 +6,26 @@
   .rich-checkbox-button__info {
     display: inline-block;
 
-    
-    font-size: 14px;
-    line-height: 18px;
-    color: rgba(31, 32, 65, 0.75);
+    position: relative;
+    top: 1.5px;
 
-    margin: 0;
+    font-size: 12px;
+    line-height: 14px;
+    color: rgba(31, 32, 65, 0.5);
 
     span {
       display: block;
       margin-bottom: 5px;
 
       font-weight: bold;
+      font-size: 14px;
+      line-height: 18px;
+      color: rgba(31, 32, 65, 0.75);
     }
   }
 
   margin-bottom: 10px;
   &:last-child {
     margin-bottom: 0;
-  }
-
-  &:nth-child(1) {
-    .rich-checkbox-button__info {
-      width: 220px;
-    }
-  }
-
-  &:nth-child(2) {
-    .rich-checkbox-button__info {
-      width: 260px;
-    }
   }
 }
