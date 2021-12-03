@@ -40,8 +40,6 @@
     .filters__list {
 
       .filter__title {
-        margin-bottom: 5px;
-  
         font-weight: bold;
         font-size: 12px;
         line-height: 15px;
@@ -54,6 +52,9 @@
 
         position: relative;
 
+        .filter__title {
+          margin-bottom: 5px;
+        }
         .calendar {
           top: 69px;
           right: -26px;
@@ -61,6 +62,9 @@
       }
       .filter__guests {
         margin-bottom: 30.44px;
+        .filter__title {
+          margin-bottom: 4.56px;
+        }
       }
       .filter__price {
         height: 72px;
@@ -75,7 +79,7 @@
 
         .price__text {
           position: relative;
-          top: 38px;
+          top: 45px;
 
           font-size: 12px;
           line-height: 14px;
