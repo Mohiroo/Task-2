@@ -1,6 +1,7 @@
 import "../../cards/calendar/calendar";
 import "../../cards/room-card/room-card";
 import "../../components/dropdown-guests/dropdown-guests"
+import "../../components/range-slider/range-slider.js";
 
 let $ = require( "jquery" );
 
