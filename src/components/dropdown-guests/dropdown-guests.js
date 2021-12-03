@@ -1,9 +1,9 @@
 let $ = require( "jquery" );
 
 let guests_buttons = $(".guests-menu__button");
-let guests_main = $(".dropdown-guests__main");
+let guests_selector = $(".dropdown-guests__selector");
 let guests_menu = $(".dropdown-guests__menu");
-let button_open = $(".guests__button");
+let button_open = $(".dropdown-guests__button");
 let button_clear = $(".guests__button-clear")
 let button_apply = $(".guests__button-apply")
 
@@ -50,22 +50,21 @@ guests_buttons.on('click', function(){
 button_apply.on('click', function() {
   let guestCount = adult + children + infants
 
+  guests_selector.toggleClass(" dropdown-guests__selector-active")
+  guests_menu.toggleClass(" dropdown-guests__menu-active")
+
   mainText.text(`${guestCount} ${getNoun(guestCount)}`);
 })
 
 button_clear.on("click", function() {
-  adult = 0;
-  children = 0;
-  infants = 0;
-
-  createMenu();  
+  refreshMenu();
 })
 
 function createMenu() {
   let guestCount = adult + children + infants
 
-  guests_main.toggleClass("active-dropdown-guests__main")
-  guests_menu.toggleClass("dropdown-guests__menu-active")
+  guests_selector.toggleClass(" dropdown-guests__selector-active")
+  guests_menu.toggleClass(" dropdown-guests__menu-active")
 
   adultCount.text(adult)
   childrenCount.text(children)
@@ -80,7 +79,22 @@ function createMenu() {
   } else {
     mainText.text(`${guestCount} ${getNoun(guestCount)}`);
   }
+}
+
+function refreshMenu() {
+  adult = 0;
+  children = 0;
+  infants = 0;
+
+  mainText.text("Сколько гостей");
   
+  adultCount.text(adult)
+  childrenCount.text(children)
+  infantsCount.text(infants)
+
+  adultButtonMinus.addClass("guests__minus-inactive");
+  childrenButtonMinus.addClass("guests__minus-inactive");
+  infantsButtonMinus.addClass("guests__minus-inactive");
 }
 
 function minusCount(category) {
@@ -139,14 +153,15 @@ function plusCount(category) {
   }
 }
 
-function getNoun(number) {
-  if (number == 0) {
-    return "гостей"
-  } else if (number == 1) {
+function getNoun(count) {
+  let countArray = String(count).split('')
+  let lastNumber = parseInt(countArray[countArray.length - 1])
+
+  if (lastNumber === 1) {
     return "гость"
-  } else if (2 <= number && number <= 4) {
+  } else if (lastNumber > 1 && lastNumber < 5 ) {
     return "гостя"
-  } else if (number > 4) {
+  } else {
     return "гостей"
   }
 }

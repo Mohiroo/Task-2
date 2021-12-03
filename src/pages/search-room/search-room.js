@@ -1,5 +1,6 @@
 import "../../cards/calendar/calendar";
 import "../../cards/room-card/room-card";
+import "../../components/dropdown-guests/dropdown-guests"
 
 let $ = require( "jquery" );
 

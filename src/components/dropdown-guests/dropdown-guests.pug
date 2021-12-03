@@ -1,27 +1,25 @@
 include ./../../components/buttons/buttons.pug
 
-mixin dropdown-guests__main(addClass='')
-  div(class="dropdown-guests__main " + addClass)
-    span.dropdown-guests__text Сколько гостей
-    button.guests__button(type="button")
-    
-
-mixin dropdown-guests__menu(addClass='')
-    div(class="dropdown-guests__menu " + addClass)
+mixin dropdown-guests
+  .dropdown-guests
+    div.dropdown-guests__selector
+      span.dropdown-guests__text Сколько гостей
+      button.dropdown-guests__button(type="button")
+    div.dropdown-guests__menu
       .dropdown-guests__option
-        span.dropdown-guests__menu-text взрослые
+        span взрослые
         .dropdown-guests__menu-buttons
           button.guests-menu__button.adult__minus(type="button") -
           span.guests-menu__count.adult__count
           button.guests-menu__button.adult__plus(type="button") +
       .dropdown-guests__option
-          span.dropdown-guests__menu-text дети
+          span дети
           .dropdown-guests__menu-buttons
             button.guests-menu__button.children__minus(type="button") -
             span.guests-menu__count.children__count
             button.guests-menu__button.children__plus(type="button") +
       .dropdown-guests__option
-        span.dropdown-guests__menu-text младенцы
+        span младенцы
         .dropdown-guests__menu-buttons
           button.guests-menu__button.infants__minus(type="button") -
           span.guests-menu__count.infants__count
@@ -29,6 +27,3 @@ mixin dropdown-guests__menu(addClass='')
       .dropdown-guests__submenu
         +button("button-3", "Очистить", "guests__button guests__button-clear guests__button-disable")
         +button("button-3", "Применить", "guests__button guests__button-apply")
-
-//- +dropdown-guests__main()
-//- +dropdown-guests__menu()
