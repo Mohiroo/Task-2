@@ -9,22 +9,28 @@
     }
 
     p {
-      margin: 0;
-      display: inline-block;
       max-width: 192px;
+      display: inline-block;
+      
+      font-size: 14px;
+      line-height: 18px;
+      color: rgba(31, 32, 65, 0.5);
     }
   }
 }
 
 .checkbox-button__button {
-  display: inline-block;
-  margin-right: 10px;
-  vertical-align: top;
-  appearance: none;
   width: 20px;
   height: 20px;
+  
+  display: inline-block;
+  margin-right: 5px;
+
+  appearance: none;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
+  
+  vertical-align: top;
 
   &:checked {
     border: solid 1px #BC9CFF;
