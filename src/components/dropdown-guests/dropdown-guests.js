@@ -37,23 +37,20 @@ infantsButtonMinus.on('click', function(){ minusCount("infants") })
 infantsButtonPlus.on('click', function(){ plusCount("infants")})
 
 guests_buttons.on('click', function(){
-  let guestsCount = adult + children + infants
+  let people = adult + children + infants
   
-  if (guestsCount == 0) {
-    $(".dropdown-guests__text").text("Сколько гостей");
+  if (people == 0) {
     button_clear.addClass("guests__button-disable")
   } else {
-   button_clear.removeClass("guests__button-disable")
+    button_clear.removeClass("guests__button-disable")
   }
 });
 
 button_apply.on('click', function() {
-  let guestCount = adult + children + infants
-
   guests_selector.toggleClass(" dropdown-guests__selector-active")
   guests_menu.toggleClass(" dropdown-guests__menu-active")
 
-  mainText.text(`${guestCount} ${getNoun(guestCount)}`);
+  getText()
 })
 
 button_clear.on("click", function() {
@@ -61,8 +58,6 @@ button_clear.on("click", function() {
 })
 
 function createMenu() {
-  let guestCount = adult + children + infants
-
   guests_selector.toggleClass(" dropdown-guests__selector-active")
   guests_menu.toggleClass(" dropdown-guests__menu-active")
 
@@ -70,15 +65,17 @@ function createMenu() {
   childrenCount.text(children)
   infantsCount.text(infants)
 
-  adultButtonMinus.addClass("guests__minus-inactive");
-  childrenButtonMinus.addClass("guests__minus-inactive");
-  infantsButtonMinus.addClass("guests__minus-inactive");
-
-  if (guestCount == 0) {
-    mainText.text("Сколько гостей");
-  } else {
-    mainText.text(`${guestCount} ${getNoun(guestCount)}`);
+  if (adult == 0) {
+    adultButtonMinus.addClass("guests__minus-inactive");
   }
+  if (children == 0) {
+    childrenButtonMinus.addClass("guests__minus-inactive");
+  }
+  if (infants == 0) {
+    infantsButtonMinus.addClass("guests__minus-inactive");
+  }
+  
+  getText()
 }
 
 function refreshMenu() {
@@ -92,9 +89,15 @@ function refreshMenu() {
   childrenCount.text(children)
   infantsCount.text(infants)
 
-  adultButtonMinus.addClass("guests__minus-inactive");
-  childrenButtonMinus.addClass("guests__minus-inactive");
-  infantsButtonMinus.addClass("guests__minus-inactive");
+  if (adult == 0) {
+    adultButtonMinus.addClass("guests__minus-inactive");
+  }
+  if (children == 0) {
+    childrenButtonMinus.addClass("guests__minus-inactive");
+  }
+  if (infants == 0) {
+    infantsButtonMinus.addClass("guests__minus-inactive");
+  }
 }
 
 function minusCount(category) {
@@ -153,15 +156,58 @@ function plusCount(category) {
   }
 }
 
-function getNoun(count) {
-  let countArray = String(count).split('')
-  let lastNumber = parseInt(countArray[countArray.length - 1])
+function getText () {
+  let guestCount = adult + children
 
-  if (lastNumber === 1) {
-    return "гость"
-  } else if (lastNumber > 1 && lastNumber < 5 ) {
-    return "гостя"
+  if (guestCount > 0) {
+    if (infants > 0) {
+      mainText.text(`${guestCount} ${getNoun("guest", guestCount)}, ${infants} ${getNoun("no-guest", infants)}`);
+    } else {
+      mainText.text(`${guestCount} ${getNoun("guest", guestCount)}`);
+    }
   } else {
-    return "гостей"
+    mainText.text("Сколько гостей")
+  }
+}
+
+function getNoun(isGuest, count) {
+  if (isGuest === "guest") {
+    let countArray = String(count).split('')
+    let lastNumber = parseInt(countArray[countArray.length - 1])
+  
+    if (lastNumber === 1) {
+      if (count == 11) {
+        return "гостей"
+      } else {
+        return "гость"
+      }
+    } else if (lastNumber > 1 && lastNumber < 5 ) {
+      if (count > 11 && count < 16) {
+        return "гостей"
+      } else {
+        return "гостя"
+      }
+    } else  {
+      return "гостей"
+    }
+  } else {
+    let countArray = String(count).split('')
+    let lastNumber = parseInt(countArray[countArray.length - 1])
+
+    if (lastNumber === 1) {
+      if (count == 11) {
+        return "младенцев"
+      } else {
+        return "младенец"
+      }
+    } else if (lastNumber > 1 && lastNumber < 5 ) {
+      if (count > 11 && count < 16) {
+        return "младенцев"
+      } else {
+        return "младенца"
+      }
+    } else {
+      return "младенцев"
+    }
   }
 }
