@@ -3,14 +3,14 @@
 
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-sizing: border-box;
-  border-radius: 2px;
+  border-radius: 2px 2px 0 0;
   
-  .dropdown-rooms__main {
+  .dropdown-rooms__selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     .dropdown-rooms__text {
-      width: 203px;
-  
-      display: inline-block;
-  
       margin: 0 0 0 14px;
   
       font-size: 14px;
@@ -24,7 +24,7 @@
       border: none;
       cursor: pointer;
   
-      width: 43px;
+      width: 44px;
       height: 42px;
   
       vertical-align: middle;
@@ -38,18 +38,22 @@
   .dropdown-rooms__menu {
     display: none; 
   }
-  
 }
 
 .dropdown-rooms-active {
-  .dropdown-rooms__main { border-bottom: 1px solid rgba(31, 32, 65, 0.25); }
+  .dropdown-rooms__selector { 
+    border-bottom: 1px solid rgba(31, 32, 65, 0.25); 
+  }
   .dropdown-rooms__menu {
-    display: initial;
+    display: block;
 
     .dropdown-rooms__option {
-      margin: 7px 6px 0 14px;
-
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       
+      margin: 7px 6px 0 14px;
+            
       font-size: 12px;
       line-height: 15px;
       font-weight: bold;
@@ -59,20 +63,13 @@
         margin-bottom: 7px;
       }
 
-      .dropdown-rooms__menu-text {
-        width: 150px;
-        display: inline-block;
-
-        vertical-align:super;
-      }
-
-      .dropdown-rooms__menu-buttons {
+      .rooms__menu-buttons {
         width: 90px;
         display: inline-flex;
         justify-content: space-between;
         align-items: center;
 
-        .dropdown-rooms__menu-button {
+        .rooms__menu-button {
           background: none;
           border: none;
           padding: 0;
@@ -90,7 +87,7 @@
           color: rgba(31, 32, 65, 0.5);
         }
 
-        .none-dropdown-rooms__menu-minus { opacity: 0.5; }
+        .rooms__minus-inactive { opacity: 0.5; }
       }
     }
   }

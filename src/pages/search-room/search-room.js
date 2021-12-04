@@ -2,6 +2,7 @@ import "../../cards/calendar/calendar";
 import "../../cards/room-card/room-card";
 import "../../components/dropdown-guests/dropdown-guests"
 import "../../components/range-slider/range-slider.js";
+import "../../components/dropdown-rooms/dropdown-rooms";
 
 let $ = require( "jquery" );
 

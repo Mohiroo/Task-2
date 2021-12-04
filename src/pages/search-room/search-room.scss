@@ -38,7 +38,6 @@
     }
 
     .filters__list {
-
       .filter__title {
         font-weight: bold;
         font-size: 12px;
@@ -100,6 +99,9 @@
       }
       .filter__amenities {
         margin-bottom: 30.44px;
+        .filter__title {
+          margin-bottom: 4.56px;
+        }
       }
       .filter__add-amenities {
   

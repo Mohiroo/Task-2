@@ -44,6 +44,8 @@ guests_buttons.on('click', function(){
   } else {
     button_clear.removeClass("guests__button-disable")
   }
+
+  getText()
 });
 
 button_apply.on('click', function() {
