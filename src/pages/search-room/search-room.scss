@@ -104,8 +104,6 @@
         }
       }
     }
-
-    
   }
 
   .search-room__content {
@@ -181,7 +179,15 @@
     transition: all 0.5s;
 
     .search-room__filters {
-      margin-right: 30px;
+      margin-right: 60px;
+
+      .filters__list {
+        .filter__staying {
+          .calendar {
+            right: -54px;
+          }
+        }
+      }
     }
     .search-room__content {
       .content__rooms {
@@ -194,7 +200,7 @@
   }
 }
 
-@media (max-width: 1160px) {
+@media (max-width: 1190px) {
   .search-room {
     .search-room__content {
       .content__rooms {
@@ -214,6 +220,14 @@
     .search-room__filters {
       margin: 0;
       align-self: center;
+
+      .filters__list {
+        .filter__staying {
+          .calendar {
+            right: -26px;
+          }
+        }
+      }
 
       .filters__button {
         width: 100%;
