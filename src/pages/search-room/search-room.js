@@ -3,6 +3,7 @@ import "../../cards/room-card/room-card";
 import "../../components/dropdown-guests/dropdown-guests"
 import "../../components/range-slider/range-slider.js";
 import "../../components/dropdown-rooms/dropdown-rooms";
+import "../../components/expandable-checkbox-list/expandable-checkbox-list";
 
 let $ = require( "jquery" );
 

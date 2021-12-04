@@ -1,6 +1,9 @@
-var $ = require( "jquery" );
+let $ = require( "jquery" );
 
-$(".expandable-checkbox__button").on('click', function(){
-  $(".expandable-checkbox__list").toggleClass("expandable-checkbox__list_enable")
-  $(".expandable-checkbox__button").toggleClass("expandable-checkbox__button_enable")
+let expandable_button = $(".expandable-checkbox__button")
+let expandable_list = $(".expandable-checkbox__list")
+
+expandable_button.on('click', function(){
+  expandable_list.toggleClass("expandable-checkbox__list_enable")
+  expandable_button.toggleClass("expandable-checkbox__button_enable")
 })
