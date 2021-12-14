@@ -4,6 +4,7 @@ import "../../components/dropdown-guests/dropdown-guests"
 import "../../components/range-slider/range-slider.js";
 import "../../components/dropdown-rooms/dropdown-rooms";
 import "../../components/expandable-checkbox-list/expandable-checkbox-list";
+import "../../header/header";
 
 let $ = require( "jquery" );
 
