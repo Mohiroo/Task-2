@@ -1,0 +1,81 @@
+@import "./../../header/header.scss";
+@import "./../../footer/footer.scss";
+@import "../../cards/book-card/book-card.scss";
+@import "../../components/bullet-list/bullet-list.scss";
+@import "../../components/icon-text-list/icon-text-list.scss";
+@import "../../components/feedback/feedback.scss";
+
+main {
+  .page__gallery {
+    display: flex;
+    flex-flow: row wrap;
+
+    margin-bottom: 70px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .page__content {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 0 140px;
+
+    .room__details {
+      margin-right: 70px;    
+
+      .room__about {
+        display: flex;
+
+        margin-bottom: 30px;
+
+        .about__brief {
+          margin-right: 70px;
+        }
+      }
+
+      .room__feedbacks {
+        margin-bottom: 30px;
+      }
+
+      .room__info {
+        display: flex;
+        justify-content: flex-start;
+
+
+        
+        .info__rules {
+          // max-width: 292px;
+          // width: 100%;
+
+          margin-right: 70px;
+        }
+        .info__cancel {
+          width: 30%;
+          .about__text {
+            font-size: 14px;
+            line-height: 24px;
+            color: rgba(31, 32, 65, 0.75);
+          }
+        }
+      }
+    }
+
+    .room__booking {
+      max-width: 380px;
+      width: 100%;
+    }
+
+    .room__text {
+      margin-bottom: 20px;
+
+      font-weight: bold;
+      font-size: 19px;
+      line-height: 23px;
+      color: #1F2041;
+    }
+  }
+}

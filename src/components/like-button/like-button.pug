@@ -1,9 +1,9 @@
-mixin like-button(likesCount='0', isActive='', addClass='')
-  if isActive="active"
-    button(class="like-button like-button_enable " + addClass)
+mixin like-button(likesCount='0', isActive='')
+  if isActive=="active"
+    button.like-button.like-button_enable(type="button")
       span.like-button__like
       span.like-button__count= likesCount
   else
-    button(class="like-button " + addClass)
+    button.like-button(type="button")
       span.like-button__like
       span.like-button__count= likesCount

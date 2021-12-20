@@ -1,3 +1,5 @@
+import "../../cards/calendar/calendar"
+
 let $ = require( "jquery" );
 
 let date_button = $(".calendar__button-apply");

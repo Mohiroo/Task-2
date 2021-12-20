@@ -5,32 +5,33 @@
 }
 
 .bullet-list__item {
+  // Последний элемент странный
+  // display: flex;
+  // align-items: flex-start;
+
+  // width: 100%;
+  // height: 100%;
+
   margin-bottom: 10px;
 
-  list-style-type: none;
-  font-size: 14px;
-  line-height: 24px;
-  color: rgba(31, 32, 65, 0.75);
-
-  span {
-    display: inline-block;
-    width: 232px;
-  }
-  
-  &::before {
-    content: "";
+  .list__point {
     width: 10.43px;
     height: 10px;
 
-    vertical-align: top;
-    position: relative;
-    top: 7px;
     display: inline-block;
     margin-right: 10.43px;
-    
+
     border-radius: 50%;
     background: rgba(31, 32, 65, 0.25);
   }
+
+  .list__text {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75);
+  }
+  
   &:last-child {
     margin-bottom: 0;
   }

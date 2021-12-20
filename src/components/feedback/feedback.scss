@@ -1,21 +1,21 @@
 @import "./../like-button/like-button.scss";
 
 .feedback {
-  max-width: 715px;
+  margin-bottom: 22px;
 
   font-size: 14px;
   line-height: 24px;
   color: rgba(31, 32, 65, 0.75);
 
   .feedback__title {
-    margin-bottom: 5px;
+    display: flex;
+    margin-bottom: 12px;
 
     .feedback__avatar {
       width: 47.67px;
       height: 48px;
 
-      display: inline-block;
-      margin-right: 6px;
+      margin-right: 9.93px;
 
       border: 2px solid #FFFFFF;
       box-sizing: border-box;
@@ -23,32 +23,23 @@
       border-radius: 32px;
     }
     .feedback__user {
-      display: inline-block;
-
-      vertical-align: super;
-
       .feedback__user-name { font-weight: bold; }
     }
   }
 
   .feedback__content {
+    display: flex;
 
     .feedback__like-box {
-      width: 47.67px;
-   
-      display: inline-block;
-      vertical-align: top;
-      margin-right: 7px;
-
-      .feedback__like {
-        margin: 0 auto 0 auto;
-      }
+      max-width: 47.67px;
+      width: 100%;
     }
     .feedback__text {
-      max-width: 653px;
+      margin-left: 9.93px;
 
-      display: inline-block;
-      margin-top: -1px;
+      font-size: 14px;
+      line-height: 24px;
+      color: rgba(31, 32, 65, 0.75);
     }
   }
 }

@@ -1,13 +1,13 @@
 include ./../like-button/like-button.pug
 
-// Доделай миксин, когда фотки будут залиты в папку страницы 
-.feedback
-  .feedback__title
-    img.feedback__avatar(src=require('./components/feedback/feedback_ava_1.png').default)
-    .feedback__user
-      p.feedback__user-name Мурад Сарафанов
-      p.feedback__date 5 дней назад
-  .feedback__content
-    .feedback__like-box
-      +like-button("12","active", "feedback__like")
-    p.feedback__text Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+mixin feedback(name='', date='', likes='', active='', avatar='', text='')
+  .feedback
+    .feedback__title
+      img.feedback__avatar(src=require('./pages/room-details/' + avatar + '.png'))
+      .feedback__user
+        p.feedback__user-name= name
+        p.feedback__date= date
+    .feedback__content
+      .feedback__like-box
+        +like-button(likes, active)
+      p.feedback__text= text

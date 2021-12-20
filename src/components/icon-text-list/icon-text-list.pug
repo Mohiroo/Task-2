@@ -4,7 +4,8 @@ mixin icon-text-list__item(title, text)
       span= title
       = text
 
-mixin icon-text-list(addClass)
-  div(class="icon-text-list " + addClass)
+mixin icon-text-list
+  div.icon-text-list
     +icon-text-list__item("Комфорт", "Шумопоглощающие стены")
     +icon-text-list__item("Удобство", "Окно в каждой из спален")
+    +icon-text-list__item("Уют", "Номер оснащён камином")
