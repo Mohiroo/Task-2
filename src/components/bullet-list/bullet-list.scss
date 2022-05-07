@@ -1,38 +1,67 @@
+// надо все заменить на это
+// .rules {
+//   max-width: 240px;
+//   max-height: 216px;
+//   margin-left: 30px;
+
+//   font-size: 14px;
+//   line-height: 24px;
+//   color: rgba(31, 32, 65, 0.75);
+
+//   li {
+//     position: relative;
+//     margin-bottom: 10px;
+//     &::before {
+//       content: "";
+
+//       display: inline-block;
+
+//       position: absolute;
+//       top: 7.45px;
+//       left: -21px;
+
+//       width: 10.43px;
+//       height: 10px;
+
+//       border-radius: 50%;
+//       background:  rgba(31, 32, 65, 0.25);
+//     }
+//   }
+// }
+
+
 
 .bullet-list {
-  padding: 0px;
-  margin: 0px;
-}
+  max-width: 240px;
+  max-height: 216px;
+  margin-left: 30px;
 
-.bullet-list__item {
-  // Последний элемент странный
-  // display: flex;
-  // align-items: flex-start;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
 
-  // width: 100%;
-  // height: 100%;
+  .bullet-list__text {
+    position: relative;
+    margin-bottom: 10px;
 
-  margin-bottom: 10px;
+    &::before {
+      content: "";
 
-  .list__point {
-    width: 10.43px;
-    height: 10px;
+      display: inline-block;
 
-    display: inline-block;
-    margin-right: 10.43px;
+      position: absolute;
+      top: 7.45px;
+      left: -21px;
 
-    border-radius: 50%;
-    background: rgba(31, 32, 65, 0.25);
-  }
+      width: 10.43px;
+      height: 10px;
 
-  .list__text {
-    display: inline-block;
-    font-size: 14px;
-    line-height: 24px;
-    color: rgba(31, 32, 65, 0.75);
-  }
-  
-  &:last-child {
-    margin-bottom: 0;
+      border-radius: 50%;
+      background: rgba(31, 32, 65, 0.25);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
