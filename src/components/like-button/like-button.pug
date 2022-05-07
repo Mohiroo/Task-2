@@ -1,9 +1,20 @@
-mixin like-button(likesCount='0', isActive='')
+mixin like-button(likeCount='0', isActive='no')
   if isActive=="active"
-    button.like-button.like-button_enable(type="button")
+    button.like-button.like-button_active(type="button")
       span.like-button__like
-      span.like-button__count= likesCount
+      .like-button__count
+        span= likeCount
   else
     button.like-button(type="button")
       span.like-button__like
-      span.like-button__count= likesCount
+      .like-button__count
+        span= likeCount
+
+
+//- mixin like-button(count='')
+//-   button.like-button
+//-     span.material-icons.like-buttonheart favorite_border
+//-     .like-buttoncount
+//-       span= count
+
+//- +like-button('2')

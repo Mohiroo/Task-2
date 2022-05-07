@@ -1,14 +1,12 @@
-var $ = require( "jquery" );
-var like_count = parseInt($(".like-button").text())
+import $ from 'jquery';
 
-$(".like-button").on('click', function(){
-  if ($(".like-button").hasClass("like-button_enable")) {
-    like_count -= 1;
-    $(".like-button__count").text(like_count)
-  } else {
-    like_count += 1;
-    $(".like-button__count").text(like_count)
-  }
-  
-  $(".like-button").toggleClass("like-button_enable")
-})
+const likeButton = $('.like-button');
+const likeCount = $('.like-button__count');
+const likeButtonActive = 'like-button_active';
+
+likeButton.on('click', function () {
+  let currentLikeCount = +($(this).find(likeCount).text())
+
+  $(this).toggleClass(likeButtonActive);
+  $(this).find(likeCount).text($(this).hasClass(likeButtonActive) ? currentLikeCount + 1 : currentLikeCount - 1);
+});
