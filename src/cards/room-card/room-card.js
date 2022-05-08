@@ -44,9 +44,7 @@ function move(direction) {
     } else {
       translateValue = translateValue + step;
     }
-
-    console.log(translateValue);
-
+    
     // передвижение
     room_card.eq(cardIndex).find(wrapper).css("transform", "matrix(1, 0, 0, 1, " + translateValue + ", 0)")
 
