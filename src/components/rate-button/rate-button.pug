@@ -1,34 +1,11 @@
-mixin rate-buttons(star_count, addClass)
-  div(class="rate-buttons " + addClass)
-    if star_count=="1"
-      span(class= "rate-button filled-rate-button")
-      span(class= "rate-button")
-      span(class= "rate-button")
-      span(class= "rate-button")
-      span(class= "rate-button")
-    else if star_count=="2"
-      span(class= "rate-button filled-rate-button")
-      span(class= "rate-button filled-rate-button")
-      span(class= "rate-button")
-      span(class= "rate-button")
-      span(class= "rate-button")
-    else if star_count=="3"
-      span(class= "rate-button filled-rate-button")
-      span(class= "rate-button filled-rate-button")
-      span(class= "rate-button filled-rate-button")
-      span(class= "rate-button")
-      span(class= "rate-button")
-    else if star_count=="4"
-      span(class= "rate-button filled-rate-button")
-      span(class= "rate-button filled-rate-button")
-      span(class= "rate-button filled-rate-button")
-      span(class= "rate-button filled-rate-button")
-      span(class= "rate-button")
-    else if star_count=="5"
-      span(class= "rate-button filled-rate-button")
-      span(class= "rate-button filled-rate-button")
-      span(class= "rate-button filled-rate-button")
-      span(class= "rate-button filled-rate-button")
-      span(class= "rate-button filled-rate-button")
+mixin rate-buttons(starsCount)
+  - var n = 0;
+  .rate-buttons
+    while n < starsCount
+      span.rate-button-filled
+      - n++
+    while n < 5
+      span.rate-button
+      - n++
 
-//- +rate-buttons('1')
+//- +rate-button('2')
