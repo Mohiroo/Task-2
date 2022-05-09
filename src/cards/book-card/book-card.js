@@ -1,46 +1,59 @@
-import "../../cards/calendar/calendar"
+import "../../cards/calendar/calendar";
+import "../../components/dropdown-guests/dropdown-guests";
+import "../../components/date-dropdown/date-dropdown";
 
-let $ = require( "jquery" );
+import $ from 'jquery';
 
-let date_button = $(".calendar__button-apply");
+const calendarButtonApply = $(".calendar__button-apply");
 
-let days_info = $(".amaunt-days__info");
-let days_sum = $(".amaunt-days__sum");
-let services_info = $(".services__info");
-let services_sum = $(".services__sum");
-let add_services_sum = $(".add-services__sum");
-let total_sum = $(".total__sum");
+const dateDropdownButton = $('.date-dropdown__button');
+const dateDropdownButtonActive = 'date-dropdown__button-active';
 
-let priceForDay = parseInt($(".info__text-bold").text().replace("₽", "").replace(" ", ""));
+const daysInfo = $(".amaunt-days__info");
+const servicesInfo = $(".services__info");
+
+const daysSum = $(".amaunt-days__sum");
+const servicesSum = $(".services__sum");
+const addServicesSum = $(".add-services__sum");
+const totalSum = $(".total__sum");
+
+let priceForDay = +($(".info__text-bold").text().replace("₽", "").replace(" ", ""));
 let servicesTax = 0;
 let addServicesTax = 300;
 let discountOfServices = 2179;
 let total = 0;
 
-days_info.text(`${priceForDay.toLocaleString()}₽ х 0 ${getNoun(window.days)}`);
-days_sum.text(`0₽`);
-services_info.text(`Сбор за услуги: скидка ${discountOfServices.toLocaleString()}₽`);
-services_sum.text(`${servicesTax.toLocaleString()}₽`);
-add_services_sum.text(`${addServicesTax.toLocaleString()}₽`)
-total_sum.text(`${total}₽`)
+// Функция - Существительное относительно количества дней
+const getNoun = (days) => days == 1 ? 'сутки' : 'суток';
 
-date_button.on("click", function() {
-  setTimeout(() => { 
+// Функция - Создание меню по умолчанию
+function setStartInfo() {
+  daysInfo.text(`${priceForDay.toLocaleString()}₽ х 0 ${getNoun(window.days)}`);
+  daysSum.text(`0₽`);
+
+  servicesInfo.text(`Сбор за услуги: скидка ${discountOfServices.toLocaleString()}₽`);
+  servicesSum.text(`${servicesTax.toLocaleString()}₽`);
+
+  addServicesSum.text(`${addServicesTax.toLocaleString()}₽`);
+
+  totalSum.text(`${total}₽`);
+};
+
+// Функция - Подтверждение введенных данных и установка положения по умолчаю кнопки меню
+calendarButtonApply.on("click", function () {
+  dateDropdownButton.toggleClass(dateDropdownButtonActive);
+
+  setTimeout(() => {
     if (days > 0) {
       let sumDays = days * priceForDay;
-      total = sumDays + servicesTax + addServicesTax - discountOfServices
-      
-      days_info.text(`${priceForDay.toLocaleString()}₽ х ${window.days} ${getNoun(window.days)}`);
-      days_sum.text(`${sumDays.toLocaleString()}₽`)
-      total_sum.text(`${total.toLocaleString()}₽`);
-    }
-  }, 100);
-})
+      total = sumDays + servicesTax + addServicesTax - discountOfServices;
 
-function getNoun(days) {
-  if (days == 1) {
-    return "сутки"
-  } else {
-    return "суток"
-  }
-}
+      daysInfo.text(`${priceForDay.toLocaleString()}₽ х ${window.days} ${getNoun(window.days)}`);
+      daysSum.text(`${sumDays.toLocaleString()}₽`);
+      totalSum.text(`${total.toLocaleString()}₽`);
+    };
+  }, 100);
+});
+
+// Создание меню
+setStartInfo();

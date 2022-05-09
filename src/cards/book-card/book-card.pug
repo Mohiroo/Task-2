@@ -4,43 +4,42 @@ include ./../../components/dropdown-guests/dropdown-guests.pug
 include ./../../components/buttons/buttons.pug
 
 mixin book-card(lux='')
-  .book-card
-    form.book-card__form
-      .book-card__info
-        span.info__number № 
-          span.info__room 888
-          if lux=="lux"
-            span.info__lux люкс
-        span.info__text 
-          span.info__text-bold 9 990₽ 
-          | в сутки
-      .book-card__dates
-        .book-card__arrival
-          p.book-card__text прибытие
-          +date-dropdown("book-card__date-dropdown", "calendar__date-1", "find-room__dropdown-button")
-        .book-card__departure
-          p.book-card__text выезд
-          +date-dropdown("book-card__date-dropdown", "calendar__date-2", "find-room__dropdown-button")
+  form.book-card__form
+    .book-card__info
+      span.info__number № 
+        span.info__room 888
+        if lux=="lux"
+          span.info__lux люкс
+      span.info__text 
+        span.info__text-bold 9 990₽ 
+        | в сутки
+    .book-card__dates
+      .book-card__arrival
+        p.book-card__text прибытие
+        +date-dropdown("book-card__date-dropdown", "calendar__date1-text", "calendar__button-create")
+      .book-card__departure
+        p.book-card__text выезд
+        +date-dropdown("book-card__date-dropdown", "calendar__date2-text", "calendar__button-create")
       +calendar()
-      .book-card__guests
-        p.book-card__text Гости
-          +dropdown-guests
-      .book-card__details
-        .details__option
-          span.details__text.amaunt-days__info
-          span.details__text.amaunt-days__sum
-        .details__option
-          span.details__text.services__info Сбор за услуги: скидка 2 179₽
-          .details__info
-            span.details__info-sign i
-          span.details__text.services__sum
-        .details__option
-          span.details__text.add-services__info Сбор за дополнительные услуги
-          .details__info
-            span.details__info-sign i
-          span.details__text.add-services__sum
-        .details__total
-          span.total__info Итого
-          span.details__total-space
-          span.total__sum
-      +button("button-4", "Забронировать", "submit", "")
+    .book-card__guests
+      p.book-card__text Гости
+        +dropdown-guests
+    .book-card__details
+      .details__option
+        span.details__text.amaunt-days__info
+        span.details__text.amaunt-days__sum
+      .details__option
+        span.details__text.services__info Сбор за услуги: скидка 2 179₽
+        .details__info
+          span.details__info-sign i
+        span.details__text.services__sum
+      .details__option
+        span.details__text.add-services__info Сбор за дополнительные услуги
+        .details__info
+          span.details__info-sign i
+        span.details__text.add-services__sum
+      .details__total
+        span.total__info Итого
+        span.details__total-space
+        span.total__sum
+    +button("button-4", "Забронировать", "submit", "")
