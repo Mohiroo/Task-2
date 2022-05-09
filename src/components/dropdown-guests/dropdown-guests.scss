@@ -40,6 +40,14 @@
       -webkit-mask: url(./components/dropdown-guests/expand_more_black_24dp.svg) center no-repeat;
       mask: url(./components/dropdown-guests/expand_more_black_24dp.svg) center no-repeat;
       background: rgba(31, 32, 65, 0.5);
+
+      transition: transform 0.5s;
+      transform-style: preserve-3d;
+      transform: rotateX(0deg);
+    }
+
+    .dropdown-guests__button-active {
+      transform: rotateX(180deg);
     }
   }
   
