@@ -3,156 +3,165 @@
 @import "./../../components/dropdown-guests/dropdown-guests.scss";
 @import "./../../components/buttons/buttons.scss";
 
-.book-card__form {
-  display: grid;
-  grid-gap: 20px;
+.book-card {
+  max-width: 380px;
 
-  padding: 39px 29px 29px;
-  width: 380px;
+  padding: 40px 0 30px;
 
   background: #FFFFFF;
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
 
-  .book-card__info {
-    height: 30px;
+  .book-card__form {
+    width: 320px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin: 0 auto;
 
-    .info__number {
-      font-weight: bold;
-      font-size: 14px;
-      line-height: 17px;
-      color: #1F2041;
-
-      .info__room {
-        font-size: 24px;
-      }
-
-      .info__lux {
-        position: relative;
-        top: 1px;
-        left: 8px;
-
-        margin-left: 1px;
-
-        font-weight: bold;
-        font-size: 12px;
-        line-height: 15px;
-        text-transform: uppercase;
-        color: #BC9CFF;
-      }
-    }
-
-    .info__text {
-      position: relative;
-      top: 2px;
-
-      font-size: 12px;
-      line-height: 18px;
-      color: rgba(31, 32, 65, 0.5);
-
-      .info__text-bold {
-        font-size: 14px;
-        font-weight: bold;
-      }
-    }
-  }
-
-  .book-card__dates {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-
-    .calendar {
-      top: 70px;
-    }
-
-    .book-card__text {
-      margin-bottom: 6px;
-      line-height: 12px;
-    }
-  }
-
-  .book-card__details {
-    .details__option {
-      margin-bottom: 12px;
-
-      display: flex;
-      justify-content: space-between;
-
-      .amaunt-days__info,
-      .services__info,
-      .add-services__info {
-        width: 214px;
-        line-height: 18px;
-      }
-
-      .details__info {
-        margin-left: 5px;
-        flex-grow: 1;
-
-        .details__info-sign {
-          display: inline-block;
-          padding: 2px 7.195px 2px;
-
-          border: 1px solid rgba(31, 32, 65, 0.25);
-          border-radius: 50%;
-          box-sizing: border-box;
-
-          font-weight: bold;
-          font-size: 12px;
-          line-height: 14px;
-          text-align: center;
-          color: rgba(31, 32, 65, 0.25);
-        }
-      }
-
-      .details__text {
-        font-size: 14px;
-        line-height: 20px;
-        color: rgba(31, 32, 65, 0.75);
-      }
-    }
-
-    .details__total {
-      margin-top: 30px;
+    display: grid;
+    grid-gap: 20px;
+    
+    .book-card__info {
+      height: 30px;
 
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      font-weight: bold;
-      font-size: 19px;
-      line-height: 24px;
-      color: #1F2041;
+      .info__number {
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px;
+        color: #1F2041;
 
-      .details__total-space {
-        height: 16px;
-        flex-grow: 1;
-        border-bottom: 1px dashed rgba(31, 32, 65, 0.25);
-        box-sizing: border-box;
+        .info__room {
+          font-size: 24px;
+        }
+
+        .info__lux {
+          position: relative;
+          top: 1px;
+          left: 8px;
+
+          margin-left: 1px;
+
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 15px;
+          text-transform: uppercase;
+          color: #BC9CFF;
+        }
+      }
+
+      .info__text {
+        position: relative;
+        top: 2px;
+
+        font-size: 12px;
+        line-height: 18px;
+        color: rgba(31, 32, 65, 0.5);
+
+        .info__text-bold {
+          font-size: 14px;
+          font-weight: bold;
+        }
       }
     }
-  }
+
+    .book-card__dates {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+
+      .calendar {
+        top: 70px;
+      }
+
+      .book-card__text {
+        margin-bottom: 6px;
+        line-height: 12px;
+      }
+    }
+
+    .book-card__details {
+      .details__option {
+        margin-bottom: 12px;
+
+        display: flex;
+        justify-content: space-between;
+
+        .amaunt-days__info,
+        .services__info,
+        .add-services__info {
+          width: 214px;
+          line-height: 18px;
+        }
+
+        .details__info {
+          margin-left: 5px;
+          flex-grow: 1;
+
+          .details__info-sign {
+            display: inline-block;
+            padding: 2px 7.195px 2px;
+
+            border: 1px solid rgba(31, 32, 65, 0.25);
+            border-radius: 50%;
+            box-sizing: border-box;
+
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: center;
+            color: rgba(31, 32, 65, 0.25);
+          }
+        }
+
+        .details__text {
+          font-size: 14px;
+          line-height: 20px;
+          color: rgba(31, 32, 65, 0.75);
+        }
+      }
+
+      .details__total {
+        margin-top: 30px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        font-weight: bold;
+        font-size: 19px;
+        line-height: 24px;
+        color: #1F2041;
+
+        .details__total-space {
+          height: 16px;
+          flex-grow: 1;
+          border-bottom: 1px dashed rgba(31, 32, 65, 0.25);
+          box-sizing: border-box;
+        }
+      }
+    }
 
 
-  .book-card__text {
-    margin-bottom: 3px;
+    .book-card__text {
+      margin-bottom: 3px;
 
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 20px;
-    text-transform: uppercase;
-    color: #1F2041;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 20px;
+      text-transform: uppercase;
+      color: #1F2041;
+    }
   }
 }
 
 @media only screen and (min-width: 381px) {
-  .book-card__form {
-      border: 1px solid rgba(0,0,0,.12);
-      border-radius: 4px;
+  .book-card {
+    width: 380px;
+
+    border: 1px solid rgba(0, 0, 0, .12);
+    border-radius: 4px;
   }
 }
