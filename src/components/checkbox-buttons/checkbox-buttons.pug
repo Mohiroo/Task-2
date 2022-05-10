@@ -2,9 +2,3 @@ mixin checkbox-button(name, value, text)
   label.checkbox-button
     input.checkbox-button__button(type='checkbox' name=name, value=value)
     p= text
-
-mixin checkbox-buttons
-  form(class="checkbox-buttons")
-    +checkbox-button("option_1", "smoke", "Можно курить")
-    +checkbox-button("option_2", "pets", "Можно с питомцами")
-    +checkbox-button("option_3", "party", "Можно пригласить гостей (до 10 человек)")
