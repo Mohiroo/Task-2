@@ -1,23 +1,25 @@
-import "../../cards/book-card/book-card"
-import "../../components/feedback/feedback"
+import '../../header/header';
+import '../../cards/book-card/book-card';
+import '../../components/feedback/feedback';
+import '../../components/like-button/like-button';
 
 import * as echarts from 'echarts';
-import $ from "jquery";
+import $ from 'jquery';
 
 const great = 130;
 const good = 65;
 const satisfactory = 65;
 const disappointed = 0;
 
-echarts.init($('.about__chart')[0], null, {
+echarts.init($('.room__chart')[0], null, {
   renderer: 'svg',
-  width: 311,
+  width: 313,
   height: 131,
 }).setOption({
   legend: {
     orient: 'vertical',
     top: '32',
-    right: "-6",
+    left: "144",
     itemWidth: 12,
     itemHeight: 12,
     icon: "circle",
@@ -41,10 +43,10 @@ echarts.init($('.about__chart')[0], null, {
     },
     label: {
       position: 'center',
-      formatter:[
-            `{number|${great + good + satisfactory + disappointed}}`,
-            `{votes|голосов}`
-          ].join('\n'),
+      formatter: [
+        `{number|${great + good + satisfactory + disappointed}}`,
+        `{votes|голосов}`
+      ].join('\n'),
       rich: {
         number: {
           fontSize: 24,
@@ -91,8 +93,7 @@ echarts.init($('.about__chart')[0], null, {
         }
       }
     },
-    data: [
-      {
+    data: [{
         name: 'Великолепно',
         type: 'pie',
         value: great,
