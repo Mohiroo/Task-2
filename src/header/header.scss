@@ -2,54 +2,28 @@
 
 .header {
   height: 70px;
+
+  padding: 0px 15px;
+  transition: all 0.5s;
   
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  .header__links {
-    max-width: 789px;
-    width: 100%;
+  .header__links-desktop {
+    width: 769px;
     height: 34px;
-
-    display: none;
-
-    margin-left: 20px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     
     a {
-      margin-right: 20px;
-
       font-size: 14px;
       line-height: 17px;
       color: rgba(31, 32, 65, 0.5);
       text-decoration: none;
     }
-    
-    .header__services, .header__agreements {
-      &::after {
-        content: "";
-        width: 24px;
-        height: 21px;
-
-        display: inline-block;
-
-        vertical-align: middle;
-
-        -webkit-mask: url(./header/expand_more_black_24dp.svg) center no-repeat;
-        mask: url(./header/expand_more_black_24dp.svg) center no-repeat;
-        background-color: rgba(31, 32, 65, 0.5);
-      }
-    }
 
     // anonym 
     .header__login-button { 
       width: 87px;
-
-      margin-right: 20px;
     }
 
     //user
@@ -69,18 +43,23 @@
     }
   }
 
-  .header__links-compact {
+  .header__links-mobile {
     position: relative;
 
-    .header__icon {
+    .header__hamburger {
       width: 48px;
       height: 48px;
-      
-      display: inline-block;
-      
-      -webkit-mask: url(./header/header-menu.svg) center no-repeat;
-      mask: url(./header/header-menu.svg) center no-repeat;
+
+      vertical-align: middle;
+
+      font-size: 24px;
+      line-height: 20px;
+      text-decoration: none;
+      border: none;
+
       background: #BC9CFF;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .header__menu {
@@ -89,8 +68,8 @@
       display: none;
       
       position: absolute;
-      right: -14px;
-      padding: 5px 0;
+      right: -15px;
+      padding: 20px 0;
 
       background: #FFFFFF;
       border: 1px solid rgba(0, 0, 0, 0.12);
@@ -100,37 +79,22 @@
       z-index: 100;
 
       a {
-        width: 100%;
+        max-width: 50%;
         display: block;
 
-        padding: 8.5px 0;
+        margin: 20px auto;
 
         font-size: 14px;
         line-height: 17px;
         color: rgba(31, 32, 65, 0.5);
         text-decoration: none;
         text-align: center;
-      }
-      .header__services, .header__agreements {
-        padding: 5px 0;
 
-        position: relative;
-        left: 6px;
-
-        &::after {
-          content: "";
-          width: 24px;
-          height: 24px;
-  
-          display: inline-block;
-  
-          vertical-align: middle;
-  
-          -webkit-mask: url(./header/expand_more_black_24dp.svg) center no-repeat;
-          mask: url(./header/expand_more_black_24dp.svg) center no-repeat;
-          background-color: rgba(31, 32, 65, 0.5);
+        &:first-child {
+          margin: 0 auto 10px auto;
         }
       }
+
       .header__user {
         border-top: 1px solid rgba(31, 32, 65, 0.1)
       }
@@ -151,43 +115,53 @@
       }
     }
   }
+
+  .header__logo {
+    height: 44px;
+  }
+
+  .material-icons {
+    width: 24px;
+    height: 21px;
+
+    vertical-align: middle;
+
+    font-size: 24px;
+    line-height: 20px;
+
+    background: rgba(31, 32, 65, 0.5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
-@media (max-width: 940px) {
+@media (min-width: 320px) {
   .header {
-    .header__links {
+    .header__links-desktop {
       display: none;
     }
-    .header__links-compact {
+    .header__links-mobile {
       display: block;
     }
   }
 }
+
 @media (min-width: 941px) {
   .header {
-    .header__links {
-      display: block;
+    max-width: 1160px;
+    margin: 0 auto;
+
+    .header__links-desktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    .header__links-compact {
+    .header__links-mobile {
       display: none;
 
       .header__menu {
         display: none;
       }
     }
-  }
-}
-
-
-@media (max-width: 1240px) {
-  .header {
-    padding: 0px 14px;
-    transition: all 0.5s;
-  }
-}
-@media (min-width: 1240px) {
-  .header {
-    padding: 0px 140px;
-    transition: all 0.5s;
   }
 }

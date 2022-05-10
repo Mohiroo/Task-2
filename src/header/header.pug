@@ -2,23 +2,28 @@ include ./../components/buttons/buttons.pug
 
 mixin header-anonym
   header.header
-    include ./header-logo.svg
-    nav.header__links
+    a.header__logo(href="./pages/room-details/room-details.pug")
+      include ./header-logo.svg
+    nav.header__links-desktop
       a.header__about(href="#") О нас
       a.header__services(href="#") Услуги
+        span.material-icons expand_more
       a.header__vacancy(href="#") Вакансии
       a.header__news(href="#") Новости
       a.header__agreements(href="#") Соглашения
+        span.material-icons expand_more
       +button("button-2", "Войти", "header__login-button",)
       +button("button-1", "Зарегистрироваться", "")
-    .header__links-compact
-      button.header__icon(type="button")
+    nav.header__links-mobile
+      button.header__hamburger.material-icons(type="button") menu
       nav.header__menu
         a.header__about(href="#") О нас
         a.header__services(href="#") Услуги
+          span.material-icons expand_more
         a.header__vacancy(href="#") Вакансии
         a.header__news(href="#") Новости
         a.header__agreements(href="#") Соглашения
+          span.material-icons expand_more
         .header__buttons
           +button("button-2", "Войти", "header__login-button",)
           +button("button-1", "Зарегистрироваться", "header__registration-button")
@@ -26,20 +31,25 @@ mixin header-anonym
 
 mixin header-user
   header.header
-    include ./header-logo.svg
-    nav.header__links
+    a.header__logo(href="#")
+      include ./header-logo.svg
+    nav.header__links-desktop
       a.header__about(href="#") О нас
       a.header__services(href="#") Услуги
+        span.material-icons expand_more
       a.header__vacancy(href="#") Вакансии
       a.header__news(href="#") Новости
       a.header__agreements(href="#") Соглашения
+        span.material-icons expand_more
       a.header__user(href="#") Юлий Цезарь
-    .header__links-compact
-      button.header__icon(type="button")
+    nav.header__links-mobile
+      button.header__hamburger.material-icons(type="button") menu
       nav.header__menu
         a.header__about(href="#") О нас
         a.header__services(href="#") Услуги
+          span.material-icons expand_more
         a.header__vacancy(href="#") Вакансии
         a.header__news(href="#") Новости
         a.header__agreements(href="#") Соглашения
+          span.material-icons expand_more
         a.header__user(href="#") Юлий Цезарь
