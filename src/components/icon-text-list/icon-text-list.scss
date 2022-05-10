@@ -2,77 +2,52 @@
   .icon-text-list__item {
     width: 280px;
 
-    display: block;
+    padding: 20px 0;
+
+    display: flex;
+
     border-bottom: 1px solid rgba(31, 32, 65, 0.1);
 
-    font-size: 14px;
-    line-height: 24px;
-    color: rgba(31, 32, 65, 0.75);
-
-    .icon-item__text {
-      margin: 0 0 0 7px;
-
-      display: inline-block;
-      vertical-align: middle;
-
-      span {
-        display: block;
-        font-weight: bold;
-      }
-    }
-
-    padding-bottom: 20px;
-    padding-top: 20px;
-
-    &:nth-child(1) {
-      padding-top: 0px;
-      &:before {
-      content: "";
-
-      width: 48px;
+    .item__div-icon {
       height: 48px;
+      width: 48px;
 
-      display: inline-block;
-      vertical-align: middle;
+      margin-right: 10px;
 
-      -webkit-mask: url(./components/icon-text-list/insert_emoticon_black_48dp.svg) center no-repeat;
-      mask: url(./components/icon-text-list/insert_emoticon_black_48dp.svg) center no-repeat;
-      background: linear-gradient(to bottom, #bc9cff, #af9fff, #a3a1fe, #97a3fc, #8ba4f9);
+      .item__icon {
+        font-size: 48px;
+        line-height: 48px;
+
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
-    &:nth-child(2) {
-      &:before {
-        content: "";
 
-        width: 48px;
-        height: 48px;
+    .item__div-text {
+      display: flex;
+      flex-direction: column;
 
-        display: inline-block;
-        vertical-align: middle;
+      font-size: 14px;
+      line-height: 24px;
+      color: rgba(31, 32, 65, 0.75);
 
-        -webkit-mask: url(./components/icon-text-list/location_city_black_48dp.svg) center no-repeat;
-        mask: url(./components/icon-text-list/location_city_black_48dp.svg) center no-repeat;
-        background: linear-gradient(to bottom, #bc9cff, #af9fff, #a3a1fe, #97a3fc, #8ba4f9);
+      .item__text-title {
+        font-weight: 700;
+      }
+
+      .item__text-text {
+        font-weight: 400;
       }
     }
-    &:nth-child(3) {
-      &:before {
-        content: "";
 
-        width: 48px;
-        height: 48px;
-
-        display: inline-block;
-        vertical-align: middle;
-
-        -webkit-mask: url(./components/icon-text-list/comfort.svg) center no-repeat;
-        mask: url(./components/icon-text-list/comfort.svg) center no-repeat;
-        background: linear-gradient(to bottom, #bc9cff, #af9fff, #a3a1fe, #97a3fc, #8ba4f9);
-      }
+    &:first-child {
+      padding: 0 0 20px 0;
     }
 
     &:last-child {
+      padding: 20px 0 0 0;  
       border-bottom: none;
     }
-  }
+  }  
 }

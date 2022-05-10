@@ -1,11 +1,13 @@
-mixin icon-text-list__item(title, text)
+mixin icon-text-list__item(icon, title, text)
   .icon-text-list__item
-    p.icon-item__text 
-      span= title
-      = text
+    .item__div-icon
+      span.item__icon.material-icons= icon
+    .item__div-text
+      span.item__text-title= title
+      span.item__text-text= text
 
 mixin icon-text-list
   div.icon-text-list
-    +icon-text-list__item("Комфорт", "Шумопоглощающие стены")
-    +icon-text-list__item("Удобство", "Окно в каждой из спален")
-    +icon-text-list__item("Уют", "Номер оснащён камином")
+    +icon-text-list__item('insert_emoticon', 'Комфорт', 'Шумопоглощающие стены')
+    +icon-text-list__item('location_city', 'Удобство', 'Окно в каждой из спален')
+    +icon-text-list__item('whatshot', 'Уют', 'Номер оснащён камином')
