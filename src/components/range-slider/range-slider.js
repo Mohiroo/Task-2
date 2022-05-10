@@ -1,14 +1,13 @@
-import "../../../node_modules/ion-rangeslider/js/ion.rangeSlider.min"
+import "../../../node_modules/ion-rangeslider/js/ion.rangeSlider.min";
+import $ from 'jquery';
 
-let $ = require( "jquery" );
-
-let slider = $(".range-slider__slider")
-let value = $(".range-slider__value")
+const slider = $(".range-slider__slider");
+const value = $(".range-slider__value");
 
 slider.ionRangeSlider({
     type: "double",
     min: 500,
-    max: 15500,
+    max: 15400,
     from: 5000,
     to: 10000,
     grid: false,
