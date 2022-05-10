@@ -1,16 +1,18 @@
 .subscription {
-  width: 267px;
+  width: 260px;
   height: 44px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-sizing: border-box;
   border-radius: 4px;
 
   .subscription__input-email {
-    width: 203px;
+    width: 210px;
     height: 100%;
-
-    vertical-align: middle;
 
     border: none;
     padding: 0;
@@ -31,18 +33,17 @@
   }
 
   .subscription__send-email {
-    width: 43px;
-    height: 42px;
+    width: 40px;
+    height: 24px;
 
-    vertical-align: middle;
-    
-    -webkit-mask: url(./components/subscription-text-field/arrow_forward_black_24dp.svg) center no-repeat;
-    mask: url(./components/subscription-text-field/arrow_forward_black_24dp.svg) center no-repeat;
-    background: linear-gradient(to bottom, #bc9cff, #af9fff, #a3a1fe, #97a3fc, #8ba4f9);
-
-    padding: 0;
     border: none;
+    padding: 0;
 
-    cursor: pointer;
+    font-size: 24px;
+    line-height: 24px;
+
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }

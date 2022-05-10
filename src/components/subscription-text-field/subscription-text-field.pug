@@ -1,4 +1,4 @@
-mixin subscription-input(addClass)
-  div(class="subscription " + addClass)
-    input.subscription__input-email(type='text', placeholder='Email', name='subscribe')
-    button.subscription__send-email
+mixin subscription
+  form.subscription
+    input.subscription__input-email(type='email', placeholder='Email', name='subscribe')
+    button.subscription__send-email.material-icons(type="button") arrow_forward
