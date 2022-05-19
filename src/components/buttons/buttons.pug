@@ -1,13 +1,20 @@
-mixin button(mode, text='', addClass='', typeButton='button')
-  if mode=='button-4'
-    button(class=mode + " " + addClass, type=typeButton)
-      span.v4-button__text= text
-      span.v4-button__arrow
-  else  
-    button(class=mode + " " + addClass, type=typeButton)= text
+mixin button(mode, text='')
+  case mode
+    when 'filled'
+      button(class='button button-' + mode, type='button')= text
+    when 'bordered'
+      button(class='button button-' + mode, type='button')= text
+    when 'text'
+      button(class='button button-' + mode, type='button')= text
+    when 'big'
+      button(class='button button-' + mode, type='button')
+        span.button-big__text= text
+        span.button-big__arrow.material-icons arrow_forward
+    default
+      button.button Неправильный мод
 
 
-//- +button("button-1", "Привет") - кнопка заполненная
-//- +button("button-2", "Войти") - кнопка с обводкой
-//- +button("button-4", "Привет") - большая кнопка
-//- +button("button-3", "Привет") - кнопка-текст
+//- +button("filled", "Привет") - кнопка заполненная
+//- +button("bordered", "Войти") - кнопка с обводкой
+//- +button("text", "Привет") - кнопка-текст
+//- +button("big", "Привет") - большая кнопка
