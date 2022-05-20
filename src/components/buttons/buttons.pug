@@ -3,7 +3,8 @@ mixin button(mode, text='')
     when 'filled'
       button(class='button button-' + mode, type='button')= text
     when 'bordered'
-      button(class='button button-' + mode, type='button')= text
+      .button-bordered
+        button(class='button button-' + mode + '__button', type='button')= text
     when 'text'
       button(class='button button-' + mode, type='button')= text
     when 'big'

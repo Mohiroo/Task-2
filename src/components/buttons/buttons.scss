@@ -1,5 +1,4 @@
 .button {
-  margin-top: 20px;
   display: inline-block;
 
   border: none;
@@ -15,7 +14,8 @@
 
 .button-filled {
   width: 99px;
-  height: 44px;
+  max-height: 44px;
+  height: 100%;
 
   background: linear-gradient(180deg, rgba(188, 156, 255, 1) 0%, rgba(139, 164, 249, 1) 100%);
   border-radius: 22px;
@@ -26,37 +26,32 @@
 }
 
 .button-bordered {
-  width: 95px;
-  height: 40px;
+  max-width: 99px;
+  max-height: 44px;
+  width: 100%;
+  height: 100%;
 
-  margin: 2px 2px 2px 2px;
+  display: flex;
+  align-items: stretch;
 
-  position: relative;
-  box-sizing: border-box;
-
+  background: linear-gradient(180deg, rgba(188, 156, 255, 1) 0%, rgba(139, 164, 249, 1) 100%);
   border-radius: 22px;
-  background-color: white;
 
-  color: #BC9CFF;
+  .button-bordered__button {
+    flex: 1;
+    margin: 2px;
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: -2px;
-    bottom: -2px;
-    left: -2px;
-    right: -2px;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    border-radius: 34px;
-    z-index: -1;
+    background: white;
+    border-radius: 22px;
+
+    color: #BC9CFF;
   }
 
   &:active {
-    &::after {
-      opacity: 0.5;
-    }
+    background: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
   }
 }
+
 
 .button-text {
   color: #BC9CFF;
