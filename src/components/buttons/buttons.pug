@@ -1,14 +1,14 @@
-mixin button(mode, text='')
+mixin button(mode, text='', addClass='')
   case mode
     when 'filled'
-      button(class='button button-' + mode, type='button')= text
+      button(class='button button-' + mode + ' ' + addClass, type='button')= text
     when 'bordered'
       .button-bordered
-        button(class='button button-' + mode + '__button', type='button')= text
+        button(class='button button-' + mode + '__button' + ' ' + addClass, type='button')= text
     when 'text'
-      button(class='button button-' + mode, type='button')= text
+      button(class='button button-' + mode + ' ' + addClass, type='button')= text
     when 'big'
-      button(class='button button-' + mode, type='button')
+      button(class='button button-' + mode + ' ' + addClass, type='button')
         span.button-big__text= text
         span.button-big__arrow.material-icons arrow_forward
     default
