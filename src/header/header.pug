@@ -2,21 +2,10 @@ include ./../components/buttons/buttons.pug
 
 mixin header-anonym
   header.header
-    a.header__logo(href="./pages/room-details/room-details.pug")
-      include ./header-logo.svg
-    nav.header__links-desktop
-      a.header__about(href="#") О нас
-      a.header__services(href="#") Услуги
-        span.material-icons expand_more
-      a.header__vacancy(href="#") Вакансии
-      a.header__news(href="#") Новости
-      a.header__agreements(href="#") Соглашения
-        span.material-icons expand_more
-      +button("button-2", "Войти", "header__login-button",)
-      +button("button-1", "Зарегистрироваться", "")
-    nav.header__links-mobile
-      button.header__hamburger.material-icons(type="button") menu
-      nav.header__menu
+    .header__wrapper
+      a.header__logo(href="./pages/room-details/room-details.pug")
+        include ./header-logo.svg
+      nav.header__links-desktop
         a.header__about(href="#") О нас
         a.header__services(href="#") Услуги
           span.material-icons expand_more
@@ -24,9 +13,21 @@ mixin header-anonym
         a.header__news(href="#") Новости
         a.header__agreements(href="#") Соглашения
           span.material-icons expand_more
-        .header__buttons
-          +button("button-2", "Войти", "header__login-button",)
-          +button("button-1", "Зарегистрироваться", "header__registration-button")
+        +button("bordered", "Войти")
+        +button("filled", "Зарегистрироваться")
+      nav.header__links-mobile
+        button.header__hamburger.material-icons(type="button") menu
+        .header__menu
+          a.header__about(href="#") О нас
+          a.header__services(href="#") Услуги
+            span.material-icons expand_more
+          a.header__vacancy(href="#") Вакансии
+          a.header__news(href="#") Новости
+          a.header__agreements(href="#") Соглашения
+            span.material-icons expand_more
+          .header__buttons
+            +button("bordered", "Войти")
+            +button("filled", "Зарегистрироваться")
 
 
 mixin header-user
