@@ -1,36 +1,43 @@
 @import "./../checkbox-buttons/checkbox-buttons.scss";
 
-.expandable-checkbox__menu {
-  .expandable-checkbox__toggle {
-    border: none;
-    background: none;
-    padding: 0;
+.expandable-checkbox {
+  .expandable-checkbox__menu {
+    margin-bottom: 14px;
 
-    position: relative;
-    margin-bottom: 18px;
+    .expandable-checkbox__text {
+      border: none;
+      background: none;
+      padding: 0;
 
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    color: #1F2041;
+      display: inline-block;
 
-    .expandable-checkbox__toggle-button {
-      width: 44px;
-      height: 44px;
-
-      position: absolute;
-      top: -5px;
-      right: -58px;
-
-      font-size: 24px;
-      color: rgba(31, 32, 65, 0.5); 
-        
-      transition: transform 0.5s;   
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: #1F2041;
     }
 
-    .expandable-checkbox__toggle-button-active {
-      transform: translateY(-20px) rotateX(180deg);
+    .expandable-checkbox__button {
+      border: none;
+      background: none;
+      padding: 0;
+
+      position: relative;
+      left: 20px;
+
+      vertical-align: middle;
+
+      font-size: 24px;
+      line-height: 24px;
+      color: rgba(31, 32, 65, 0.5);
+
+      transition: transform 0.5s;
+      transform: rotateX(0deg);
+    }
+
+    .expandable-checkbox__button-active {
+      transform: rotateX(180deg);
     }
   }
 

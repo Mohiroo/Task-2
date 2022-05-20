@@ -1,9 +1,10 @@
 include ./../checkbox-buttons/checkbox-buttons.pug
 
 mixin expandable-checkbox__menu
-  div.expandable-checkbox__menu
-    button.expandable-checkbox__toggle Дополнительные удобства
-      span.expandable-checkbox__toggle-button.material-icons expand_more
+  .expandable-checkbox
+    .expandable-checkbox__menu
+      p.expandable-checkbox__text Дополнительные удобства
+      button.expandable-checkbox__button.material-icons expand_more
     .expandable-checkbox__list
       +checkbox-button("option_1", "breakfast", "Завтрак")
       +checkbox-button("option_1", "table", "Письменный стол")
