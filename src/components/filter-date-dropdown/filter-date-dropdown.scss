@@ -1,4 +1,4 @@
-.filter-date-dropdown {
+.filter-date {
   width: 266px;
   height: 44px;
 
@@ -11,23 +11,31 @@
   justify-content: space-between;
   align-items: center;
 
-  .filter-date-dropdown__date {
+  .filter-date__text {
     margin-left: 14px;
 
     font-size: 14px;
     line-height: 18px;
     color: rgba(31, 32, 65, 0.75);
-
-    &:focus { outline: none; }
-    &:hover { cursor: default; }
   }
 
-  .filter-date-dropdown__button {
-    height: 44px;
-    width: 44px;
+  .filter-date__button {
+    width: 43px;
+    height: 100%;
 
-    -webkit-mask: url(./components/filter-date-dropdown/expand_more_black_24dp.svg) center no-repeat;
-    mask: url(./components/filter-date-dropdown/expand_more_black_24dp.svg) center no-repeat;
-    background: rgba(31, 32, 65, 0.5);
+    border: none;
+    background: none;
+    padding: 0;
+
+    font-size: 24px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.5);
+
+    transition: transform 0.5s;
+    transform: rotateX(0deg);
+  }
+
+  .filter-date__button-active {
+    transform: rotateX(180deg);
   }
 }
