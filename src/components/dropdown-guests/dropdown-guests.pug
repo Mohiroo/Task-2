@@ -4,7 +4,7 @@ mixin dropdown-guests
   .dropdown-guests
     div.dropdown-guests__selector
       span.dropdown-guests__text Сколько гостей
-      button.dropdown-guests__button(type="button")
+      button.dropdown-guests__button.material-icons(type="button") expand_more
     div.dropdown-guests__menu
       .dropdown-guests__option
         span взрослые
@@ -25,5 +25,5 @@ mixin dropdown-guests
           span.guests-menu__count.infants__count
           button.guests-menu__button.infants__plus(type="button") +
       .dropdown-guests__submenu
-        +button("button-3", "Очистить", "guests__button guests__button-clear guests__button-disable")
-        +button("button-3", "Применить", "guests__button guests__button-apply")
+        +button("text", "Очистить", "guests__button guests__button-clear guests__button-disable")
+        +button("text", "Применить", "guests__button guests__button-apply")

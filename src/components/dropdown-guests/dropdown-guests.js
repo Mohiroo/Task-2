@@ -182,7 +182,7 @@ function plusCount(category) {
       if (infants == 0) {
         infantsButtonMinus.removeClass("guests__minus-inactive");
       };
-  
+
       infants++;
       infantsCount.text(infants);
     };
