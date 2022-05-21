@@ -1,20 +1,19 @@
 include ./../../header/header.pug
 include ./../../components/filter-date-dropdown/filter-date-dropdown.pug
-include ../../cards/calendar/calendar.pug
 include ./../../components/dropdown-guests/dropdown-guests.pug
 include ./../../components/range-slider/range-slider.pug
 include ./../../components/checkbox-buttons/checkbox-buttons.pug
 include ./../../components/rich-checkbox-buttons/rich-checkbox-buttons.pug
 include ./../../components/dropdown-rooms/dropdown-rooms.pug
 include ./../../components/expandable-checkbox-list/expandable-checkbox-list.pug
-include ./../../cards/room-card/room-card.pug
 include ./../../components/pagination/pagination.pug
+include ./../../cards/room-card/room-card.pug
+include ./../../cards/calendar/calendar.pug
 include ./../../footer/footer.pug
 
 +header-anonym
-.search-room
+main.search-room
   aside.search-room__filters
-    button.filters__button фильтры
     .filters__list
       .filter__staying
         .filter__title даты пребывания в отеле
@@ -29,7 +28,10 @@ include ./../../footer/footer.pug
         .price__text Стоимость за сутки пребывания в номере
       .filter__rules
         .filter__title правила дома
-        +checkbox-buttons
+        .checkbox-buttons
+          +checkbox-button("option_1", "smoke", "Можно курить")
+          +checkbox-button("option_2", "pets", "Можно с питомцами")
+          +checkbox-button("option_3", "party", "Можно пригласить гостей (до 10 человек)")
       .filter__availability
         .filter__title доступность
         +rich-checkbox-buttons
@@ -38,6 +40,7 @@ include ./../../footer/footer.pug
         +dropdown-rooms
       .filter__add-amenities
         +expandable-checkbox__menu
+    .filters__button
   .search-room__content
     p.content__title Номера, которые мы для вас подобрали
     .content__rooms 
@@ -53,7 +56,6 @@ include ./../../footer/footer.pug
       +room-card("666", "no-lux", "5 000", "5", "25")
       +room-card("444", "no-lux", "5 000", "4", "15")
       +room-card("352", "no-lux", "5 000", "3", "55")
-      .pagination__info
-        +pagination()
-        p.pagination__text 1 – 12 из 100+ вариантов аренды
+    .pagination__info
+      +pagination
 +footer-desktop
