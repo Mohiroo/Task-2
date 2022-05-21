@@ -1,10 +1,14 @@
-mixin pagination(addClass)
-  div.pagination
-    a(href="#").pagination_button.pagination_button-active 1
-    a(href="#").pagination_button 2
-    a(href="#").pagination_button 3
-    span.pagination_button ...
-    a(href="#").pagination_button 15
-    a(href="#").pagination_button.next-button
+mixin pagination
+  .pagination
+    button.pagination__button.pagination__button-prev.material-icons(type='button') arrow_back
+    button.pagination__button(type='button')
+    button.pagination__button(type='button')
+    button.pagination__button(type='button')
+    button.pagination__button(type='button')
+    button.pagination__button(type='button')
+    button.pagination__button(type='button')
+    button.pagination__button(type='button')
+    button.pagination__button.pagination__button-next.material-icons(type='button') arrow_forward
+  p.pagination-subtext
 
 //- +pagination
