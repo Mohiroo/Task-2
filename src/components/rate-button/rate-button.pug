@@ -2,10 +2,10 @@ mixin rate-buttons(starsCount)
   - var n = 0;
   .rate-buttons
     while n < starsCount
-      span.rate-button-filled
+      span.rate-button-filled.material-icons star
       - n++
     while n < 5
-      span.rate-button
+      span.rate-button.material-icons star_border
       - n++
 
-//- +rate-button('2')
+//- +rate-buttons('2')
