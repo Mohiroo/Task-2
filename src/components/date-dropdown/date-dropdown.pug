@@ -1,6 +1,6 @@
 mixin date-dropdown(addClassBlock='', addClassText='', addClassButton='')
-  div(class="date-dropdown " + addClassBlock)
-    span(class="date-dropdown__date " + addClassText) ДД.ММ.ГГГГ
-    button(class="date-dropdown__button " + addClassButton, type="button")
+  .date-dropdown(class=addClassBlock)
+    span.date-dropdown__date(class=addClassText) ДД.ММ.ГГГГ
+    button.date-dropdown__button.material-icons(class=addClassButton, type="button") expand_more
 
 //- +date-dropdown("testClass", "testText", "TestButton")
