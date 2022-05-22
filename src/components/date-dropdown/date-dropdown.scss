@@ -6,16 +6,14 @@
   box-sizing: border-box;
   border-radius: 4px;
 
-  display: inline-flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 
   .date-dropdown__date {
     margin-left: 15px;
 
-    background: none;
-    border: none;
-    padding: 0;
+    flex: 1;
 
     font-size: 14px;
     line-height: 18px;
@@ -35,10 +33,5 @@
     color: rgba(31, 32, 65, 0.5);
 
     transition: transform 0.5s;
-    transform: rotateX(0deg);
-  }
-
-  .date-dropdown__button-active {
-    transform: rotateX(180deg);
   }
 }

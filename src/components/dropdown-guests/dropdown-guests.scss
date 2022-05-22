@@ -1,7 +1,6 @@
 @import "./../../components/buttons/buttons.scss";
 
 .dropdown-guests {
-  width: 266px;
   position: relative;
 
   .dropdown-guests__selector {
@@ -16,8 +15,9 @@
     justify-content: space-between;
   
     .dropdown-guests__text {
-      display: inline-block;
       margin: 0 0 0 14px;
+
+      flex: 1;
   
       font-size: 14px;
       line-height: 24px;
