@@ -1,11 +1,12 @@
 mixin like-button(likeCount='0', isActive='no')
   if isActive=="active"
     button.like-button.like-button_active(type="button")
-      span.like-button__like
-      .like-button__count
-        span= likeCount
+      span.like-button__like.material-icons favorite
+      span.like-button__count= likeCount
   else
     button.like-button(type="button")
-      span.like-button__like
-      .like-button__count
-        span= likeCount
+      span.like-button__like.material-icons favorite_border
+      span.like-button__count= likeCount
+
+//- +like-button('2', 'no')
+//- +like-button('12', 'active')
