@@ -4,20 +4,20 @@ include ./../../components/dropdown-guests/dropdown-guests.pug
 include ./../../components/buttons/buttons.pug
 
 mixin find-room(addClass='')
-  div(class="find-room " + addClass)
-    form.find-room__form(action="http://www.google.com")
+  .find-room(class=addClass)
+    .find-room__form
       p.find-room__title Найдём номера под ваши пожелания
       .find-room__date
         .find-room__arrival
           p.find-room__text прибытие
-          +date-dropdown("find-room__date-dropdown", "calendar__date-1", "find-room__dropdown-button")
+          +date-dropdown("find-room__date-dropdown", "calendar__date1-text", "calendar__button-create")
         .find-room__departure
           p.find-room__text выезд
-          +date-dropdown("find-room__date-dropdown", "calendar__date-2", "find-room__dropdown-button")
+          +date-dropdown("find-room__date-dropdown", "calendar__date2-text", "calendar__button-create")
       +calendar
       .find-room__guests
         p.find-room__text Гости
         +dropdown-guests
-      +button("button-4", "Подобрать номера", "", "submit")
+      +button("big", "Подобрать номера")
 
 //- +find-room()

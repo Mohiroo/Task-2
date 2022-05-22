@@ -1,7 +1,7 @@
 include ./../../components/buttons/buttons.pug
 
 mixin calendar
-  div.calendar
+  .calendar
     .calendar__month
       button.month__button.month__back(type="button")
       span.month__selected Ноябрь 2021
@@ -52,5 +52,5 @@ mixin calendar
         span.calendar__date
         span.calendar__date
     .calendar__buttons
-      +button("button-3", "Очистить", "calendar__button-clear")
-      +button("button-3", "Применить", "calendar__button-apply")
+      +button('text', 'Очистить', 'calendar__button-clear')
+      +button('text', 'Применить', 'calendar__button-apply')

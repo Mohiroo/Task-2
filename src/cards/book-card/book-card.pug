@@ -5,7 +5,7 @@ include ./../../components/buttons/buttons.pug
 
 mixin book-card(lux='')
   .book-card
-    form.book-card__form
+    .book-card__form
       .book-card__info
         span.info__number № 
           span.info__room 888
@@ -43,4 +43,4 @@ mixin book-card(lux='')
           span.total__info Итого
           span.details__total-space
           span.total__sum
-      +button("button-4", "Забронировать", "submit", "")
+      +button("big", "Забронировать")
