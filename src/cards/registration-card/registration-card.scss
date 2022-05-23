@@ -3,7 +3,7 @@
 @import "./../../components/toggle/toggle.scss";
 @import "./../../components/buttons/buttons.scss";
 
-.registration {
+.registration-card {
   max-width: 380px;
   height: 646px;
 
@@ -25,6 +25,7 @@
 
       color: #1F2041;
     }
+
     .registration__name {
       margin: 20px 0 7px 0;
 
@@ -32,10 +33,17 @@
         margin-bottom: 10px;
       }
     }
-    .registration__sex { margin-bottom: 23px; }
-    .registration__birthdate { margin-bottom: 20px; }
+
+    .registration__sex {
+      margin-bottom: 23px;
+    }
+
+    .registration__birthdate {
+      margin-bottom: 20px;
+    }
+
     .registration__login-details {
-      margin-bottom: 22px;
+      margin-bottom: 24px;
 
       .registration__password {
         margin: 10px 0 7px 0;
@@ -57,8 +65,12 @@
     width: 320px;
     height: 44px;
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     margin: 0 auto;
-    
+
     .login-account__text {
       display: inline-block;
 
