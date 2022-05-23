@@ -1,58 +1,67 @@
-const { css } = require("jquery");
-let $ = require( "jquery" );
+import $ from "jquery";
 
-let calendar = $(".calendar");
-let day = $(".calendar__date");
-let button_next = $(".month__next");
-let button_back = $(".month__back");
-let button_clear = $(".calendar__button-clear");
-let button_apply = $(".calendar__button-apply");
+const calendar = $(".calendar");
+const day = $(".calendar__date");
+const buttonNext = $(".month__next");
+const buttonBack = $(".month__back");
+const buttonClear = $(".calendar__button-clear");
+const buttonApply = $(".calendar__button-apply");
 
-let single_date = $(".calendar__single-date");
-let double_date1 = $(".calendar__date-1")
-let double_date2 = $(".calendar__date-2")
+const singleDateText = $(".calendar__single-date-text");
+const doubleDate1Text = $(".calendar__date1-text")
+const doubleDate2Text = $(".calendar__date2-text")
+const calendarCreateButton = $(".calendar__button-create")
 
 const today = new Date(); // Текущий день, месяц, год
 let selectedMonth = new Date(); // Изменяемый: при переключении переключении месяцов
 let daysOfMonth = []; // список дней месяца для вычисления "оставшися клеток для заполнения"
 
-let datesOfCalendar = []; // datesOfCalendar[0] == classIndex[0]
 const months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октрябрь", "Ноябрь", "Декабрь"];
 const shortMonths = ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"]
+let datesOfCalendar = []; // datesOfCalendar[0] == classIndex[0]
 
 let pickedDates = 0; // Клики по датам
 let firstPickDate = null; // месяц, год 1 выбранной даты
 let secondPickDate = null; // месяц, год 2 выбранной даты
 
-createCalendar()
+let translateValue = 0;
 
-button_next.on("click", function() { 
+calendarCreateButton.on("click", function () {
+  createCalendar()
+  calendar.toggle();
+  calendarCreateButton.css('transform', `rotateX(${translateValue = translateValue == 0 ? 180 : 0}deg)`);
+})
+
+buttonNext.on("click", function () {
   changeMonth("next");
   refreshCalendar();
 })
-button_back.on("click", function() { 
+
+buttonBack.on("click", function () {
   changeMonth("back");
   refreshCalendar();
 })
-day.on("click", function() { 
-  let calendarCell = $(this).index();
 
-  pickDates(calendarCell);
+day.on("click", function () {
+  pickDates($(this).index());
 })
 
-button_clear.on("click", function() { 
+buttonClear.on("click", function () {
   firstPickDate = null;
   secondPickDate = null;
   pickedDates = 0;
-  
+
   refreshCalendar();
 
-  double_date1.text("ДД.ММ.ГГГГ")
-  single_date.text("ДД.ММ - ДД.ММ")
-  double_date2.text("ДД.ММ.ГГГГ")
+  singleDateText.text("ДД.ММ - ДД.ММ")
+  doubleDate1Text.text("ДД.ММ.ГГГГ")
+  doubleDate2Text.text("ДД.ММ.ГГГГ")
 })
-button_apply.on("click", function() {
-  if (secondPickDate == null) {
+
+buttonApply.on("click", function () {
+  if (firstPickDate == null) {
+    return
+  } else if (secondPickDate == null) {
     secondPickDate = firstPickDate;
   }
 
@@ -66,14 +75,14 @@ button_apply.on("click", function() {
   let secondFirstDate__month = shortMonths[secondPickDate.getMonth()]
   let secondDate__year = secondPickDate.getFullYear()
 
-  single_date.text(`${firstDate__date} ${shortFirstDate__month} - ${secondDate__date} ${secondFirstDate__month}`)
-  double_date1.text(`${firstDate__date}.${firstDate__month}.${firstDate__year}`);
-  double_date2.text(`${secondDate__date}.${secondDate__month}.${secondDate__year}`);
+  singleDateText.text(`${firstDate__date} ${shortFirstDate__month} - ${secondDate__date} ${secondFirstDate__month}`);
+  doubleDate1Text.text(`${firstDate__date}.${firstDate__month}.${firstDate__year}`);
+  doubleDate2Text.text(`${secondDate__date}.${secondDate__month}.${secondDate__year}`);
 
-  window.days = (secondPickDate.getTime() - firstPickDate.getTime()) / (1000*60*60*24);
-  if (window.days == 0) { window.days = 1; }
+  translateValue = 0;
+  calendarCreateButton.css('transform', `rotateX(${translateValue}deg)`);
 
-  calendar.removeClass("calendar-active")
+  calendar.toggle();
 })
 
 function createCalendar() {
@@ -81,12 +90,17 @@ function createCalendar() {
   getDaysInMonth(selectedMonth.getMonth(), selectedMonth.getFullYear());
 
   let firstDayOfMonth = (new Date(selectedMonth.getFullYear(), selectedMonth.getMonth(), 1)).getDay(); // первый день в месяцу в формате недели
-  let lastDayOfMonth = daysOfMonth[daysOfMonth.length-1]
+  let lastDayOfMonth = daysOfMonth[daysOfMonth.length - 1]
   let dayIndex = 1; // Счетчик дней, на выходе равен 35
   let classIndex = 0; // Счетчик ячеек, на выходе равен 34
 
+  if (firstPickDate !== null && firstPickDate === secondPickDate) {
+    day.eq(firstPickCell).removeClass('calendar__date-start')
+    return
+  }
+
   for (let i = 1; i < firstDayOfMonth; i++) { // Дни предыдущего месяца
-    dayIndex = i-firstDayOfMonth+1; // +1 поскольку dayIndex = 0 - первое число месяца
+    dayIndex = i - firstDayOfMonth + 1; // +1 поскольку dayIndex = 0 - первое число месяца
 
     let date = new Date(selectedMonth.getFullYear(), selectedMonth.getMonth(), dayIndex);
     day.eq(classIndex).text(date.getDate())
@@ -98,7 +112,7 @@ function createCalendar() {
     dayIndex = dayIndex + 1;
     datesOfCalendar.push(date);
   }
-  for(let i = firstDayOfMonth; i < lastDayOfMonth+firstDayOfMonth; i++) { // Дни текущего месяца
+  for (let i = firstDayOfMonth; i < lastDayOfMonth + firstDayOfMonth; i++) { // Дни текущего месяца
     let date = new Date(selectedMonth.getFullYear(), selectedMonth.getMonth(), dayIndex);
     day.eq(classIndex).text(date.getDate())
 
@@ -164,14 +178,14 @@ let firstPickCell = null; // 1 выбранная дата
 let secondPickCell = null; // 2 выбранная дата
 
 function pickDates(calendarCell) { // Выбор дат
-  if (pickedDates == 0) {   // Выбор 1 даты
+  if (pickedDates == 0) { // Выбор 1 даты
     firstPickCell = calendarCell;
     firstPickDate = datesOfCalendar[calendarCell];
-    
+
     day.eq(firstPickCell).addClass("calendar__date-first-pick");
 
     pickedDates = 1;
-  } else if (pickedDates == 1) {    // Выбор 2 даты + диапазон
+  } else if (pickedDates == 1) { // Выбор 2 даты + диапазон
     secondPickDate = datesOfCalendar[calendarCell];
     day.removeClass("calendar__date-first-pick");
 
@@ -194,14 +208,14 @@ function pickDates(calendarCell) { // Выбор дат
 
     } else { // Сначала выбрана 2 дата, потом - 1
       secondPickDate = datesOfCalendar[calendarCell];
-      
+
       let temp = firstPickDate;
       firstPickDate = secondPickDate;
       secondPickDate = temp;
 
       secondPickCell = firstPickCell;
       firstPickCell = calendarCell;
-      
+
       for (let i = 0; i < datesOfCalendar.length; i++) {
         if (datesOfCalendar[i].getFullYear() == firstPickDate.getFullYear() && datesOfCalendar[i].getMonth() == firstPickDate.getMonth() && datesOfCalendar[i].getDate() == firstPickDate.getDate()) {
           day.eq(i).addClass("calendar__date-start")
@@ -217,7 +231,7 @@ function pickDates(calendarCell) { // Выбор дат
       }
     }
     pickedDates = 2;
-  } else if (pickedDates == 2) {    // 3 пик, новый выбор дат
+  } else if (pickedDates == 2) { // 3 пик, новый выбор дат
     firstPickDate = datesOfCalendar[calendarCell];
     secondPickDate = null;
 
@@ -231,14 +245,14 @@ function pickDates(calendarCell) { // Выбор дат
     pickedDates = 1;
     secondPickDate = null;
   }
-  
+
   if (firstPickCell == secondPickCell) {
     day.removeClass("calendar__date-start");
     day.removeClass("calendar__date-end");
   }
 }
 
-function displayPickedDates(date, calendarCell) {    // Соотношение даты
+function displayPickedDates(date, calendarCell) { // Соотношение даты
   if (firstPickDate != null && secondPickDate != null) { // 1 и 2 даты выбраны
     if (firstPickDate.getFullYear() == date.getFullYear() && firstPickDate.getMonth() == date.getMonth() && firstPickDate.getDate() == date.getDate()) { // Отметка 1 выбранной даты
       day.eq(calendarCell).addClass("calendar__date-start");
@@ -256,7 +270,7 @@ function displayPickedDates(date, calendarCell) {    // Соотношение �
 }
 
 function clearPickedDates() { // Очистка выбранных дат
-  day.removeClass("calendar__date-first-pick")
+  day.removeClass("calendar__date-first-pick");
   day.removeClass("calendar__date-start");
   day.removeClass("calendar__date-end");
   day.removeClass("calendar__date-range");

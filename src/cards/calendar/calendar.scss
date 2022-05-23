@@ -1,16 +1,12 @@
 @import "./../../components/buttons/buttons.scss";
 
 .calendar {
-  display: none;
-}
-
-.calendar-active {
   width: 320px;
 
-  display: inline-block;
+  display: none;
   position: absolute;
-  z-index: 110;
-  
+  z-index: 10;
+
   background: #FFFFFF;
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-sizing: border-box;
@@ -38,29 +34,35 @@
 
       padding: 0;
       border: none;
-          
-      -webkit-mask: url(./cards/calendar/arrow.svg) center no-repeat;
-      mask: url(./cards/calendar/arrow.svg) center no-repeat;
-      background: #BC9CFF;
+      background: none;
+
+      font-size: 24px;
+      line-height: 20px;
+      color: #BC9CFF;
     }
-    .month__next { transform: matrix(-1, 0, 0, 1, 0, 0); }
   }
-  
+
   .calendar__picker {
     width: 279.39px;
     margin: 0 auto 20px auto;
-    .calendar__picker-weekdays {      
+
+    .calendar__picker-weekdays {
+      height: 40px;
+
       display: flex;
       align-items: center;
-      
+
       font-weight: bold;
       font-size: 12px;
       line-height: 15px;
       text-align: center;
       color: #BC9CFF;
 
-      .calendar__weekday { flex-grow: 1; }
+      .calendar__weekday {
+        flex-grow: 1;
+      }
     }
+
     .calendar__picker-date {
       height: 200px;
 
@@ -77,8 +79,14 @@
         text-align: center;
       }
 
-      .prev-month { color: rgba(31, 32, 65, 0.25); }
-      .next-month { color: rgba(31, 32, 65, 0.25); }
+      .prev-month {
+        color: rgba(31, 32, 65, 0.25);
+      }
+
+      .next-month {
+        color: rgba(31, 32, 65, 0.25);
+      }
+
       .calendar__date-today {
         background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
         border-radius: 22px;
@@ -86,6 +94,7 @@
         font-weight: bold;
         color: #FFFFFF;
       }
+
       .calendar__date-first-pick {
         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
         border-radius: 22px;
@@ -93,6 +102,7 @@
         font-weight: bold;
         color: white;
       }
+
       .calendar__date-start {
         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
         border-radius: 22px;
@@ -117,10 +127,11 @@
           opacity: 0.25;
         }
       }
+
       .calendar__date-range {
         position: relative;
         z-index: 10;
-        
+
         &::before {
           content: "";
           width: 39.88px;
@@ -134,6 +145,7 @@
           opacity: 0.25;
         }
       }
+
       .calendar__date-end {
         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
         border-radius: 22px;
@@ -166,11 +178,12 @@
     height: 15px;
     margin: 0 auto 20px auto;
 
-    .calendar__button-clear { float: left; }
-    .calendar__button-apply { float: right; }
-  }
-}
+    .calendar__button-clear {
+      float: left;
+    }
 
-@media (max-width: 320px) {
-  .calendar-active { max-width: 318px; }
+    .calendar__button-apply {
+      float: right;
+    }
+  }
 }

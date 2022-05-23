@@ -3,9 +3,9 @@ include ./../../components/buttons/buttons.pug
 mixin calendar
   .calendar
     .calendar__month
-      button.month__button.month__back(type="button")
+      button.month__button.month__back.material-icons(type="button") arrow_back
       span.month__selected Ноябрь 2021
-      button.month__button.month__next(type="button")
+      button.month__button.month__next.material-icons(type="button") arrow_forward
     .calendar__picker
       .calendar__picker-weekdays
         span.calendar__weekday Пн
