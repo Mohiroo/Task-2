@@ -1,11 +1,14 @@
 include ./../../header/header.pug
-include ./../../cards/find-room/find-room.pug
 include ./../../footer/footer.pug
+include ./../../cards/find-room/find-room.pug
 
 +header-anonym
-main.landing__content
-  +find-room("landing__find-room")
-  p.landing__text.
-    Лучшие номера для вашей работы, <br>
-    отдыха и просто вдохновения
+main
+  .landing-page
+    .landing-page__card
+      +find-room
+    .landing-page__note
+      span.landing-page__text.
+        Лучшие номера для вашей работы, <br>
+        отдыха и просто вдохновения
 +footer-desktop
