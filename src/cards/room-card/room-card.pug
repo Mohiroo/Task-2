@@ -11,9 +11,9 @@ mixin room-card(number='ОШИБКА', lux='ОШИБКА', cost='ОШИБКА', 
           img.slider__item(src=require("./pages/search-room/" + number + ".png"))
         .slider__buttons
           .slider__button-left
-            button.slider__button.slider__button-prev(type="button")
+            button.slider__button.slider__button-prev.material-icons(type="button") expand_more
           .slider__button-right
-            button.slider__button.slider__button-next(type="button")
+            button.slider__button.slider__button-next.material-icons(type="button") expand_more
           .slider__indicators
             button.slider__indicator.slider__indicator-1.slider__indicator-active
             button.slider__indicator.slider__indicator-2

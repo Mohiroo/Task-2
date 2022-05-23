@@ -1,81 +1,90 @@
-let $ = require( "jquery" );
+import $ from "jquery";
 
-let room_card = $(".room-card")
-let wrapper = $(".slider__wrapper");
-let buttonNext = $(".slider__button-next");
-let buttonPrev = $(".slider__button-prev");
-let indicators = $(".slider__indicator");
-let indicator_1 = $(".slider__indicator-1");
-let indicator_2 = $(".slider__indicator-2");
-let indicator_3 = $(".slider__indicator-3");
-let indicator_4 = $(".slider__indicator-4");
+const roomCard = $(".room-card")
+const sliderWrapper = $(".slider__wrapper");
+const buttonNext = $(".slider__button-next");
+const buttonPrev = $(".slider__button-prev");
+const indicators = $(".slider__indicator");
+const indicator1 = $(".slider__indicator-1");
+const indicator2 = $(".slider__indicator-2");
+const indicator3 = $(".slider__indicator-3");
+const indicator4 = $(".slider__indicator-4");
 
-wrapper.css("transform", "matrix(1, 0, 0, 1, 0, 0)")
+sliderWrapper.css("transform", "matrix(1, 0, 0, 1, 0, 0)")
 
 let cardIndex
 let translateValue
 
-room_card.on("click", function() { 
+roomCard.on("click", function () {
   cardIndex = $(this).index()
-  let localTranslateValue = parseInt(room_card.eq(cardIndex).find(wrapper).css("transform").match(/(-?[0-9\.]+)/g)[4])
+  let localTranslateValue = parseInt(roomCard.eq(cardIndex).find(sliderWrapper).css("transform").match(/(-?[0-9\.]+)/g)[4])
 
   if (localTranslateValue % 270 === 0) {
     translateValue = localTranslateValue
   }
 })
-buttonNext.on('click', function() { move("next") });
-buttonPrev.on('click', function() { move("back") });
 
-indicator_1.on('click', function() { moveToIndicator(1) });
-indicator_2.on('click', function() { moveToIndicator(2) });
-indicator_3.on('click', function() { moveToIndicator(3) });
-indicator_4.on('click', function() { moveToIndicator(4) });
+buttonNext.on('click', {direction: "next"}, move);
+buttonPrev.on('click', {direction: "back"}, move);
 
-function move(direction) {
-  setTimeout(() => { 
+indicator1.on('click', {indicator: 1}, moveToIndicator);
+indicator2.on('click', {indicator: 2}, moveToIndicator);
+indicator3.on('click', {indicator: 3}, moveToIndicator);
+indicator4.on('click', {indicator: 4}, moveToIndicator);
+
+function move(event) {
+  setTimeout(() => {
     // установка шага в зависимости от направления
-    let step = direction === 'next' ? -270 : 270;
+    let step = event.data.direction === 'next' ? -270 : 270;
 
     // рассчет расстояния
-    if (translateValue == 0 && direction == "back") {
+    if (translateValue == 0 && event.data.direction == "back") {
       translateValue = -810;
-    } else if (translateValue == -810 && direction == "next") {
+    } else if (translateValue == -810 && event.data.direction == "next") {
       translateValue = 0;
     } else {
       translateValue = translateValue + step;
     }
-    
+
     // передвижение
-    room_card.eq(cardIndex).find(wrapper).css("transform", "matrix(1, 0, 0, 1, " + translateValue + ", 0)")
+    roomCard.eq(cardIndex).find(sliderWrapper).css("transform", "matrix(1, 0, 0, 1, " + translateValue + ", 0)")
 
     changeIndicator();
   }, 100);
 }
 
 // Передвижение по нажатию на интикатор
-function moveToIndicator(indicator) { 
-  setTimeout(() => { 
-  if (indicator == 1) { translateValue = 0}
-  if (indicator == 2) { translateValue = -270}
-  if (indicator == 3) { translateValue = -540}
-  if (indicator == 4) { translateValue = -810}
+function moveToIndicator(event) {
+  setTimeout(() => {
+    if (event.data.indicator == 1) {
+      translateValue = 0
+    }
+    if (event.data.indicator == 2) {
+      translateValue = -270
+    }
+    if (event.data.indicator == 3) {
+      translateValue = -540
+    }
+    if (event.data.indicator == 4) {
+      translateValue = -810
+    }
 
-  room_card.eq(cardIndex).find(wrapper).css("transform", "matrix(1, 0, 0, 1, " + translateValue + ", 0)")
-  changeIndicator()
+    roomCard.eq(cardIndex).find(sliderWrapper).css("transform", "matrix(1, 0, 0, 1, " + translateValue + ", 0)")
+    changeIndicator()
   }, 100);
 }
 
 // Изменение индикатора
 function changeIndicator() {
-  room_card.eq(cardIndex).find(indicators).removeClass("slider__indicator-active");
+  roomCard.eq(cardIndex).find(indicators).removeClass("slider__indicator-active");
 
   if (translateValue == 0) {
-    room_card.eq(cardIndex).find(indicator_1).addClass("slider__indicator-active")
+    roomCard.eq(cardIndex).find(indicator1).addClass("slider__indicator-active")
   } else if (translateValue == -270) {
-    room_card.eq(cardIndex).find(indicator_2).addClass("slider__indicator-active")
+    roomCard.eq(cardIndex).find(indicator2).addClass("slider__indicator-active")
   } else if (translateValue == -540) {
-    room_card.eq(cardIndex).find(indicator_3).addClass("slider__indicator-active")
+    roomCard.eq(cardIndex).find(indicator3).addClass("slider__indicator-active")
   } else if (translateValue == -810) {
-    room_card.eq(cardIndex).find(indicator_4).addClass("slider__indicator-active")
+    roomCard.eq(cardIndex).find(indicator4).addClass("slider__indicator-active")
   }
 }
