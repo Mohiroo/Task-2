@@ -1,6 +1,5 @@
 import "../../cards/calendar/calendar";
 import "../../components/dropdown-guests/dropdown-guests";
-import "../../components/date-dropdown/date-dropdown";
 
 import $ from 'jquery';
 
