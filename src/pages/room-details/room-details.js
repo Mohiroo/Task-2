@@ -1,7 +1,6 @@
 import '../../header/header';
 import '../../cards/book-card/book-card';
 import '../../components/feedback/feedback';
-import '../../components/like-button/like-button';
 
 import * as echarts from 'echarts';
 import $ from 'jquery';
