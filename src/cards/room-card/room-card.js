@@ -1,4 +1,5 @@
 import '../../components/rate-button/rate-button.scss';
+import './room-card.scss';
 import $ from "jquery";
 
 const roomCard = $(".room-card")

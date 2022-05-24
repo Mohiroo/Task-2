@@ -23,39 +23,42 @@ let priceForDay = +($(".info__text-bold").text().replace("₽", "").replace(" ",
 let servicesTax = 0;
 let addServicesTax = 300;
 let discountOfServices = 2179;
-let total = 0;
+let days = +getItem('countDays');
+let total = priceForDay * days + servicesTax + addServicesTax - discountOfServices;
 
 // Функция - Существительное относительно количества дней
-const getNoun = (days) => days == 1 ? 'сутки' : 'суток';
+const getNoun = (daysCount) => daysCount == 1 ? 'сутки' : 'суток';
+
+// Создание меню
+setInfo();
 
 // Функция - Создание меню по умолчанию
-function setStartInfo() {
-  daysInfo.text(`${priceForDay.toLocaleString()}₽ х 0 ${getNoun(window.days)}`);
-  daysSum.text(`0₽`);
+function setInfo() {
+  daysInfo.text(`${priceForDay.toLocaleString()}₽ х ${getItem('countDays')} ${getNoun(+getItem('countDays'))}`);
+  daysSum.text(`${(priceForDay * days).toLocaleString()}₽`);
 
   servicesInfo.text(`Сбор за услуги: скидка ${discountOfServices.toLocaleString()}₽`);
   servicesSum.text(`${servicesTax.toLocaleString()}₽`);
 
   addServicesSum.text(`${addServicesTax.toLocaleString()}₽`);
 
-  totalSum.text(`${total}₽`);
+  totalSum.text(`${total.toLocaleString()}₽`);
 };
 
 // Функция - Подтверждение введенных данных и установка положения по умолчаю кнопки меню
 calendarButtonApply.on("click", function () {
   dateDropdownButton.toggleClass(dateDropdownButtonActive);
 
-  setTimeout(() => {
-    if (days > 0) {
-      let sumDays = days * priceForDay;
-      total = sumDays + servicesTax + addServicesTax - discountOfServices;
+  days = +getItem('countDays');
+  total = priceForDay * days + servicesTax + addServicesTax - discountOfServices
 
-      daysInfo.text(`${priceForDay.toLocaleString()}₽ х ${window.days} ${getNoun(window.days)}`);
-      daysSum.text(`${sumDays.toLocaleString()}₽`);
-      totalSum.text(`${total.toLocaleString()}₽`);
-    };
-  }, 100);
+  setInfo();
 });
 
-// Создание меню
-setStartInfo();
+function getItem(key) {
+  try {
+    return window.sessionStorage.getItem(key);
+  } catch (e) {
+    console.log(e);
+  }
+};

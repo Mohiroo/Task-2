@@ -30,6 +30,8 @@ let adult = 0;
 let children = 0;
 let infants = 0;
 
+setVars();
+
 // Создание меню
 buttonOpen.on('click', function () {
   createMenu();
@@ -62,6 +64,10 @@ buttonApply.on('click', function () {
   guestsSelector.toggleClass(" dropdown-guests__selector-active");
   guestsMenu.toggleClass(" dropdown-guests__menu-active");
 
+  setItem('adult', `${adult}`);
+  setItem('children', `${children}`);
+  setItem('infants', `${infants}`);
+
   getText();
 });
 
@@ -85,6 +91,17 @@ guestsButtons.on('click', function () {
 dropdownGuestsButton.on("click", function () {
   dropdownGuestsButton.toggleClass(dropdownGuestsButtonActive);
 });
+
+// Функция - отрисовка меню
+function setVars() {
+  if (window.location.href !== 'http://localhost:4200/index.html') {
+    adult = +getItem('adult');
+    children = +getItem('children');
+    infants = +getItem('infants');
+
+    getText();
+  }
+}
 
 // Функция - создание меню
 function createMenu() {
@@ -242,4 +259,20 @@ function getNoun(isGuest, count) {
       return "младенцев";
     };
   };
+};
+
+function setItem(key, value) {
+  try {
+    return window.sessionStorage.setItem(key, value);
+  } catch (e) {
+    console.warn(e);
+  }
+};
+
+function getItem(key) {
+  try {
+    return window.sessionStorage.getItem(key);
+  } catch (e) {
+    console.log(e);
+  }
 };

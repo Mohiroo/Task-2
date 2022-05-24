@@ -7,7 +7,7 @@ import "../../components/range-slider/range-slider.js";
 import "../../components/expandable-checkbox-list/expandable-checkbox-list";
 import "../../components/pagination/pagination";
 import "../../cards/calendar/calendar";
-import "../../cards/room-card/room-card";
+import '../../cards/room-card/room-card';
 import "../../footer/footer";
 import "../../header/header";
 import '../template-page/template-page';
@@ -31,4 +31,4 @@ window.addEventListener('resize', function () {
 
 filtersButton.on("click", function () {
   filters.css('transform', `translateX(${translateValue = translateValue === 0 ? -294 : 0}px)`);
-})
+});

@@ -4,3 +4,22 @@ import '../../footer/footer';
 import '../template-page/template-page'
 import './landing.pug';
 import './landing.scss';
+import $ from "jquery";
+
+window.sessionStorage.clear()
+
+const buttonNext = $('.button-big')
+
+buttonNext.on("click", function () {
+  if ((+getItem('adult')) + (+getItem('children')) + (+getItem('infants')) !== 0 && (+getItem('countDays')) !== 0) {
+    window.location.href = 'search-room.html';
+  }
+});
+
+function getItem(key) {
+  try {
+    return window.sessionStorage.getItem(key);
+  } catch (e) {
+    console.log(e);
+  }
+};
