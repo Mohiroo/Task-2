@@ -1,16 +1,44 @@
 @import "~normalize.css/normalize.css";
 
-// Временное решение
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Material+Icons+Outlined");
-@import "./pages/room-details/room-details.scss";
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/MontserratRegular.eot');
+  src: url('./fonts/MontserratRegular.eot') format('embedded-opentype'),
+       url('./fonts/MontserratRegular.woff2') format('woff2'),
+       url('./fonts/MontserratRegular.woff') format('woff'),
+       url('./fonts/MontserratRegular.ttf') format('truetype'),
+       url('./fonts/MontserratRegular.svg#MontserratRegular') format('svg');
+}
 
+@font-face {
+  font-family: 'MontserratBold';
+  src: url('./fonts/MontserratBold.eot');
+  src: url('./fonts/MontserratBold.eot') format('embedded-opentype'),
+       url('./fonts/MontserratBold.woff2') format('woff2'),
+       url('./fonts/MontserratBold.woff') format('woff'),
+       url('./fonts/MontserratBold.ttf') format('truetype'),
+       url('./fonts/MontserratBold.svg#MontserratBold') format('svg');
+}
+
+@font-face {
+  font-family: 'Material-icons';
+  src: url('./fonts/MaterialIconsRegular.eot');
+  src: url('./fonts/MaterialIconsRegular.eot') format('embedded-opentype'),
+       url('./fonts/MaterialIconsRegular.woff2') format('woff2'),
+       url('./fonts/MaterialIconsRegular.woff') format('woff'),
+       url('./fonts/MaterialIconsRegular.ttf') format('truetype'),
+       url('./fonts/MaterialIconsRegular.svg#MaterialIconsRegular') format('svg');
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+}
 
 body {
   min-width: 320px;
   max-width: 1920px;
 
-  font-family: Montserrat;
+  font-family: 'Montserrat';
 
   &::-webkit-scrollbar {
     display: none;
@@ -19,4 +47,8 @@ body {
 
 p {
   margin: 0;
+}
+
+.material-icons {
+  font-family: 'Material-icons';
 }
