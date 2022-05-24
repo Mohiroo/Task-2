@@ -1,29 +1,27 @@
-@import "./../../components/buttons/buttons.scss";
-
 .dropdown-guests {
   position: relative;
 
   .dropdown-guests__selector {
     height: 44px;
-  
+
     box-sizing: border-box;
     border-radius: 4px;
     border: 1px solid rgba(31, 32, 65, 0.25);
-    
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-  
+
     .dropdown-guests__text {
       margin: 0 0 0 14px;
 
       flex: 1;
-  
+
       font-size: 14px;
       line-height: 24px;
       color: rgba(31, 32, 65, 0.75);
     }
-  
+
     .dropdown-guests__button {
       width: 43px;
       height: 100%;
@@ -44,83 +42,85 @@
       transform: rotateX(180deg);
     }
   }
-  
-  .dropdown-guests__selector-active { 
+
+  .dropdown-guests__selector-active {
     border-radius: 4px 4px 0 0;
-    border-color: rgba(31, 32, 65, 0.5); 
+    border-color: rgba(31, 32, 65, 0.5);
   }
 
   .dropdown-guests__menu {
-    display: none; 
+    display: none;
   }
-  
+
   .dropdown-guests__menu-active {
     width: 100%;
-    
+
     display: inline-block;
     position: absolute;
     z-index: 100;
-  
+
     background: white;
     border-radius: 0 0 4px 4px;
     border: 1px solid rgba(31, 32, 65, 0.5);
     border-top: none;
     box-sizing: border-box;
-  
+
     .dropdown-guests__option {
       display: flex;
       justify-content: space-between;
       align-items: center;
 
       margin: 7px 15px 0 14px;
-  
+
       font-size: 12px;
       line-height: 15px;
-      font-weight: bold;
+      font-family: 'MontserratBold';
       text-transform: uppercase;
-  
+
       .dropdown-guests__menu-buttons {
         width: 90px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-  
+
         .guests-menu__button {
           background: none;
           border: none;
           padding: 0;
-  
+
           width: 30px;
           height: 30px;
-  
+
           border: 1px solid rgba(31, 32, 65, 0.25);
           box-sizing: border-box;
           border-radius: 22px;
-  
+
           font-size: 18px;
           line-height: 22px;
-  
+
           color: rgba(31, 32, 65, 0.5);
         }
-  
-        .guests__minus-inactive { opacity: 0.5; }
+
+        .guests__minus-inactive {
+          opacity: 0.5;
+        }
       }
     }
-  
+
     .dropdown-guests__submenu {
       margin: 20px 7px 13px 14px;
-  
+
       max-width: 299px;
       height: 15px;
-  
+
       .guests__button-apply {
         float: right;
       }
-  
+
       .guests__button-clear {
         float: left;
       }
-  
+
       .guests__button-disable {
         display: none;
       }

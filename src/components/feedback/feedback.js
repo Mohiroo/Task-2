@@ -1,1 +1,2 @@
-import "../like-button/like-button"
+import './feedback.scss';
+import "../like-button/like-button";

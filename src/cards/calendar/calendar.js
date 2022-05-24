@@ -1,3 +1,5 @@
+import "../../components/buttons/buttons";
+import './calendar.scss';
 import $ from "jquery";
 
 const calendar = $(".calendar");

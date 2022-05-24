@@ -1,6 +1,12 @@
-import '../../header/header';
-import '../../cards/book-card/book-card';
 import '../../components/feedback/feedback';
+import '../../components/bullet-list/bullet-list';
+import '../../components/icon-text-list/icon-text-list';
+import '../../cards/book-card/book-card';
+import '../../footer/footer';
+import '../../header/header';
+import '../template-page/template-page';
+import './room-details.pug';
+import './room-details.scss';
 
 import * as echarts from 'echarts';
 import $ from 'jquery';

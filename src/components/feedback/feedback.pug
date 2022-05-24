@@ -3,7 +3,7 @@ include ./../like-button/like-button.pug
 mixin feedback(name='', date='', likes='', active='', avatar='', text='')
   .feedback
     .feedback__title
-      img.feedback__avatar(src=require('./pages/room-details/' + avatar + '.png'))
+      img.feedback__avatar(src=require('./' + avatar + '.png'))
       .feedback__user
         p.feedback__user-name= name
         p.feedback__date= date

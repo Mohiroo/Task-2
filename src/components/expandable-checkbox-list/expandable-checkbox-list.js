@@ -1,3 +1,5 @@
+import '../buttons/buttons';
+import './expandable-checkbox-list.scss';
 import $ from 'jquery';
 
 const expandableToggle = $(".expandable-checkbox__menu");

@@ -1,9 +1,5 @@
-@import "./../../header/header.scss";
-@import "./../../cards/find-room/find-room.scss";
-@import "./../../footer/footer.scss";
-
 main {
-  background: url("./pages/landing/landing_background.png") no-repeat center / cover;
+  background: url(./landing_background.png) no-repeat center 100% / cover;
 
   .landing-page {
     height: 830px;
@@ -66,5 +62,11 @@ footer .footer-desktop .footer__main {
       align-items: flex-end;
       text-align: right;
     }
+  }
+}
+
+@media (min-width: 1200px) {
+  .landing-page {
+    padding: 70px 0 18px;
   }
 }

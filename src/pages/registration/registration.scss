@@ -1,7 +1,3 @@
-@import "./../../header/header.scss";
-@import "./../../cards/registration-card/registration-card.scss";
-@import "./../../footer/footer.scss";
-
 .registration__content {
   height: 683px;
 
@@ -9,10 +5,10 @@
   justify-content: center;
   align-items: center;
 
-  background: url("./pages/registration/registration_background.png") no-repeat center 100% / cover;
+  background: url(./registration_background.png) no-repeat center 100% / cover;
 
   transition: all 1s;
-  
+
   .registration-card {
     flex: 1;
 

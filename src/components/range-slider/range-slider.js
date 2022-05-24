@@ -1,4 +1,6 @@
 import "../../../node_modules/ion-rangeslider/js/ion.rangeSlider.min";
+import '../../../node_modules/ion-rangeslider/css/ion.rangeSlider.css';
+import './range-slider.scss';
 import $ from 'jquery';
 
 const slider = $(".range-slider__slider");

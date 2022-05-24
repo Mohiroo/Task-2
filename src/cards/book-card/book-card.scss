@@ -1,8 +1,3 @@
-@import "./../calendar/calendar.scss";
-@import "./../../components/date-dropdown/date-dropdown.scss";
-@import "./../../components/dropdown-guests/dropdown-guests.scss";
-@import "./../../components/buttons/buttons.scss";
-
 .book-card {
   max-width: 380px;
 
@@ -19,7 +14,7 @@
 
     display: grid;
     grid-gap: 20px;
-    
+
     .book-card__info {
       height: 30px;
 
@@ -28,7 +23,7 @@
       align-items: center;
 
       .info__number {
-        font-weight: bold;
+        font-family: 'MontserratBold';
         font-size: 14px;
         line-height: 17px;
         color: #1F2041;
@@ -44,7 +39,7 @@
 
           margin-left: 1px;
 
-          font-weight: bold;
+          font-family: 'MontserratBold';
           font-size: 12px;
           line-height: 15px;
           text-transform: uppercase;
@@ -62,7 +57,7 @@
 
         .info__text-bold {
           font-size: 14px;
-          font-weight: bold;
+          font-family: 'MontserratBold';
         }
       }
     }
@@ -108,7 +103,7 @@
             border-radius: 50%;
             box-sizing: border-box;
 
-            font-weight: bold;
+            font-family: 'MontserratBold';
             font-size: 12px;
             line-height: 14px;
             text-align: center;
@@ -130,7 +125,7 @@
         justify-content: space-between;
         align-items: center;
 
-        font-weight: bold;
+        font-family: 'MontserratBold';
         font-size: 19px;
         line-height: 24px;
         color: #1F2041;
@@ -148,7 +143,7 @@
     .book-card__text {
       margin-bottom: 3px;
 
-      font-weight: bold;
+      font-family: 'MontserratBold';
       font-size: 12px;
       line-height: 20px;
       text-transform: uppercase;

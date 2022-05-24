@@ -1,3 +1,4 @@
+import './pagination.scss';
 import $ from "jquery";
 
 const paginationButton = $('.pagination__button');

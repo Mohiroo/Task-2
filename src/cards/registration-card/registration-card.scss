@@ -1,8 +1,3 @@
-@import "./../../components/text-field/text-field.scss";
-@import "./../../components/radio-buttons/radio-buttons.scss";
-@import "./../../components/toggle/toggle.scss";
-@import "./../../components/buttons/buttons.scss";
-
 .registration-card {
   max-width: 380px;
   height: 646px;
@@ -19,7 +14,7 @@
     margin: 40px auto 30px;
 
     .registration__title {
-      font-weight: bold;
+      font-family: 'MontserratBold';
       font-size: 24px;
       line-height: 29px;
 
@@ -53,7 +48,7 @@
     .registration__text {
       margin-bottom: 5px;
 
-      font-weight: bold;
+      font-family: 'MontserratBold';
       font-size: 12px;
       line-height: 15px;
       text-transform: uppercase;

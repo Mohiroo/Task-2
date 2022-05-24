@@ -1,5 +1,3 @@
-@import "./../checkbox-buttons/checkbox-buttons.scss";
-
 .expandable-checkbox {
   .expandable-checkbox__menu {
     margin-bottom: 14px;
@@ -11,7 +9,7 @@
 
       display: inline-block;
 
-      font-weight: bold;
+      font-family: 'MontserratBold';
       font-size: 12px;
       line-height: 15px;
       text-transform: uppercase;

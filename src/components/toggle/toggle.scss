@@ -5,7 +5,7 @@
   color: rgba(31, 32, 65, 0.75);
 }
 
- .toggle__button {
+.toggle__button {
   appearance: none;
 
   height: 20px;
@@ -17,9 +17,9 @@
   position: relative;
   vertical-align: middle;
   margin-right: 10px;
-  
+
   transition: all .2s ease;
-  
+
   &:after {
     content: '';
     position: absolute;
@@ -31,19 +31,19 @@
     border-radius: 50%;
     background: rgba(31, 32, 65, 0.25);
 
-    transition: all .2s cubic-bezier(.5,.1,.75,1.35);
+    transition: all .2s cubic-bezier(.5, .1, .75, 1.35);
   }
-    
+
   &:checked {
     border-color: #BC9CFF;
-    
+
     &:after {
       background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
       transform: translatex(20px);
     }
   }
 
-  &:focus { outline: none; }
+  &:focus {
+    outline: none;
+  }
 }
-  
-    

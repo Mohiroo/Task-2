@@ -1,7 +1,7 @@
-@import "../checkbox-buttons/checkbox-buttons.scss";
-
 .rich-checkbox-button {
   display: block;
+
+  margin-bottom: 10px;
 
   .rich-checkbox-button__info {
     display: inline-block;
@@ -17,14 +17,13 @@
       display: block;
       margin-bottom: 5px;
 
-      font-weight: bold;
+      font-family: 'MontserratBold';
       font-size: 14px;
       line-height: 18px;
       color: rgba(31, 32, 65, 0.75);
     }
   }
 
-  margin-bottom: 10px;
   &:last-child {
     margin-bottom: 0;
   }

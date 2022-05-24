@@ -5,10 +5,10 @@ mixin room-card(number='ОШИБКА', lux='ОШИБКА', cost='ОШИБКА', 
     .room-card__images
       .slider
         .slider__wrapper
-          img.slider__item(src=require("./pages/search-room/" + number + ".png"))
-          img.slider__item(src=require("./pages/search-room/" + number + ".png"))
-          img.slider__item(src=require("./pages/search-room/" + number + ".png"))
-          img.slider__item(src=require("./pages/search-room/" + number + ".png"))
+          img.slider__item(src=require("./" + number + ".png"))
+          img.slider__item(src=require("./" + number + ".png"))
+          img.slider__item(src=require("./" + number + ".png"))
+          img.slider__item(src=require("./" + number + ".png"))
         .slider__buttons
           .slider__button-left
             button.slider__button.slider__button-prev.material-icons(type="button") expand_more

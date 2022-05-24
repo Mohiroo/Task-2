@@ -1,14 +1,9 @@
-@import "./../calendar/calendar.scss";
-@import "./../../components/date-dropdown/date-dropdown.scss";
-@import "./../../components/dropdown-guests/dropdown-guests.scss";
-@import "./../../components/buttons/buttons.scss";
-
 .find-room {
   max-width: 380px;
   height: 374px;
-  
+
   padding: 40px 0 30px;
-  
+
   background: white;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
@@ -24,22 +19,22 @@
       display: flex;
       justify-content: space-between;
     }
-  
+
     .button-big {
       margin-top: 10px;
     }
-  
+
     .find-room__title {
-      font-weight: bold;
+      font-family: 'MontserratBold';
       font-size: 24px;
       line-height: 29px;
       color: #1F2041;
     }
-  
+
     .find-room__text {
       margin-bottom: 5px;
-  
-      font-weight: bold;
+
+      font-family: 'MontserratBold';
       font-size: 12px;
       line-height: 16px;
       text-transform: uppercase;

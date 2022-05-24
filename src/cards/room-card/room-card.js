@@ -1,3 +1,4 @@
+import '../../components/rate-button/rate-button.scss';
 import $ from "jquery";
 
 const roomCard = $(".room-card")
@@ -10,10 +11,10 @@ const indicator2 = $(".slider__indicator-2");
 const indicator3 = $(".slider__indicator-3");
 const indicator4 = $(".slider__indicator-4");
 
-sliderWrapper.css("transform", "matrix(1, 0, 0, 1, 0, 0)")
-
 let cardIndex
 let translateValue
+
+sliderWrapper.css("transform", "matrix(1, 0, 0, 1, 0, 0)")
 
 roomCard.on("click", function () {
   cardIndex = $(this).index()
@@ -24,13 +25,25 @@ roomCard.on("click", function () {
   }
 })
 
-buttonNext.on('click', {direction: "next"}, move);
-buttonPrev.on('click', {direction: "back"}, move);
+buttonNext.on('click', {
+  direction: "next"
+}, move);
+buttonPrev.on('click', {
+  direction: "back"
+}, move);
 
-indicator1.on('click', {indicator: 1}, moveToIndicator);
-indicator2.on('click', {indicator: 2}, moveToIndicator);
-indicator3.on('click', {indicator: 3}, moveToIndicator);
-indicator4.on('click', {indicator: 4}, moveToIndicator);
+indicator1.on('click', {
+  indicator: 1
+}, moveToIndicator);
+indicator2.on('click', {
+  indicator: 2
+}, moveToIndicator);
+indicator3.on('click', {
+  indicator: 3
+}, moveToIndicator);
+indicator4.on('click', {
+  indicator: 4
+}, moveToIndicator);
 
 function move(event) {
   setTimeout(() => {

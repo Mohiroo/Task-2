@@ -1,3 +1,5 @@
+import '../buttons/buttons';
+import './dropdown-guests.scss';
 import $ from 'jquery';
 
 const guestsButtons = $(".guests-menu__button");

@@ -1,8 +1,6 @@
-@import "./../components/buttons/buttons.scss";
-
 .header {
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  
+
   .header__wrapper {
     height: 70px;
 
@@ -17,120 +15,122 @@
     .header__links-desktop {
       width: 769px;
       height: 34px;
-      
+
       a {
         font-size: 14px;
         line-height: 17px;
         color: rgba(31, 32, 65, 0.5);
         text-decoration: none;
       }
-  
+
       //user
       .header__user {
         &::before {
           content: "";
           width: 1px;
           height: 30px;
-  
+
           display: inline-block;
           vertical-align: middle;
-  
+
           margin-right: 20px;
-  
+
           background: rgba(31, 32, 65, 0.1);
         }
       }
     }
-  
+
     .header__links-mobile {
       position: relative;
-  
+
       .header__hamburger {
         width: 48px;
         height: 48px;
-  
+
         vertical-align: middle;
-  
+
         font-size: 24px;
         line-height: 20px;
         text-decoration: none;
+        padding: 0;
         border: none;
-  
+
         background: #BC9CFF;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
-  
+
       .header__menu {
         width: 320px;
-  
+
         display: none;
-        
+
         position: absolute;
         right: -15px;
         padding: 20px 0;
-  
+
         background: #FFFFFF;
         border: 1px solid rgba(0, 0, 0, 0.12);
         box-sizing: border-box;
         box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
         border-radius: 4px;
         z-index: 100;
-  
+
         a {
           max-width: 50%;
           display: block;
-  
+
           margin: 20px auto;
-  
+
           font-size: 14px;
           line-height: 17px;
           color: rgba(31, 32, 65, 0.5);
           text-decoration: none;
           text-align: center;
-  
+
           &:first-child {
             margin: 0 auto 10px auto;
           }
         }
-  
+
         .header__user {
           border-top: 1px solid rgba(31, 32, 65, 0.1)
         }
-  
+
         .header__buttons {
           height: 34px;
-  
+
           display: flex;
           justify-content: space-around;
         }
       }
     }
-  
+
     .header__logo {
       position: relative;
       top: 2px;
     }
-  
+
     .material-icons {
       width: 24px;
       height: 21px;
-  
+
       margin-left: 2px;
-  
+
       vertical-align: middle;
-  
+
       font-size: 24px;
       line-height: 20px;
-  
+
       background: rgba(31, 32, 65, 0.5);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-  
+
     .button-bordered {
       width: 87px;
     }
+
     .button-filled {
       width: 196px;
     }
@@ -142,6 +142,7 @@
     .header__links-desktop {
       display: none;
     }
+
     .header__links-mobile {
       display: block;
     }
@@ -158,6 +159,7 @@
       justify-content: space-between;
       align-items: center;
     }
+
     .header__links-mobile {
       display: none;
 
