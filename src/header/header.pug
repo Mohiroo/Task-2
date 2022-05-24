@@ -3,54 +3,58 @@ include ./../components/buttons/buttons.pug
 mixin header-anonym
   header.header
     .header__wrapper
-      a.header__logo(href="./landing.html")
+      a.header__logo(href="./index.html")
         include ./header-logo.svg
       nav.header__links-desktop
-        a.header__about(href="#") О нас
-        a.header__services(href="#") Услуги
+        a.header__about(href="./page404.html") О нас
+        a.header__services(href="./page404.html") Услуги
           span.material-icons expand_more
-        a.header__vacancy(href="#") Вакансии
-        a.header__news(href="#") Новости
-        a.header__agreements(href="#") Соглашения
+        a.header__vacancy(href="./page404.html") Вакансии
+        a.header__news(href="./page404.html") Новости
+        a.header__agreements(href="./page404.html") Соглашения
           span.material-icons expand_more
-        +button("bordered", "Войти")
-        +button("filled", "Зарегистрироваться")
+        a.header__button(href="./sign-in.html")
+          +button("bordered", "Войти")
+        a.header__button(href="./registration.html")
+          +button("filled", "Зарегистрироваться")
       nav.header__links-mobile
         button.header__hamburger.material-icons(type="button") menu
         .header__menu
-          a.header__about(href="#") О нас
-          a.header__services(href="#") Услуги
+          a.header__about(href="./page404.html") О нас
+          a.header__services(href="./page404.html") Услуги
             span.material-icons expand_more
-          a.header__vacancy(href="#") Вакансии
-          a.header__news(href="#") Новости
-          a.header__agreements(href="#") Соглашения
+          a.header__vacancy(href="./page404.html") Вакансии
+          a.header__news(href="./page404.html") Новости
+          a.header__agreements(href="./page404.html") Соглашения
             span.material-icons expand_more
           .header__buttons
-            +button("bordered", "Войти")
-            +button("filled", "Зарегистрироваться")
+            a.header__button(href="./sign-in.html")
+              +button("bordered", "Войти")
+            a.header__button(href="./registration.html")
+              +button("filled", "Зарегистрироваться")
 
 
 mixin header-user
   header.header
-    a.header__logo(href="#")
+    a.header__logo(href="./page404.html")
       include ./header-logo.svg
     nav.header__links-desktop
-      a.header__about(href="#") О нас
-      a.header__services(href="#") Услуги
+      a.header__about(href="./page404.html") О нас
+      a.header__services(href="./page404.html") Услуги
         span.material-icons expand_more
-      a.header__vacancy(href="#") Вакансии
-      a.header__news(href="#") Новости
-      a.header__agreements(href="#") Соглашения
+      a.header__vacancy(href="./page404.html") Вакансии
+      a.header__news(href="./page404.html") Новости
+      a.header__agreements(href="./page404.html") Соглашения
         span.material-icons expand_more
-      a.header__user(href="#") Юлий Цезарь
+      a.header__user(href="./page404.html") Юлий Цезарь
     nav.header__links-mobile
       button.header__hamburger.material-icons(type="button") menu
       nav.header__menu
-        a.header__about(href="#") О нас
-        a.header__services(href="#") Услуги
+        a.header__about(href="./page404.html") О нас
+        a.header__services(href="./page404.html") Услуги
           span.material-icons expand_more
-        a.header__vacancy(href="#") Вакансии
-        a.header__news(href="#") Новости
-        a.header__agreements(href="#") Соглашения
+        a.header__vacancy(href="./page404.html") Вакансии
+        a.header__news(href="./page404.html") Новости
+        a.header__agreements(href="./page404.html") Соглашения
           span.material-icons expand_more
-        a.header__user(href="#") Юлий Цезарь
+        a.header__user(href="./page404.html") Юлий Цезарь

@@ -23,6 +23,10 @@
         text-decoration: none;
       }
 
+      .header__button {
+        height: 34px;
+      }
+
       //user
       .header__user {
         &::before {
@@ -97,11 +101,18 @@
           border-top: 1px solid rgba(31, 32, 65, 0.1)
         }
 
-        .header__buttons {
+        .header__buttons {        
           height: 34px;
+
+          margin: 0 auto;
 
           display: flex;
           justify-content: space-around;
+
+          .header__button {
+            max-width: none;
+            margin: 0;
+          }
         }
       }
     }
