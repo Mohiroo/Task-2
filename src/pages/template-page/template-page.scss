@@ -2,32 +2,32 @@
 
 @font-face {
   font-family: 'Montserrat';
-  src: url('../../fonts/MontserratRegular.eot');
-  src: url('../../fonts/MontserratRegular.eot') format('embedded-opentype'),
-       url('../../fonts/MontserratRegular.woff2') format('woff2'),
-       url('../../fonts/MontserratRegular.woff') format('woff'),
-       url('../../fonts/MontserratRegular.ttf') format('truetype'),
-       url('../../fonts//MontserratRegular.svg#MontserratRegular') format('svg');
+  src: url('../../fonts/font-MontserratRegular.eot');
+  src: url('../../fonts/font-MontserratRegular.eot') format('embedded-opentype'),
+    url('../../fonts/font-MontserratRegular.woff2') format('woff2'),
+    url('../../fonts/font-MontserratRegular.woff') format('woff'),
+    url('../../fonts/font-MontserratRegular.ttf') format('truetype'),
+    url('../../fonts/font-MontserratRegular.svg#MontserratRegular') format('svg');
 }
 
 @font-face {
   font-family: 'MontserratBold';
-  src: url('../../fonts/MontserratBold.eot');
-  src: url('../../fonts/MontserratBold.eot') format('embedded-opentype'),
-       url('../../fonts/MontserratBold.woff2') format('woff2'),
-       url('../../fonts/MontserratBold.woff') format('woff'),
-       url('../../fonts/MontserratBold.ttf') format('truetype'),
-       url('../../fonts/MontserratBold.svg#MontserratBold') format('svg');
+  src: url('../../fonts/font-MontserratBold.eot');
+  src: url('../../fonts/font-MontserratBold.eot') format('embedded-opentype'),
+    url('../../fonts/font-MontserratBold.woff2') format('woff2'),
+    url('../../fonts/font-MontserratBold.woff') format('woff'),
+    url('../../fonts/font-MontserratBold.ttf') format('truetype'),
+    url('../../fonts/font-MontserratBold.svg#MontserratBold') format('svg');
 }
 
 @font-face {
   font-family: 'Material-icons';
-  src: url('../../fonts/MaterialIconsRegular.eot');
-  src: url('../../fonts/MaterialIconsRegular.eot') format('embedded-opentype'),
-       url('../../fonts/MaterialIconsRegular.woff2') format('woff2'),
-       url('../../fonts/MaterialIconsRegular.woff') format('woff'),
-       url('../../fonts/MaterialIconsRegular.ttf') format('truetype'),
-       url('../../fonts/MaterialIconsRegular.svg#MaterialIconsRegular') format('svg');
+  src: url('../../fonts/font-MaterialIconsRegular.eot');
+  src: url('../../fonts/font-MaterialIconsRegular.eot') format('embedded-opentype'),
+    url('../../fonts/font-MaterialIconsRegular.woff2') format('woff2'),
+    url('../../fonts/font-MaterialIconsRegular.woff') format('woff'),
+    url('../../fonts/font-MaterialIconsRegular.ttf') format('truetype'),
+    url('../../fonts/font-MaterialIconsRegular.svg#MaterialIconsRegular') format('svg');
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -43,7 +43,7 @@ body {
   p {
     margin: 0;
   }
-  
+
   .material-icons {
     font-family: 'Material-icons';
   }
@@ -52,4 +52,3 @@ body {
     display: none;
   }
 }
-
