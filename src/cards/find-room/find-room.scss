@@ -12,12 +12,18 @@
     width: 320px;
     margin: 0 auto;
 
+    position: relative;
+
     display: grid;
     grid-gap: 20px;
 
     .find-room__date {
       display: flex;
       justify-content: space-between;
+    }
+
+    .calendar {
+      top: 147px;
     }
 
     .button-big {
