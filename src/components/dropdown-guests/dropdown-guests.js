@@ -187,14 +187,14 @@ function plusCount(category) {
       adultButtonMinus.removeClass("guests__minus-inactive");
     };
 
-    adult++;
+    ++adult;
     adultCount.text(adult);
   } else if (category == "children") {
     if (children == 0) {
       childrenButtonMinus.removeClass("guests__minus-inactive");
     };
 
-    children++;
+    ++children;
     childrenCount.text(children);
   } else if (category == "infants") {
     if (adult !== 0) {
@@ -202,7 +202,7 @@ function plusCount(category) {
         infantsButtonMinus.removeClass("guests__minus-inactive");
       };
 
-      infants++;
+      ++infants;
       infantsCount.text(infants);
     };
   };

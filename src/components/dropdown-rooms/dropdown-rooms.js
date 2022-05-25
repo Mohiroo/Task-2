@@ -24,7 +24,6 @@ let bathrooms = 0;
 buttonOpen.on("click", function () {
   createMenu()
 });
-
 bedroomsButtonMinus.on("click", function () {
   minusCount("bedrooms")
 });
@@ -99,21 +98,21 @@ function plusCount(category) {
       bedroomsButtonMinus.removeClass("rooms__minus-inactive");
     }
 
-    bedrooms = bedrooms++;
+    bedrooms = ++bedrooms;
     bedroomsCount.text(bedrooms);
   } else if (category == "beds") {
     if (beds == 0) {
       bedsButtonMinus.removeClass("rooms__minus-inactive");
     }
 
-    beds = beds++;
+    beds = ++beds;
     bedsCount.text(beds);
   } else if (category == "bathrooms") {
     if (bathrooms == 0) {
       bathroomsButtonMinus.removeClass("rooms__minus-inactive");
     }
 
-    bathrooms = bathrooms++;
+    bathrooms = ++bathrooms;
     bathroomsCount.text(bathrooms);
   }
   getText();
