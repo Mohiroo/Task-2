@@ -1,1 +1,2 @@
-import './template-page.scss'
+import '../../../node_modules/normalize.css/normalize.css';
+import './template-page.scss';

@@ -1,33 +1,23 @@
-@import "~normalize.css/normalize.css";
-
 @font-face {
   font-family: 'Montserrat';
-  src: url('../../fonts/font-MontserratRegular.eot');
-  src: url('../../fonts/font-MontserratRegular.eot') format('embedded-opentype'),
-    url('../../fonts/font-MontserratRegular.woff2') format('woff2'),
-    url('../../fonts/font-MontserratRegular.woff') format('woff'),
-    url('../../fonts/font-MontserratRegular.ttf') format('truetype'),
-    url('../../fonts/font-MontserratRegular.svg#MontserratRegular') format('svg');
+  src: url(../../fonts/font-MontserratRegular.ttf) format('truetype'),
+       url(../../fonts/font-MontserratRegular.woff) format('woff'),
+       url(../../fonts/font-MontserratRegular.svg#font-MontserratRegular) format('svg');
 }
 
 @font-face {
   font-family: 'MontserratBold';
-  src: url('../../fonts/font-MontserratBold.eot');
-  src: url('../../fonts/font-MontserratBold.eot') format('embedded-opentype'),
-    url('../../fonts/font-MontserratBold.woff2') format('woff2'),
-    url('../../fonts/font-MontserratBold.woff') format('woff'),
-    url('../../fonts/font-MontserratBold.ttf') format('truetype'),
-    url('../../fonts/font-MontserratBold.svg#MontserratBold') format('svg');
+  src: url(../../fonts/font-MontserratBold.svg#font-MontserratBold) format('svg'),
+       url(../../fonts/font-MontserratBold.ttf) format('truetype'),
+       url(../../fonts/font-MontserratBold.woff) format('woff');
 }
 
 @font-face {
   font-family: 'Material-icons';
-  src: url('../../fonts/font-MaterialIconsRegular.eot');
-  src: url('../../fonts/font-MaterialIconsRegular.eot') format('embedded-opentype'),
-    url('../../fonts/font-MaterialIconsRegular.woff2') format('woff2'),
-    url('../../fonts/font-MaterialIconsRegular.woff') format('woff'),
-    url('../../fonts/font-MaterialIconsRegular.ttf') format('truetype'),
-    url('../../fonts/font-MaterialIconsRegular.svg#MaterialIconsRegular') format('svg');
+  src: url(../../fonts/font-MaterialIconsRegular.ttf) format('truetype'),
+       url(../../fonts/font-MaterialIconsRegular.woff) format('woff'),
+       url(../../fonts/font-MaterialIconsRegular.svg#font-MaterialIconsRegular) format('svg');
+  
   font-style: normal;
   font-weight: 400;
   font-size: 24px;

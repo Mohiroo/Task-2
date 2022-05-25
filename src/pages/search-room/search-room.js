@@ -1,3 +1,4 @@
+import '../template-page/template-page';
 import "../../components/filter-date-dropdown/filter-date-dropdown";
 import "../../components/rich-checkbox-buttons/rich-checkbox-buttons";
 import "../../components/checkbox-buttons/checkbox-buttons";
@@ -10,7 +11,6 @@ import "../../cards/calendar/calendar";
 import '../../cards/room-card/room-card';
 import "../../footer/footer";
 import "../../header/header";
-import '../template-page/template-page';
 import './search-room.pug';
 import './search-room.scss';
 import $ from "jquery";
