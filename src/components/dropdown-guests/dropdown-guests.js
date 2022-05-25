@@ -94,7 +94,7 @@ dropdownGuestsButton.on("click", function () {
 
 // Функция - отрисовка меню
 function setVars() {
-  if (window.location.href !== 'http://localhost:4200/index.html') {
+  if (window.location.href !== 'https://mohiroo.github.io/task-2/' || window.location.href !== 'https://mohiroo.github.io/task-2/index.html') {
     adult = +getItem('adult');
     children = +getItem('children');
     infants = +getItem('infants');
@@ -273,6 +273,6 @@ function getItem(key) {
   try {
     return window.sessionStorage.getItem(key);
   } catch (e) {
-    console.log(e);
+    console.warn(e);
   }
 };

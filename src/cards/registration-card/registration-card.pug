@@ -21,7 +21,9 @@ mixin registration-card
         +text-field(mode, "email", "Email", "email", "")
         +text-field(mode, "password", "Пароль", "password", "registration__password")
         +toggle("Получать спецпредложения", "registration__special-offers")
-      +button("big", "зарегистрироваться")
+      a.registration__button(href="./page404.html")
+        +button("big", "зарегистрироваться")
     .registration__login-account
       p.login-account__text Уже есть аккаунт на Toxin
-      +button("bordered", "Войти")
+      a.login__button(href="./page404.html")
+        +button("bordered", "Войти")

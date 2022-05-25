@@ -69,15 +69,15 @@ buttonApply.on("click", function () {
     secondPickDate = firstPickDate;
   }
 
-  let firstDate__date = firstPickDate.getDate().toString().length == 1 ? "0" + firstPickDate.getDate() : firstPickDate.getDate()
-  let firstDate__month = (firstPickDate.getMonth() + 1).toString().length == 1 ? "0" + (firstPickDate.getMonth() + 1) : firstPickDate.getMonth() + 1
-  let shortFirstDate__month = shortMonths[firstPickDate.getMonth()]
-  let firstDate__year = firstPickDate.getFullYear()
+  let firstDate__date = firstPickDate.getDate().toString().length == 1 ? "0" + firstPickDate.getDate() : firstPickDate.getDate();
+  let firstDate__month = (firstPickDate.getMonth() + 1).toString().length == 1 ? "0" + (firstPickDate.getMonth() + 1) : firstPickDate.getMonth() + 1;
+  let shortFirstDate__month = shortMonths[firstPickDate.getMonth()];
+  let firstDate__year = firstPickDate.getFullYear();
 
-  let secondDate__date = secondPickDate.getDate().toString().length == 1 ? "0" + secondPickDate.getDate() : secondPickDate.getDate()
-  let secondDate__month = (secondPickDate.getMonth() + 1).toString().length == 1 ? "0" + (secondPickDate.getMonth() + 1) : secondPickDate.getMonth() + 1
-  let secondFirstDate__month = shortMonths[secondPickDate.getMonth()]
-  let secondDate__year = secondPickDate.getFullYear()
+  let secondDate__date = secondPickDate.getDate().toString().length == 1 ? "0" + secondPickDate.getDate() : secondPickDate.getDate();
+  let secondDate__month = (secondPickDate.getMonth() + 1).toString().length == 1 ? "0" + (secondPickDate.getMonth() + 1) : secondPickDate.getMonth() + 1;
+  let secondFirstDate__month = shortMonths[secondPickDate.getMonth()];
+  let secondDate__year = secondPickDate.getFullYear();
 
   singleDateText.text(`${firstDate__date} ${shortFirstDate__month} - ${secondDate__date} ${secondFirstDate__month}`);
   doubleDate1Text.text(`${firstDate__date}.${firstDate__month}.${firstDate__year}`);
@@ -97,7 +97,7 @@ buttonApply.on("click", function () {
 })
 
 function setVars() {
-  if (window.location.href !== 'http://localhost:4200/index.html') {
+  if (window.location.href !== 'https://mohiroo.github.io/task-2/' || window.location.href !== 'https://mohiroo.github.io/task-2/index.html') {
     firstPickDate = new Date(+getItem('firstDate'));
     secondPickDate = new Date(+getItem('secondDate'));
 
@@ -311,6 +311,6 @@ function getItem(key) {
   try {
     return window.sessionStorage.getItem(key);
   } catch (e) {
-    console.log(e);
+    console.warn(e);
   }
 };

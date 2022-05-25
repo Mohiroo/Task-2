@@ -8,7 +8,9 @@ mixin login-card
       .login__login-details
         +text-field(mode, "email", "Email", "email", "login__email")
         +text-field(mode, "password", "Пароль", "password", "")
-      +button("big", "Войти")
+      a.login__button(href="./page404.html")
+        +button("big", "Войти")
     .login__registration-account
       p.registration-account__text Нет аккаунта на Toxin?
-      +button("bordered", "Создать")
+      a.registration__button(href="./page404.html")
+        +button("bordered", "Создать")

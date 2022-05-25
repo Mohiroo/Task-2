@@ -76,5 +76,11 @@
       vertical-align: center;
       color: #000000;
     }
+
+    .login__button {
+      max-width: 99px;
+      height: 44px;
+      flex: 1;
+    }
   }
 }
