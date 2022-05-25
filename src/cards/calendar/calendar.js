@@ -97,7 +97,10 @@ buttonApply.on("click", function () {
 })
 
 function setVars() {
-  if (window.location.href !== 'https://mohiroo.github.io/task-2/' || window.location.href !== 'https://mohiroo.github.io/task-2/index.html') {
+  if ((window.location.href !== 'https://mohiroo.github.io/task-2/' ||
+      window.location.href !== 'https://mohiroo.github.io/task-2/index.html') &&
+    (+getItem('firstDate')) !== 0) {
+
     firstPickDate = new Date(+getItem('firstDate'));
     secondPickDate = new Date(+getItem('secondDate'));
 

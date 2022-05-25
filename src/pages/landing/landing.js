@@ -20,6 +20,6 @@ function getItem(key) {
   try {
     return window.sessionStorage.getItem(key);
   } catch (e) {
-    console.log(e);
+    console.warn(e);
   }
 };
