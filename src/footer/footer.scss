@@ -81,14 +81,12 @@ footer {
         }
 
         .footer__subscribe {
-          width: 260px;
+          width: 259px;
 
           grid-area: f;
 
           .section__title {
-            margin-bottom: 17.7px;
-
-            line-height: 16px;
+            margin-bottom: 18px;
           }
         }
       }
@@ -108,6 +106,10 @@ footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        .footer-bottom__links {
+          height: 24px;
+        }
       }
     }
   }

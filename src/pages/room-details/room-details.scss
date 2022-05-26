@@ -5,6 +5,7 @@ main {
   transition: padding 3s ease;
 
   .room__gallery {
+    height: 485px;
     display: flex;
 
     .room__gallery-left {
@@ -50,6 +51,7 @@ main {
     }
 
     .room__feedbacks {
+      margin-top: 2px;
       grid-area: d;
     }
 
@@ -85,6 +87,7 @@ main {
   .room__text-right {
     position: relative;
     top: 8px;
+    left: 2px;
     float: right;
 
     font-size: 14px;
@@ -105,7 +108,11 @@ main {
       "c"
       "f";
 
-    .room__feedbacks {
+    .room__brief,
+    .room__experience,
+    .room__feedbacks,
+    .info__rules,
+    .info__cancel {
       width: 320px;
     }
   }
@@ -125,8 +132,7 @@ main {
     .room__feedbacks,
     .info__rules,
     .info__cancel {
-      width: 320px;
-      padding-left: 29px;
+      width: initial;
     }
 
     .room__feedbacks {
@@ -135,7 +141,13 @@ main {
 
     .info__rules {
       .room__text {
-        margin-left: 20px;
+        margin: 2px 0 18px 20px;
+      }
+    }
+
+    .info__cancel {
+      .room__text {
+        margin: 1px 0 18px 0;
       }
     }
   }

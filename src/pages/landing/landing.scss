@@ -14,13 +14,12 @@ main {
 
     .landing-page__note {
       height: 100%;
-
+      margin: 0 -7px 3px 0;
       display: flex;
 
-      .landing__text {
+      .landing-page__text {
         font-size: 14px;
         line-height: 24px;
-        text-align: right;
         color: rgba(31, 32, 65, 0.75);
       }
     }

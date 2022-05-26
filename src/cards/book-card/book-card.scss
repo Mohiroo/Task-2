@@ -49,7 +49,7 @@
 
       .info__text {
         position: relative;
-        top: 2px;
+        top: 3px;
 
         font-size: 12px;
         line-height: 18px;
@@ -72,14 +72,21 @@
       }
 
       .book-card__text {
-        margin-bottom: 6px;
-        line-height: 12px;
+        margin-bottom: 5px;
+        line-height: 15px;
+      }
+    }
+
+    .book-card__guests {
+      .book-card__text {
+        margin-bottom: 5px;
+        line-height: 15px;
       }
     }
 
     .book-card__details {
       .details__option {
-        margin-bottom: 12px;
+        margin-bottom: 14px;
 
         display: flex;
         justify-content: space-between;
@@ -88,7 +95,6 @@
         .services__info,
         .add-services__info {
           width: 214px;
-          line-height: 18px;
         }
 
         .details__info {
@@ -119,7 +125,7 @@
       }
 
       .details__total {
-        margin-top: 30px;
+        margin-top: 28px;
 
         display: flex;
         justify-content: space-between;

@@ -70,12 +70,16 @@
       justify-content: space-between;
       align-items: center;
 
-      margin: 7px 15px 0 14px;
+      margin: 7px 7px 0 14px;
 
       font-size: 12px;
       line-height: 15px;
       font-family: 'MontserratBold';
       text-transform: uppercase;
+
+      &:first-child {
+        margin: 5px 7px 0 14px;
+      }
 
       .dropdown-guests__menu-buttons {
         width: 90px;
@@ -108,7 +112,7 @@
     }
 
     .dropdown-guests__submenu {
-      margin: 20px 7px 13px 14px;
+      margin: 21px 7px 13px 14px;
 
       max-width: 299px;
       height: 15px;
